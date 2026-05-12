@@ -52,6 +52,24 @@ You can also copy the repository webpage URL and ask an AI agent to help downloa
 
 你也可以直接复制这个仓库网页链接，让 AI agent 帮你下载并完成安装设置。
 
+Short prompt for an AI agent:
+
+给 AI agent 的简短 prompt：
+
+```text
+Please help me download and install the Codex skills from this repository:
+https://github.com/juliaError/econ-TopJournal-writing-Skill
+
+Copy `skills/econ-write` and `skills/cn-top-econ-writing` into `~/.codex/skills/`, then tell me whether I still need to refresh or restart Codex.
+```
+
+```text
+请帮我下载并安装这个仓库里的 Codex skills：
+https://github.com/juliaError/econ-TopJournal-writing-Skill
+
+把 `skills/econ-write` 和 `skills/cn-top-econ-writing` 复制到 `~/.codex/skills/`，然后告诉我是否还需要刷新或重启 Codex。
+```
+
 ## Usage / 使用方式 🛠️
 
 Use `econ-write` for general English economics paper writing:
