@@ -13,6 +13,7 @@ This repository collects Codex skills for economics paper writing, revision, and
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
 | `PAPER_CORPUS.md` | Paper corpus used as the writing-learning reference set. | 构建和扩展本写作 workflow 时参考、蒸馏的中英文论文清单。 |
 | `THIRD_PARTY_NOTICES.md` | Third-party copyright and MIT License notice. | 外部来源与 MIT License 声明。 |
+| `AI_ASSISTANCE.md` | Notes on AI-assisted development and responsibility. | 关于 AI 辅助开发、署名和责任边界的说明。 |
 
 ## Knowledge Sources / 知识来源 📚
 
@@ -89,3 +90,11 @@ The `skills/econ-write/` skill is based on [`hanlulong/econ-writing-skill`](http
 This repository does not yet define a separate license for original additions.
 
 本仓库目前尚未为自有新增内容单独设定 license。
+
+## AI Assistance / AI 辅助说明 🤖
+
+ChatGPT and Codex were used to help organize the repository, draft documentation, review attribution, and prepare Git commits. They are not listed as authors or maintainers because responsibility for the repository, licensing choices, and final content remains with the human maintainer.
+
+本仓库在整理目录、撰写说明、检查引用和准备 Git 提交时使用了 ChatGPT 与 Codex 辅助。它们不列为作者或维护者；仓库内容、许可选择和后续维护责任仍由人类维护者承担。
+
+See [`AI_ASSISTANCE.md`](AI_ASSISTANCE.md) for details.
