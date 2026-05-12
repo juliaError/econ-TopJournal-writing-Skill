@@ -110,6 +110,7 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - `04_ai_translationese_linter.md`：运行 AI 腔、翻译腔、作者备忘腔和模板推进词检查。
 - `05_section_phrase_patterns.md`：按摘要、引言、文献、机制、实证、结果、稳健性、结论选择句法骨架。
 - `06_revision_workflow.md`：执行“逻辑主线—句法搭配—linter”的三轮中文修稿流程。
+- `07_source_coverage.md`：检查规则来源覆盖、降级语料和缺失语料，避免把单篇风格误当成通用规则。
 
 使用这些文件时，不要照搬语料论文原句；只应用其中的功能判断、句法骨架、搭配规则和检查标准。
 
