@@ -13,7 +13,7 @@ This repository collects Codex skills for economics paper writing, revision, and
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
 | `docs/paper-corpus.md` | Paper corpus used as the writing-learning reference set. | 构建和扩展本写作 workflow 时参考、蒸馏的中英文论文清单。 |
 | `LICENSE` | MIT License for the original contents of this repository. | 本仓库原创内容采用的 MIT License。 |
-| `THIRD_PARTY_NOTICES.md` | Third-party copyright and MIT License notice. | 外部来源与 MIT License 声明。 |
+| `NOTICE.md` | Third-party copyright and MIT License notice. | 外部来源与 MIT License 声明。 |
 | `docs/ai-assistance.md` | Notes on AI-assisted development and responsibility. | 关于 AI 辅助开发、署名和责任边界的说明。 |
 
 ## Knowledge Sources / 知识来源 📚
@@ -84,13 +84,13 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ## Attribution And License / 引用与许可 ⚖️
 
-The `skills/econ-write/` skill is based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the preserved third-party copyright and license notice.
+The `skills/econ-write/` skill is based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`NOTICE.md`](NOTICE.md) for the preserved third-party copyright and license notice.
 
-`skills/econ-write/` 基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，采用 MIT License。第三方版权与许可声明已保存在 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。
+`skills/econ-write/` 基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，采用 MIT License。第三方版权与许可声明已保存在 [`NOTICE.md`](NOTICE.md)。
 
-The original contents of this repository are licensed under the MIT License. Third-party materials remain subject to their own notices and attribution, as described in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+The original contents of this repository are licensed under the MIT License. Third-party materials remain subject to their own notices and attribution, as described in [`NOTICE.md`](NOTICE.md).
 
-本仓库原创内容采用 MIT License；第三方内容仍以其各自的声明和引用要求为准，见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。
+本仓库原创内容采用 MIT License；第三方内容仍以其各自的声明和引用要求为准，见 [`NOTICE.md`](NOTICE.md)。
 
 ## AI Assistance / AI 辅助说明 🤖
 
