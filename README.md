@@ -11,10 +11,10 @@ This repository collects Codex skills for economics paper writing, revision, and
 | `skills/econ-write/` | General economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
 | `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. | 后续用于细分写作规则的模块化参考文件，目前部分内容仍是占位。 |
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
-| `docs/PAPER_CORPUS.md` | Paper corpus used as the writing-learning reference set. | 构建和扩展本写作 workflow 时参考、蒸馏的中英文论文清单。 |
+| `docs/paper-corpus.md` | Paper corpus used as the writing-learning reference set. | 构建和扩展本写作 workflow 时参考、蒸馏的中英文论文清单。 |
 | `LICENSE` | MIT License for the original contents of this repository. | 本仓库原创内容采用的 MIT License。 |
 | `THIRD_PARTY_NOTICES.md` | Third-party copyright and MIT License notice. | 外部来源与 MIT License 声明。 |
-| `docs/AI_ASSISTANCE.md` | Notes on AI-assisted development and responsibility. | 关于 AI 辅助开发、署名和责任边界的说明。 |
+| `docs/ai-assistance.md` | Notes on AI-assisted development and responsibility. | 关于 AI 辅助开发、署名和责任边界的说明。 |
 
 ## Knowledge Sources / 知识来源 📚
 
@@ -28,9 +28,9 @@ This repository currently has two kinds of sources:
 1. **外部 skill 来源**：`skills/econ-write/` 基于 Lu Han 的开源项目 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，许可证为 MIT License。
 2. **本地论文语料**：`paper_skills` 模块计划从 38 篇经济学论文中提炼写作规则，覆盖英文理论/实证论文和中文经济学期刊论文。
 
-See [`docs/PAPER_CORPUS.md`](docs/PAPER_CORPUS.md) for the full paper list and what each group teaches.
+See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the full paper list and what each group teaches.
 
-完整论文清单和学习重点见 [`docs/PAPER_CORPUS.md`](docs/PAPER_CORPUS.md)。
+完整论文清单和学习重点见 [`docs/paper-corpus.md`](docs/paper-corpus.md)。
 
 ## Install Locally / 本地安装 🚀
 
@@ -98,4 +98,4 @@ ChatGPT and Codex were used to help organize the repository, draft documentation
 
 本仓库在整理目录、撰写说明、检查引用和准备 Git 提交时使用了 ChatGPT 与 Codex 辅助。它们不列为作者或维护者；仓库内容、许可选择和后续维护责任仍由人类维护者承担。
 
-See [`docs/AI_ASSISTANCE.md`](docs/AI_ASSISTANCE.md) for details.
+See [`docs/ai-assistance.md`](docs/ai-assistance.md) for details.
