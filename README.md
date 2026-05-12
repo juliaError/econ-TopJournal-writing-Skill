@@ -8,6 +8,12 @@ This repository contains Codex skills for economics paper writing workflows.
 - `skills/econ-write/references/paper_skills/`: optional section-specific reference modules used by `econ-write` when relevant.
 - `skills/cn-top-econ-writing/`: Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》.
 
+## Attribution
+
+The `skills/econ-write/` skill is based on the open-source [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) project by Lu Han, which is licensed under the MIT License. Local additions in this repository include the optional `paper_skills` reference modules and the separate `cn-top-econ-writing` skill.
+
+See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the preserved third-party copyright and license notice.
+
 ## Install Locally
 
 Copy the skill directories into your Codex skills folder:
@@ -38,4 +44,4 @@ Use `cn-top-econ-writing` for Chinese top-journal submissions:
 
 - `econ-write` selectively loads `references/paper_skills/` files only when the task needs them.
 - Some `paper_skills` reference files are placeholders until their Markdown rule bodies are filled in.
-- No license is included yet. Add one before public reuse if you want to define redistribution and modification rights.
+- This repository does not yet define a separate license for original additions. The third-party `econ-write` source notice is preserved in `THIRD_PARTY_NOTICES.md`.
