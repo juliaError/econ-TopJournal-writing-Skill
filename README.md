@@ -48,6 +48,10 @@ Restart or refresh Codex after installation so the skills list is reloaded.
 
 安装后重启或刷新 Codex，让 skills 列表重新加载。
 
+You can also copy the repository webpage URL and ask an AI agent to help download and set up the skills for you.
+
+你也可以直接复制这个仓库网页链接，让 AI agent 帮你下载并完成安装设置。
+
 ## Usage / 使用方式 🛠️
 
 Use `econ-write` for general English economics paper writing:
