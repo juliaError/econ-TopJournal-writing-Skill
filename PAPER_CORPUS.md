@@ -6,15 +6,15 @@ This file lists the economics papers used as the writing-learning corpus for dev
 
 ## Corpus Status / 语料状态
 
-- Total planned papers: 38.
-- Main PDF/Word files obtained locally: 33.
+- Total planned papers: 43.
+- Main PDF/Word files obtained locally: 38.
 - Additional open HTML full texts: 2.
-- Public main documents not yet obtained: 5.
+- Public main documents not yet obtained: 3.
 
-- 计划语料共 38 篇。
-- 已取得主 PDF/Word 文件 33 篇。
+- 计划语料共 43 篇。
+- 已取得主 PDF/Word 文件 38 篇。
 - 另有开放 HTML 全文 2 篇。
-- 暂未取得公开主文档 5 篇。
+- 暂未取得公开主文档 3 篇。
 
 These papers are used as writing examples, not as a claim that the current repository has already fully distilled every paper into executable rules. The `paper_skills` files will be filled progressively.
 
@@ -96,12 +96,30 @@ These papers are used as writing examples, not as a claim that the current repos
 | C17 | 中国城市化发展——基于空间均衡模型的研究 | 赵方；袁超文 | 未记录 | 学习理论模型与中国城市化事实的结合。 |
 | C18 | 企业投资决策中的同行效应研究 | 杨海生；柳建华；连玉君 | 未记录 | 学习公司金融和企业行为实证论文的规范写法。 |
 
+### Additional Chinese Journal Papers / 新增中文期刊论文
+
+| ID | 论文 | 作者 | 年份 | 写作学习重点 |
+| --- | --- | --- | --- | --- |
+| N01 | 中国产业结构变迁对经济增长和波动的影响 | 干春晖；郑若谷；余典范 | 2011 | 学习摘要压缩、贡献排序和产业结构议题的结果解释。 |
+| N02 | 城市化、城市倾向的经济政策与城乡收入差距 | 陆铭；陈钊 | 2004 | 学习政策因素、城乡收入差距和文献转入问题的中文叙述。 |
+| N03 | 外需冲击、政府采购管理与小微企业发展 | 赵仁杰；霍宇辰；张子尧 | 2026 | 学习近期中文顶刊摘要、政策背景、机制层级和需求管理表述。 |
+| N04 | 自动化资本、企业空间布局与区域协同 | 裴建锁；陈哲昂；彭凯旋；张蒙 | 2026 | 学习模型机制、空间布局、区域协同和政策含义的中文表达。 |
+| N05 | 财政规则、宏观经济稳定和财政治理绩效 | 周波；杨李路 | 2026 | 学习财政政策规则、宏观稳定和方法定位的写法。 |
+
+### Backup Source / 备用来源
+
+| ID | 论文 | 作者 | 年份 | 说明 |
+| --- | --- | --- | --- | --- |
+| C04-backup | 中国地方官员的晋升锦标赛模式研究 | 周黎安 | 2007 | 与 C04 同题，作为备用抽取来源，不重复计入论文总数。 |
+
 ## Availability Notes / 文档可得性说明
 
-- The local corpus download task obtained 19 English main PDFs and 14 Chinese main PDF/Word files.
+- The local corpus download task obtained 19 English main PDFs and 19 unique Chinese main PDF/Word files.
 - C05 and C06 have open HTML full texts saved in the local corpus task.
-- E03, C10, and C14 still need a reliable public main document or user-provided access copy before they can be treated as complete local files.
+- E03, original C10, and C14 still need a reliable public main document or user-provided access copy before they can be treated as complete local files.
+- N02 is related to urbanization and urban-rural income gaps, but it is not the same paper as original C10.
 
-- 本地下载任务已取得 19 篇英文主 PDF 和 14 篇中文主 PDF/Word 文件。
+- 本地下载任务已取得 19 篇英文主 PDF 和 19 篇不重复中文主 PDF/Word 文件。
 - C05 与 C06 已保存开放 HTML 全文。
-- E03、C10、C14 仍需可靠公开主文档或用户提供的访问版本，才能作为完整本地文件处理。
+- E03、原 C10、C14 仍需可靠公开主文档或用户提供的访问版本，才能作为完整本地文件处理。
+- N02 与城市化和城乡收入差距主题相关，但不是原 C10。

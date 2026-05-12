@@ -101,6 +101,18 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - 是否带有作者备忘、工作日志或答辩口吻；若有，应改成论文正文可直接使用的表述。
 - 如果一句话虽然逻辑上能懂，但中文读起来别扭、不顺或不够像论文，就继续修改，直到自然、准确、清楚。
 
+## 中文遣词造句模块
+当用户要求中文润色、去 AI 腔、去翻译腔、去作者备忘腔、改摘要/引言/结果解释的中文表达，或进行投稿前语体清理时，必须按需读取 `references/chinese-diction/` 下的文件：
+
+- `01_sentence_functions.md`：先判断句子功能，再改措辞。
+- `02_collocations.md`：检查经济学中文常用搭配、慎用搭配和替代表达。
+- `03_good_bad_pairs.md`：用原创坏句/好句对照修正空泛表达。
+- `04_ai_translationese_linter.md`：运行 AI 腔、翻译腔、作者备忘腔和模板推进词检查。
+- `05_section_phrase_patterns.md`：按摘要、引言、文献、机制、实证、结果、稳健性、结论选择句法骨架。
+- `06_revision_workflow.md`：执行“逻辑主线—句法搭配—linter”的三轮中文修稿流程。
+
+使用这些文件时，不要照搬语料论文原句；只应用其中的功能判断、句法骨架、搭配规则和检查标准。
+
 ## 期刊模式细则
 
 ### A. ER 模式（《经济研究》）
