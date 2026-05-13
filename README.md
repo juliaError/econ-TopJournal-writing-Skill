@@ -140,19 +140,21 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 ## Current Status / 当前状态 🌱
 
 - `econ-write` is usable now and keeps its third-party MIT notice.
-- **2026-05-13 update**: `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
-- **2026-05-13 update**: `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
-- **2026-05-13 update**: `econ-writing-workflow` now includes `references/argument-logic/` for full-paper logic, repeated material, emphasis, ordering, and table/figure fit.
-- **2026-05-13 update**: `econ-writing-workflow` now includes `references/full-paper-drafting/` for drafting an auditable paper from a user-owned result package, with input audits, table/figure placement, anti-fabrication `TODO` rules, and language-specific routing.
+- **2026-05-13 update**:
+  1. `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
+  2. `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
+  3. `econ-writing-workflow` now includes `references/argument-logic/` for full-paper logic, repeated material, emphasis, ordering, and table/figure fit.
+  4. `econ-writing-workflow` now includes `references/full-paper-drafting/` for drafting an auditable paper from a user-owned result package, with input audits, table/figure placement, anti-fabrication `TODO` rules, and language-specific routing.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
 
 - `econ-write` 当前可直接使用，并已保留第三方 MIT 声明。
-- **2026-05-13 更新**：`econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
-- **2026-05-13 更新**：新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
-- **2026-05-13 更新**：`econ-writing-workflow` 已新增 `references/argument-logic/`，用于全文逻辑、重复删除、重点排序和表图是否服务主线的审查。
-- **2026-05-13 更新**：`econ-writing-workflow` 已新增 `references/full-paper-drafting/`，用于基于作者自己的研究问题、结果包和图表生成可审查初稿，并通过输入审查、正文/附录表图安排、禁止编造的 `TODO` 规则和中英文写作路由保证边界清楚。
+- **2026-05-13 更新**：
+  1. `econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
+  2. 新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
+  3. `econ-writing-workflow` 已新增 `references/argument-logic/`，用于全文逻辑、重复删除、重点排序和表图是否服务主线的审查。
+  4. `econ-writing-workflow` 已新增 `references/full-paper-drafting/`，用于基于作者自己的研究问题、结果包和图表生成可审查初稿，并通过输入审查、正文/附录表图安排、禁止编造的 `TODO` 规则和中英文写作路由保证边界清楚。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
 - 长期目标是逐步基于本地写作规则和非逐篇来源的抽象规则，重写为完全原创的经济学写作 skills。
