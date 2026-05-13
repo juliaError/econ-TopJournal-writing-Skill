@@ -1,21 +1,30 @@
-MIT License
+# License Overview
 
-Copyright (c) 2026 Hangdong REN
+This repository uses layered licensing.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Original Repository Content
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Unless a file states otherwise or is covered by a third-party notice, the original skills, documentation, examples, and workflow rules created for this repository are licensed under:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+License deed: https://creativecommons.org/licenses/by-nc/4.0/
+Legal code: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+You may share and adapt the original repository content for non-commercial purposes, with attribution, subject to the CC BY-NC 4.0 terms.
+
+Commercial use of the original repository content is not permitted without separate written permission from the repository maintainer.
+
+## Third-Party Content
+
+Third-party materials remain under their own licenses and notices. In particular, content based on `hanlulong/econ-writing-skill` remains subject to the upstream MIT License notice preserved in `NOTICE.md`.
+
+This license overview does not relicense third-party MIT content as CC BY-NC 4.0.
+
+## Ethical Use
+
+Use of this repository is also governed by the ethical-use expectations in `ETHICAL_USE.md`, including prohibitions on paid paper-writing services, ghostwriting, academic misconduct services, and fabrication of research materials.
+
+## No Warranty
+
+This repository is provided as-is, without warranties or guarantees. This license overview is not legal advice.

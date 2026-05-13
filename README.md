@@ -13,9 +13,10 @@ This repository collects Codex skills for economics paper writing, revision, and
 | `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. | 后续用于细分写作规则的模块化参考文件，目前部分内容仍是占位。 |
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
 | `skills/econ-table-figure-design/` | Bilingual economics table and figure design skill for regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, and export checks. | 中英文通用经济学表格与图形设计 skill，覆盖三线表、主回归、稳健性、异质性、机制、表注图注、配色和导出检查。 |
-| `docs/paper-corpus.md` | Paper corpus used as the writing-learning reference set. | 构建和扩展本写作 workflow 时参考、蒸馏的中英文论文清单。 |
-| `LICENSE` | MIT License for the original contents of this repository. | 本仓库原创内容采用的 MIT License。 |
+| `docs/paper-corpus.md` | Corpus policy for how local writing-learning sources are used without publishing paper lists or source text. | 语料使用政策，说明如何使用本地写作学习来源，同时不公开论文清单或来源文本。 |
+| `LICENSE` | Layered license overview: original repository content is CC BY-NC 4.0; third-party content keeps its own license. | 分层许可说明：本仓库原创内容采用 CC BY-NC 4.0；第三方内容保留原许可。 |
 | `NOTICE.md` | Third-party copyright and MIT License notice. | 外部来源与 MIT License 声明。 |
+| `ETHICAL_USE.md` | Ethical-use policy for non-commercial academic writing support. | 非商用学术写作辅助的伦理使用说明。 |
 | `docs/ai-assistance.md` | Notes on AI-assisted development and responsibility. | 关于 AI 辅助开发、署名和责任边界的说明。 |
 
 ## Knowledge Sources / 知识来源 📚
@@ -23,16 +24,16 @@ This repository collects Codex skills for economics paper writing, revision, and
 This repository currently has two kinds of sources:
 
 1. **Third-party skill source**: `skills/econ-write/` is based on the open-source [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) project by Lu Han, licensed under the MIT License.
-2. **Local paper corpus**: the modular `paper_skills` and table/figure workflows are designed to be expanded from a 43-paper economics writing-learning corpus, including classic English theory/empirical papers and Chinese economics journal papers.
+2. **Curated local corpus**: the modular writing and table/figure workflows are informed by a private, locally maintained economics writing-learning corpus. Public files contain only abstracted rules, original examples, and reusable workflows.
 
 本仓库目前有两类来源：
 
 1. **外部 skill 来源**：`skills/econ-write/` 基于 Lu Han 的开源项目 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，许可证为 MIT License。
-2. **本地论文语料**：`paper_skills` 与表图设计模块计划从 43 篇经济学论文中提炼写作规则，覆盖英文理论/实证论文和中文经济学期刊论文。
+2. **本地整理语料**：模块化写作和表图 workflow 由私人、本地维护的经济学写作学习语料启发。公开文件只包含抽象规则、原创例句和可复用工作流。
 
-See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the full paper list and what each group teaches.
+See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the corpus-use policy.
 
-完整论文清单和学习重点见 [`docs/paper-corpus.md`](docs/paper-corpus.md)。
+语料使用政策见 [`docs/paper-corpus.md`](docs/paper-corpus.md)。
 
 ## Install Locally / 本地安装 🚀
 
@@ -129,28 +130,36 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 - `econ-write` is usable now and keeps its third-party MIT notice.
 - **2026-05-13 update**: `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
 - **2026-05-13 update**: `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
-- **2026-05-13 update**: `econ-writing-workflow` is now added as the main writing entry skill that routes ordinary user requests to the relevant specialized module.
+- **2026-05-13 update**: `econ-writing-workflow` now includes `references/argument-logic/` for full-paper logic, repeated material, emphasis, ordering, and table/figure fit.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
-- The long-term goal is to gradually rewrite the workflow into a fully original economics writing skill distilled from the paper corpus and locally developed writing rules.
+- The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
 
 - `econ-write` 当前可直接使用，并已保留第三方 MIT 声明。
 - **2026-05-13 更新**：`econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
 - **2026-05-13 更新**：新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
-- **2026-05-13 更新**：新增 `econ-writing-workflow` 写作总入口 skill，用于把普通用户请求路由到相应专业模块。
+- **2026-05-13 更新**：`econ-writing-workflow` 已新增 `references/argument-logic/`，用于全文逻辑、重复删除、重点排序和表图是否服务主线的审查。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
-- 长期目标是逐步基于论文语料和自有写作规则，重写为完全原创的经济学写作 skill。
+- 长期目标是逐步基于本地写作规则和非逐篇来源的抽象规则，重写为完全原创的经济学写作 skills。
 
-## Attribution And License / 引用与许可 ⚖️
+## Attribution, License, And Ethical Use / 引用、许可与伦理使用 ⚖️
 
-The `skills/econ-write/` skill is based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`NOTICE.md`](NOTICE.md) for the preserved third-party copyright and license notice.
+The `skills/econ-write/` skill includes content based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`NOTICE.md`](NOTICE.md) for the preserved third-party copyright and license notice.
 
-`skills/econ-write/` 基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，采用 MIT License。第三方版权与许可声明已保存在 [`NOTICE.md`](NOTICE.md)。
+`skills/econ-write/` 包含基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) 的内容，原项目采用 MIT License。第三方版权与许可声明已保存在 [`NOTICE.md`](NOTICE.md)。
 
-The original contents of this repository are licensed under the MIT License. Third-party materials remain subject to their own notices and attribution, as described in [`NOTICE.md`](NOTICE.md).
+Original repository content is licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), unless otherwise stated. Commercial use of original repository content requires separate written permission. Third-party materials remain subject to their own notices and licenses, as described in [`NOTICE.md`](NOTICE.md).
 
-本仓库原创内容采用 MIT License；第三方内容仍以其各自的声明和引用要求为准，见 [`NOTICE.md`](NOTICE.md)。
+除非另有说明，本仓库原创内容采用 Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)。原创内容的商业使用需要另行取得书面许可。第三方内容仍以其各自声明和许可为准，见 [`NOTICE.md`](NOTICE.md)。
+
+This repository is intended for non-commercial academic writing support. Do not use it for paid paper-writing services, ghostwriting, academic misconduct services, or fabricated research materials. See [`ETHICAL_USE.md`](ETHICAL_USE.md).
+
+本仓库用于非商用学术写作辅助。不得用于付费论文代写、ghostwriting、学术不端服务或伪造研究材料。见 [`ETHICAL_USE.md`](ETHICAL_USE.md)。
+
+Because the original repository content uses a NonCommercial license, this repository is not distributed as an OSI-approved open-source project.
+
+由于原创内容采用 NonCommercial 许可，本仓库不以 OSI 认可的开源项目形式发布。
 
 ## AI Assistance / AI 辅助说明 🤖
 

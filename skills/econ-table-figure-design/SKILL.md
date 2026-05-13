@@ -43,7 +43,7 @@ Load only the relevant files:
 - `references/figures/05_mechanism_figures.md`: mechanism figures and diagrams.
 - `references/figures/06_figure_notes_titles_axes.md`: captions, notes, axes, legends, labels.
 - `references/figures/07_export_quality.md`: export, resolution, and final artifact checks.
-- `references/visual_style/01_paper_palette_templates.md`: paper-specific palette templates.
+- `references/visual_style/01_paper_palette_templates.md`: corpus-informed reusable palette templates.
 - `references/visual_style/02_common_visual_style.md`: reusable visual style rules.
 - `references/visual_style/03_black_white_compatibility.md`: print and grayscale compatibility.
 

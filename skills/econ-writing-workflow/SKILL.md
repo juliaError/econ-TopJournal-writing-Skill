@@ -17,10 +17,11 @@ Before writing or editing, classify the request:
 
 1. **English paper prose**: abstract, introduction, literature review, model/theory prose, empirical/results prose, conclusion, referee response, or English revision.
 2. **English diction cleanup**: remove AI-like prose, translationese, vague contribution language, weak verbs, or template signposting.
-3. **Chinese top-journal writing**: Chinese paper structure, Chinese abstract, introduction, contribution framing, journal fit, submission style, or top-journal revision.
-4. **Chinese diction cleanup**: remove AI 腔, 翻译腔, 作者备忘腔, unnatural collocations, or stiff Chinese academic prose.
-5. **Tables and figures**: table/figure admission, main-text versus appendix placement, three-line tables, regression/robustness/heterogeneity/mechanism tables, notes, captions, palettes, fonts, or export quality.
-6. **Empirical workflow**: data cleaning, variable construction, sample construction, regression code, estimation, diagnostics, or reproducibility.
+3. **Argument logic**: full-paper logic, argument spine, repeated material, misplaced sections, emphasis, ordering, or whether tables and figures serve the main line.
+4. **Chinese top-journal writing**: Chinese paper structure, Chinese abstract, introduction, contribution framing, journal fit, submission style, or top-journal revision.
+5. **Chinese diction cleanup**: remove AI 腔, 翻译腔, 作者备忘腔, unnatural collocations, or stiff Chinese academic prose.
+6. **Tables and figures**: table/figure admission, main-text versus appendix placement, three-line tables, regression/robustness/heterogeneity/mechanism tables, notes, captions, palettes, fonts, or export quality.
+7. **Empirical workflow**: data cleaning, variable construction, sample construction, regression code, estimation, diagnostics, or reproducibility.
 
 If a request spans more than one category, handle them in this order:
 
@@ -34,6 +35,7 @@ If a request spans more than one category, handle them in this order:
 
 - For English paper prose, use `econ-write`.
 - For English diction cleanup, use `econ-write` and load `references/english-diction/` selectively.
+- For full-paper logic, repeated material, emphasis, section ordering, and argument-spine audits, load `references/argument-logic/` selectively before polishing prose.
 - For Chinese top-journal writing, use `cn-top-econ-writing`.
 - For Chinese diction cleanup, use `cn-top-econ-writing` and load `references/chinese-diction/` selectively.
 - For tables, figures, notes, captions, palettes, typography, and export checks, use `econ-table-figure-design`.
@@ -46,6 +48,16 @@ If a request spans more than one category, handle them in this order:
 - Do not put author workflow notes in paper-facing text, table notes, or figure notes.
 - Do not merge all specialized rules into the response. Load only the relevant child skill or reference files needed for the task.
 - Preserve the user's language target: English manuscript tasks should output English unless asked otherwise; Chinese top-journal tasks should output Chinese unless asked otherwise.
+
+## Argument-Logic References
+
+Load only the relevant files:
+
+- `references/argument-logic/01_argument_spine.md`: one-chain paper logic and missing-link audit.
+- `references/argument-logic/02_redundancy_linter.md`: repeated, appendix, and delete/merge material.
+- `references/argument-logic/03_emphasis_and_ordering.md`: what to foreground, delay, or de-emphasize.
+- `references/argument-logic/04_table_figure_logic.md`: whether tables and figures serve the main line.
+- `references/argument-logic/05_revision_workflow.md`: full-paper logic revision workflow.
 
 ## Output Check
 

@@ -1,15 +1,23 @@
-# Third-Party Notices
+# Notices And Third-Party Licensing
+
+This repository uses layered licensing:
+
+- Original repository content is licensed under CC BY-NC 4.0 unless otherwise stated.
+- Third-party materials remain under their own licenses.
+- The upstream MIT License notice below is preserved for content based on `hanlulong/econ-writing-skill`.
+
+The repository maintainer does not relicense upstream MIT content as non-commercial-only content. Users must comply with both this notice and the applicable license for the content they use.
 
 ## hanlulong/econ-writing-skill
 
-The `skills/econ-write/` directory in this repository is based on:
+The `skills/econ-write/` directory in this repository includes content based on:
 
 - Project: `hanlulong/econ-writing-skill`
 - Repository: https://github.com/hanlulong/econ-writing-skill
 - Author: Lu Han
-- License: MIT License
+- Upstream license: MIT License
 
-The following copyright and permission notice is preserved from the upstream project.
+The following copyright and permission notice is preserved from the upstream project:
 
 ```text
 MIT License

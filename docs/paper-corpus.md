@@ -1,145 +1,67 @@
-# Paper Corpus / 论文语料库 📚
+# Corpus Policy / 语料使用政策
 
-This file lists the economics papers used as the writing-learning corpus for developing and extending the local `paper_skills` workflow. The `econ-writing-workflow` entry skill now routes corpus-derived writing rules to the relevant English, Chinese, or table/figure module.
+This repository uses a locally maintained economics-writing corpus to develop abstract writing, revision, table, figure, and style rules. The public repository does not publish the corpus list, article text, screenshots, full tables, full figure pages, long quotations, or paper-specific extraction logs.
 
-本文件记录构建和扩展本地 `paper_skills` 写作工作流时参考、蒸馏的经济学论文语料。现在由 `econ-writing-workflow` 写作总入口 skill 将这些语料规则路由到英文、中文或表图模块。
+本仓库使用本地整理的经济学写作语料来发展抽象的写作、修稿、表格、图形和风格规则。公开仓库不发布具体论文清单、论文原文、截图、整表、整页图形、长引文或逐篇抽取日志。
 
-## Corpus Status / 语料状态
+## Public Rule Boundary / 公开规则边界
 
-- Total planned papers: 43.
-- Main PDF/Word files obtained locally: 38.
-- Additional open HTML full texts: 2.
-- Public main documents not yet obtained: 3.
+Public skill files may include:
 
-- 计划语料共 43 篇。
-- 已取得主 PDF/Word 文件 38 篇。
-- 另有开放 HTML 全文 2 篇。
-- 暂未取得公开主文档 3 篇。
+- abstracted writing rules;
+- original examples created for revision practice;
+- reusable table and figure design principles;
+- general corpus coverage categories without paper names or source identifiers;
+- ethical and licensing notes.
 
-These papers are used as writing examples, not as a claim that the current repository has already fully distilled every paper into executable rules. The `paper_skills` files will be filled progressively.
+公开 skill 文件可以包含：
 
-这些论文是写作学习样本，并不表示当前仓库已经把每篇论文完整蒸馏为可执行规则；`paper_skills` 会逐步补全。
+- 抽象后的写作规则；
+- 为修稿练习原创的例句；
+- 可复用的表格与图形设计原则；
+- 不含论文名和来源编号的一般语料覆盖类别；
+- 伦理与许可说明。
 
-## 2026-05-13 Table/Figure Design Update / 2026-05-13 表图设计更新
+Public skill files must not include:
 
-The repository now includes `skills/econ-table-figure-design/`, a bilingual table and figure design skill distilled from the same local English and Chinese economics-paper corpus. It covers three-line tables, main regression tables, robustness tables, heterogeneity and mechanism displays, table notes, figure admission, event-study/trend/map/distribution figures, palette templates, typography, black-white compatibility, and export checks.
+- copied article paragraphs or long source sentences;
+- paper screenshots, full table images, full figure pages, or extracted page images;
+- detailed paper lists with author names and titles;
+- paper-specific source identifiers or per-paper audit tables;
+- source text that could substitute for reading the original article.
 
-The table/figure audit planned 43 corpus sources. The first pass classified 35 as included or text-only usable, 5 as downgraded because extraction quality was weak, and 3 as missing or restricted. Rendered PDF pages and visual audit images are kept only in the local task directory and are not part of the public repository.
+公开 skill 文件不得包含：
 
-本仓库现已新增 `skills/econ-table-figure-design/`，这是一个中英文通用表格与图形设计 skill，由同一套本地中英文经济学论文语料蒸馏而来。它覆盖三线表、主回归表、稳健性表、异质性与机制展示、表注、图形准入、事件研究图、趋势图、地图、分布图、配色模板、字体字号、黑白打印兼容和导出检查。
+- 复制的论文段落或长原句；
+- 论文截图、整表图片、整页图形或页面渲染图片；
+- 含作者和题名的详细论文清单；
+- 逐篇来源编号或逐篇审计表；
+- 可能替代阅读原文的来源文本。
 
-表图审计共规划 43 个语料来源。第一轮将 35 个来源归为可纳入或仅文本可用，5 个来源因抽取质量不足而降级，3 个来源仍为缺失或受限。本地渲染的 PDF 页面和视觉审计图片只保存在任务目录，不进入公开仓库。
+## How The Corpus Is Used / 语料如何使用
 
-## What The Corpus Is For / 这些论文用来学习什么
+The corpus is used only as a private learning and audit aid. Rules are released as original abstractions, checklists, workflows, and templates. When a rule depends on broad writing patterns, the public file should describe the pattern by function rather than naming the source articles.
 
-- Abstracts: how top papers state the question, method, finding, and contribution compactly.
-- Introductions: how papers move from motivation to research question, design, results, and contribution.
-- Theory sections: how simple environments, assumptions, mechanisms, propositions, and implications are introduced.
-- Empirical sections: how identification, sample construction, model specification, results, robustness, and mechanisms are narrated.
-- Tables and figures: how table notes, panel structures, graph admission, and result interpretation support the paper's main story.
+语料只作为本地学习和审计辅助。公开发布的内容应是原创抽象规则、检查清单、工作流和模板。当某条规则来自广泛写作模式时，公开文件应按功能说明模式，而不是列出来源论文。
 
-- 摘要：学习如何紧凑表达问题、方法、发现和贡献。
-- 引言：学习如何从问题意识进入研究问题、识别设计、核心结果和贡献。
-- 理论部分：学习如何展开环境、假设、机制、命题和可检验含义。
-- 实证部分：学习如何叙述识别、样本、模型、结果、稳健性和机制。
-- 表图：学习表注、panel 结构、图形准入和结果解释如何服务主线。
+## Skill Routing / Skill 调用
 
-## English Diction Training Status / 英文遣词训练状态
+`econ-writing-workflow` is the public entry skill that routes corpus-informed writing rules to the relevant module:
 
-The `econ-write` skill now includes an `english-diction` module distilled from the readable English corpus. It focuses on prose function, verbs and collocations, abstract/introduction patterns, theory-versus-empirical prose, and revision checks for AI-like or translation-like English.
+- English writing and diction rules;
+- Chinese top-journal writing and diction rules;
+- table and figure design rules;
+- argument logic and revision workflow rules.
 
-The first-pass audit treats E01, E02, E04, E05, E08-E11, and E13-E20 as readable for function-level distillation. E06, E07, and E12 remain downgraded because local PDF text extraction is too weak for sentence-level rules. E03 remains missing/restricted: public metadata exist, but the main article full text is not openly available locally, and the web appendix is not used as a substitute.
+`econ-writing-workflow` 是公开写作总入口 skill，用于将语料启发的写作规则路由到相应模块：
 
-`econ-write` 现在包含 `english-diction` 模块，用可读英文语料蒸馏英文经济学 prose 的句子功能、动词搭配、摘要/引言句法、理论与实证 prose 差异，以及去 AI 腔/翻译腔修稿检查。
+- 英文写作与遣词规则；
+- 中文顶刊写作与遣词规则；
+- 表格与图形设计规则；
+- 全文逻辑与修稿工作流规则。
 
-第一轮审计将 E01、E02、E04、E05、E08-E11、E13-E20 作为可用于功能级蒸馏的英文语料。E06、E07、E12 因本地 PDF 文本抽取质量不足而降级，不进入句子级核心规则。E03 仍为缺失/受限状态：公开元数据存在，但本地主文档不可开放取得，web appendix 不作为主文替代。
+## Maintenance Note / 维护说明
 
-## English Papers / 英文论文
+Detailed source audits may remain in local task directories for private verification. They should not be copied into public skill references unless converted into abstract, non-source-specific guidance.
 
-### Theory And Model Papers / 理论与模型论文
-
-| ID | Paper | Authors | Year | Writing-learning focus |
-| --- | --- | --- | --- | --- |
-| E01 | Bayesian Persuasion | Emir Kamenica; Matthew Gentzkow | 2011 | Moves from a minimal question into a formal model; strong abstract and introduction. |
-| E02 | A Simple Model of Herd Behavior | Abhijit V. Banerjee | 1992 | Shows how a simple model can explain a large mechanism with few propositions. |
-| E03 | Social Value of Public Information | Stephen Morris; Hyun Song Shin | 2002 | Presents a counterintuitive result with restraint and clarity. |
-| E04 | Multitask Principal-Agent Analyses: Incentive Contracts, Asset Ownership, and Job Design | Bengt Holmstrom; Paul Milgrom | 1991 | Uses one theoretical framework to explain multiple organizational phenomena. |
-| E05 | Strategic Information Transmission | Vincent P. Crawford; Joel Sobel | 1982 | Defines environment, equilibrium, and information structure in a classic theory paper. |
-| E06 | The Costs and Benefits of Ownership: A Theory of Vertical and Lateral Integration | Sanford J. Grossman; Oliver D. Hart | 1986 | Models ownership, residual rights, and mechanism language. |
-| E07 | Property Rights and the Nature of the Firm | Oliver Hart; John Moore | 1990 | Makes abstract contract theory readable as an economics problem. |
-| E08 | Endogenous Technological Change | Paul M. Romer | 1990 | Moves from a large macro question into model assumptions. |
-| E09 | The Impact of Trade on Intra-Industry Reallocations and Aggregate Industry Productivity | Marc J. Melitz | 2003 | Connects theory, mechanism, and testable implications. |
-| E10 | Why Did the West Extend the Franchise? Democracy, Inequality, and Growth in Historical Perspective | Daron Acemoglu; James A. Robinson | 2000 | Converts a historical question into a political-economy mechanism. |
-
-### Empirical, Reduced-Form, And Measurement Papers / 实证、准实验与测度论文
-
-| ID | Paper | Authors | Year | Writing-learning focus |
-| --- | --- | --- | --- | --- |
-| E11 | Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania | David Card; Alan B. Krueger | 1994 | Clear question-design-result chain. |
-| E12 | Schooling and Labor Market Consequences of School Construction in Indonesia: Evidence from an Unusual Policy Experiment | Esther Duflo | 2001 | Classic policy-shock paper; useful for introduction and identification narration. |
-| E13 | The China Syndrome: Local Labor Market Effects of Import Competition in the United States | David H. Autor; David Dorn; Gordon H. Hanson | 2013 | Links shock, local labor markets, and mechanisms. |
-| E14 | The Persistent Effects of Peru's Mining Mita | Melissa Dell | 2010 | Exemplary historical institution shock and spatial regression discontinuity design. |
-| E15 | The Long-Term Effects of Africa's Slave Trades | Nathan Nunn | 2008 | Turns a large historical question into rigorous empirical analysis. |
-| E16 | The Enduring Impact of the American Dust Bowl: Short- and Long-Run Adjustments to Environmental Catastrophe | Richard Hornbeck | 2012 | Strong figures, mechanism narration, and long-run adjustment discussion. |
-| E17 | On the Origins of Gender Roles: Women and the Plough | Alberto Alesina; Paola Giuliano; Nathan Nunn | 2013 | Organizes cultural-variable construction, historical mechanism, and robustness. |
-| E18 | House Prices, Home Equity-Based Borrowing, and the U.S. Household Leverage Crisis | Atif R. Mian; Amir Sufi | 2011 | Breaks a macro crisis into household balance-sheet mechanisms. |
-| E19 | Where is the Land of Opportunity? The Geography of Intergenerational Mobility in the United States | Raj Chetty; Nathaniel Hendren; Patrick Kline; Emmanuel Saez | 2014 | Large-data fact paper with strong narrative and figure organization. |
-| E20 | Does Management Matter? Evidence from India | Nicholas Bloom; Benn Eifert; Aprajit Mahajan; David McKenzie; John Roberts | 2013 | Field experiment and firm productivity writing; strong tables and mechanisms. |
-
-## Chinese Papers / 中文论文
-
-### Theory, Institutions, And Political Economy / 理论、制度与政治经济学框架
-
-| ID | 论文 | 作者 | 年份 | 写作学习重点 |
-| --- | --- | --- | --- | --- |
-| C01 | 发展战略、自生能力和经济收敛 | 林毅夫 | 2002 | 学习中文理论文章如何提出核心概念并层层展开。 |
-| C02 | 新结构经济学——重构发展经济学的框架 | 林毅夫 | 2011 | 学习大理论框架的中文表达方式。 |
-| C03 | 发展战略、产业结构与收入分配 | 林毅夫；陈斌开 | 2013 | 学习理论机制、数值模拟与中国问题意识的结合。 |
-| C04 | 中国地方官员的晋升锦标赛模式研究 | 周黎安 | 2007 | 学习“概念—机制—制度后果”的中文政治经济学写法。 |
-| C05 | 行政发包制 | 周黎安 | 2014 | 学习中文制度机制表达和治理结构叙述。 |
-| C06 | 中国的大国发展道路——论分权式改革的得失 | 王永钦；张晏；章元；陈钊；陆铭 | 未记录 | 学习如何把中国改革经验组织成自洽框架。 |
-| C07 | 中国的财政分权与经济增长 | 林毅夫；刘志强 | 未记录 | 学习早期中文实证论文的问题、假说和回归组织。 |
-| C08 | 地方保护和市场分割：从发展战略的角度考察 | 林毅夫；刘培林 | 未记录 | 学习如何用发展战略视角解释制度扭曲。 |
-
-### Empirical, Measurement, Firm, And Regional Economics / 实证、测度、企业与区域经济
-
-| ID | 论文 | 作者 | 年份 | 写作学习重点 |
-| --- | --- | --- | --- | --- |
-| C09 | 国民收入的要素分配：统计数据背后的故事 | 白重恩；钱震杰 | 未记录 | 学习测度纠偏型论文的中文写法。 |
-| C10 | 发展战略、城市化与中国城乡收入差距 | 陈斌开；林毅夫 | 未记录 | 学习从理论视角进入实证问题的方式。 |
-| C11 | 中国的贸易自由化与制造业企业生产率 | 余淼杰 | 未记录 | 学习中国企业数据与贸易政策冲击的写法。 |
-| C12 | 加工贸易、企业生产率和关税减免 | 余淼杰 | 未记录 | 学习企业层面机制拆解和 robustness 组织。 |
-| C13 | 贸易自由化与中国制造业企业出口行为：“入世”是否促进了出口参与？ | 毛其淋；盛斌 | 未记录 | 学习标题、摘要、假说和异质性组织。 |
-| C14 | 中国工业企业数据库的使用现状和潜在问题 | 聂辉华；江艇；杨汝岱 | 未记录 | 学习数据清理和数据库问题类论文写法。 |
-| C15 | 测度中国数字普惠金融发展：指数编制与空间特征 | 郭峰；王靖一；王芳；孔涛；张勋；程志云 | 未记录 | 学习指数构建、空间事实和测度说明。 |
-| C16 | 最低工资标准与中国企业的出口行为 | 孙楚仁；田国强；章韬 | 未记录 | 学习政策变量进入企业行为分析的写法。 |
-| C17 | 中国城市化发展——基于空间均衡模型的研究 | 赵方；袁超文 | 未记录 | 学习理论模型与中国城市化事实的结合。 |
-| C18 | 企业投资决策中的同行效应研究 | 杨海生；柳建华；连玉君 | 未记录 | 学习公司金融和企业行为实证论文的规范写法。 |
-
-### Additional Chinese Journal Papers / 新增中文期刊论文
-
-| ID | 论文 | 作者 | 年份 | 写作学习重点 |
-| --- | --- | --- | --- | --- |
-| N01 | 中国产业结构变迁对经济增长和波动的影响 | 干春晖；郑若谷；余典范 | 2011 | 学习摘要压缩、贡献排序和产业结构议题的结果解释。 |
-| N02 | 城市化、城市倾向的经济政策与城乡收入差距 | 陆铭；陈钊 | 2004 | 学习政策因素、城乡收入差距和文献转入问题的中文叙述。 |
-| N03 | 外需冲击、政府采购管理与小微企业发展 | 赵仁杰；霍宇辰；张子尧 | 2026 | 学习近期中文顶刊摘要、政策背景、机制层级和需求管理表述。 |
-| N04 | 自动化资本、企业空间布局与区域协同 | 裴建锁；陈哲昂；彭凯旋；张蒙 | 2026 | 学习模型机制、空间布局、区域协同和政策含义的中文表达。 |
-| N05 | 财政规则、宏观经济稳定和财政治理绩效 | 周波；杨李路 | 2026 | 学习财政政策规则、宏观稳定和方法定位的写法。 |
-
-### Backup Source / 备用来源
-
-| ID | 论文 | 作者 | 年份 | 说明 |
-| --- | --- | --- | --- | --- |
-| C04-backup | 中国地方官员的晋升锦标赛模式研究 | 周黎安 | 2007 | 与 C04 同题，作为备用抽取来源，不重复计入论文总数。 |
-
-## Availability Notes / 文档可得性说明
-
-- The local corpus download task obtained 19 English main PDFs and 19 unique Chinese main PDF/Word files.
-- C05 and C06 have open HTML full texts saved in the local corpus task.
-- E03, original C10, and C14 still need a reliable public main document or user-provided access copy before they can be treated as complete local files.
-- N02 is related to urbanization and urban-rural income gaps, but it is not the same paper as original C10.
-
-- 本地下载任务已取得 19 篇英文主 PDF 和 19 篇不重复中文主 PDF/Word 文件。
-- C05 与 C06 已保存开放 HTML 全文。
-- E03、原 C10、C14 仍需可靠公开主文档或用户提供的访问版本，才能作为完整本地文件处理。
-- N02 与城市化和城乡收入差距主题相关，但不是原 C10。
+详细来源审计可以保留在本地任务目录中用于私人复核。除非已经转换为抽象、非逐篇来源的规则，否则不得复制进公开 skill references。
