@@ -1,45 +1,83 @@
-# Economics Top-Journal Writing Skills / 经济学顶刊写作 Skills ✨
+# Economics Writing Workflow Skills / 经济学论文写作 Workflow Skills ✨
 
-This repository collects Codex skills for economics paper writing, revision, and top-journal style checking.
+This repository is a self-developed Codex skill system for economics paper writing, revision, style adaptation, table/figure design, and workflow routing. It supports English economics prose and top-journal style, Chinese top-journal writing, bilingual table and figure presentation, and auditable full-draft workflows based on user-owned research questions and result packages.
 
-本仓库用于整理经济学论文写作、修改、投稿前审查和中文顶刊风格适配的 Codex skills。它目前采用“总入口 workflow skill + 可独立调用的专业子 skill”的结构。
+It uses a modular structure: ordinary users can start from the main workflow skill, while advanced users can call specialized sub-skills directly.
+
+这是我们自己开发的一套经济学论文写作 Codex skill 系统，用于论文写作、修改、风格适配、表格图形设计和 workflow 路由。它同时覆盖英文经济学论文写作与英文顶刊风格、中文顶刊写作、中英文通用表图展示，以及基于作者自己研究问题和结果包的可审查完整初稿流程。
+
+它采用模块化结构：普通用户可以从总入口 workflow skill 开始，高级用户也可以直接调用专业子 skill。
 
 ## What Is Inside / 仓库内容 🧭
 
-| Path | English | 中文说明 |
-| --- | --- | --- |
-| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, full-draft, or table/figure module, and points empirical work to the empirical workflow. | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
-| `skills/econ-write/` | General economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
-| `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. | 后续用于细分写作规则的模块化参考文件，目前部分内容仍是占位。 |
-| `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
-| `skills/econ-table-figure-design/` | Bilingual economics table and figure design skill for regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, and export checks. | 中英文通用经济学表格与图形设计 skill，覆盖三线表、主回归、稳健性、异质性、机制、表注图注、配色和导出检查。 |
-| `docs/paper-corpus.md` | Corpus policy for how local writing-learning sources are used without publishing paper lists or source text. | 语料使用政策，说明如何使用本地写作学习来源，同时不公开论文清单或来源文本。 |
-| `LICENSE` | Layered license overview: original repository content is CC BY-NC 4.0; third-party content keeps its own license. | 分层许可说明：本仓库原创内容采用 CC BY-NC 4.0；第三方内容保留原许可。 |
-| `NOTICE.md` | Third-party copyright and MIT License notice. | 外部来源与 MIT License 声明。 |
-| `ETHICAL_USE.md` | Ethical-use policy for non-commercial academic writing support. | 非商用学术写作辅助的伦理使用说明。 |
-| `docs/ai-assistance.md` | Notes on AI-assisted development and responsibility. | 关于 AI 辅助开发、署名和责任边界的说明。 |
+### English
+
+| Path | Description |
+| --- | --- |
+| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, full-draft, or table/figure module, and points empirical work to the empirical workflow. |
+| `skills/econ-write/` | General English economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. |
+| `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. Some files are still being developed. |
+| `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. |
+| `skills/econ-table-figure-design/` | Bilingual economics table and figure design skill for regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, and export checks. |
+| `docs/paper-corpus.md` | Corpus policy for how local writing-learning sources are used without publishing paper lists or source text. |
+| `LICENSE` | Layered license overview: original repository content is CC BY-NC 4.0; third-party content keeps its own license. |
+| `NOTICE.md` | Third-party copyright and MIT License notice. |
+| `ETHICAL_USE.md` | Ethical-use policy for non-commercial academic writing support. |
+| `docs/ai-assistance.md` | Notes on AI-assisted development and responsibility. |
+
+### 中文
+
+| 路径 | 说明 |
+| --- | --- |
+| `skills/econ-writing-workflow/` | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
+| `skills/econ-write/` | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
+| `skills/econ-write/references/paper_skills/` | `econ-write` 按需加载的分 section 参考规则；部分文件仍在开发中。 |
+| `skills/cn-top-econ-writing/` | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
+| `skills/econ-table-figure-design/` | 中英文通用经济学表格与图形设计 skill，覆盖三线表、主回归、稳健性、异质性、机制、表注图注、配色和导出检查。 |
+| `docs/paper-corpus.md` | 语料使用政策，说明如何使用本地写作学习来源，同时不公开论文清单或来源文本。 |
+| `LICENSE` | 分层许可说明：本仓库原创内容采用 CC BY-NC 4.0；第三方内容保留原许可。 |
+| `NOTICE.md` | 外部来源与 MIT License 声明。 |
+| `ETHICAL_USE.md` | 非商用学术写作辅助的伦理使用说明。 |
+| `docs/ai-assistance.md` | 关于 AI 辅助开发、署名和责任边界的说明。 |
 
 ## Knowledge Sources / 知识来源 📚
+
+### English
 
 This repository currently has two kinds of sources:
 
 1. **Third-party skill source**: `skills/econ-write/` is based on the open-source [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) project by Lu Han, licensed under the MIT License.
 2. **Curated local corpus**: the modular writing and table/figure workflows are informed by a private, locally maintained economics writing-learning corpus. Public files contain only abstracted rules, original examples, and reusable workflows.
 
+See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the corpus-use policy.
+
+### 中文
+
 本仓库目前有两类来源：
 
 1. **外部 skill 来源**：`skills/econ-write/` 基于 Lu Han 的开源项目 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，许可证为 MIT License。
 2. **本地整理语料**：模块化写作和表图 workflow 由私人、本地维护的经济学写作学习语料启发。公开文件只包含抽象规则、原创例句和可复用工作流。
 
-See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the corpus-use policy.
-
 语料使用政策见 [`docs/paper-corpus.md`](docs/paper-corpus.md)。
 
 ## Install Locally / 本地安装 🚀
 
-Copy the skill directories into your Codex skills folder:
+### English
 
-将本仓库中的全部 skill 目录复制到 Codex skills 文件夹：
+#### Method 1 (Recommended): Ask an AI agent to install
+
+Copy the repository URL and ask an AI agent to download and install the skills for you.
+
+```text
+Please help me download and install the Codex skills from this repository:
+https://github.com/juliaError/econ-TopJournal-writing-Skill
+
+Copy `skills/econ-writing-workflow`, `skills/econ-write`, `skills/cn-top-econ-writing`, and `skills/econ-table-figure-design` into `~/.codex/skills/`, then tell me whether I still need to refresh or restart Codex.
+```
+
+#### Method 2: Manual copy
+
+Clone or download this repository, then copy the skill directories into your Codex skills folder:
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -49,24 +87,13 @@ cp -R skills/cn-top-econ-writing ~/.codex/skills/cn-top-econ-writing
 cp -R skills/econ-table-figure-design ~/.codex/skills/econ-table-figure-design
 ```
 
-Restart or refresh Codex after installation so the skills list is reloaded.
+After either method, restart or refresh Codex so the skills list is reloaded.
 
-安装后重启或刷新 Codex，让 skills 列表重新加载。
+### 中文
 
-You can also copy the repository webpage URL and ask an AI agent to help download and set up the skills for you.
+#### 方法 1（推荐）：让 AI agent 帮你安装
 
-你也可以直接复制这个仓库网页链接，让 AI agent 帮你下载并完成安装设置。
-
-Short prompt for an AI agent:
-
-给 AI agent 的简短 prompt：
-
-```text
-Please help me download and install the Codex skills from this repository:
-https://github.com/juliaError/econ-TopJournal-writing-Skill
-
-Copy `skills/econ-writing-workflow`, `skills/econ-write`, `skills/cn-top-econ-writing`, and `skills/econ-table-figure-design` into `~/.codex/skills/`, then tell me whether I still need to refresh or restart Codex.
-```
+复制这个仓库链接，让 AI agent 帮你下载并安装 skills。
 
 ```text
 请帮我下载并安装这个仓库里的 Codex skills：
@@ -75,69 +102,89 @@ https://github.com/juliaError/econ-TopJournal-writing-Skill
 把 `skills/econ-writing-workflow`、`skills/econ-write`、`skills/cn-top-econ-writing` 和 `skills/econ-table-figure-design` 复制到 `~/.codex/skills/`，然后告诉我是否还需要刷新或重启 Codex。
 ```
 
+#### 方法 2：手动复制
+
+克隆或下载本仓库，然后把 skill 目录复制到 Codex skills 文件夹：
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R skills/econ-writing-workflow ~/.codex/skills/econ-writing-workflow
+cp -R skills/econ-write ~/.codex/skills/econ-write
+cp -R skills/cn-top-econ-writing ~/.codex/skills/cn-top-econ-writing
+cp -R skills/econ-table-figure-design ~/.codex/skills/econ-table-figure-design
+```
+
+无论使用哪种方法，安装后都需要重启或刷新 Codex，让 skills 列表重新加载。
+
 ## Usage / 使用方式 🛠️
 
-For most users, call `econ-writing-workflow` first. It will route the writing task to the right module:
+### English
 
-普通用户日常优先调用 `econ-writing-workflow`。它会根据写作任务类型自动转向合适的模块：
+For most users, call `econ-writing-workflow` first. It will route the writing task to the right module.
 
 ```text
 Use econ-writing-workflow to revise this paper's introduction, tables, and Chinese abstract.
 ```
 
-```text
-用 econ-writing-workflow 检查这篇经济学论文的引言、主回归表和中文表达。
-```
-
-It can also help draft an auditable full paper from your own research question, regression tables, figures, and design notes. Missing facts should remain as explicit `TODO` items rather than invented claims:
-
-如果你已经有自己的研究问题、回归表、图和识别/变量说明，也可以让它生成一版可审查的完整初稿。缺失信息应保留为明确的 `TODO`，不能编造：
+It can also help draft an auditable full paper from your own research question, regression tables, figures, and design notes. Missing facts should remain as explicit `TODO` items rather than invented claims.
 
 ```text
 Use econ-writing-workflow to draft a Chinese economics paper from this result folder, research question, variable notes, and figures. First audit the inputs, decide which tables and figures enter the main text, then draft the paper with TODO markers for missing literature or design details.
 ```
 
-```text
-用 econ-writing-workflow 根据这个结果文件夹、研究问题、变量说明和图表，生成一版中文经济学论文初稿。先审查输入，再判断正文/附录表图，最后起草全文；缺失的文献和识别细节用 TODO 标出。
-```
-
 Advanced users may call specialized skills directly:
 
-高级用户也可以直接调用专业子 skill：
+- Use `econ-write` for general English economics paper writing.
+- Use `cn-top-econ-writing` for Chinese top-journal submissions.
+- Use `econ-table-figure-design` when the task is about tables, figures, notes, palettes, or main-text versus appendix placement.
 
-Use `econ-write` for general English economics paper writing:
-
-一般英文经济学论文写作可以使用 `econ-write`：
+Examples:
 
 ```text
 Use econ-write to revise this introduction.
 ```
 
-Use `cn-top-econ-writing` for Chinese top-journal submissions:
+```text
+Use econ-table-figure-design to decide which regression tables and figures should enter the main text, how many columns each table should have, and what the notes should include.
+```
 
-中文顶刊投稿、修改和预审可以使用 `cn-top-econ-writing`：
+For empirical coding, data cleaning, or regressions, pair these writing skills with a separate empirical workflow skill.
+
+### 中文
+
+普通用户日常优先调用 `econ-writing-workflow`。它会根据写作任务类型自动转向合适的模块。
+
+```text
+用 econ-writing-workflow 检查这篇经济学论文的引言、主回归表和中文表达。
+```
+
+如果你已经有自己的研究问题、回归表、图和识别/变量说明，也可以让它生成一版可审查的完整初稿。缺失信息应保留为明确的 `TODO`，不能编造。
+
+```text
+用 econ-writing-workflow 根据这个结果文件夹、研究问题、变量说明和图表，生成一版中文经济学论文初稿。先审查输入，再判断正文/附录表图，最后起草全文；缺失的文献和识别细节用 TODO 标出。
+```
+
+高级用户也可以直接调用专业子 skill：
+
+- 一般英文经济学论文写作可以使用 `econ-write`。
+- 中文顶刊投稿、修改和预审可以使用 `cn-top-econ-writing`。
+- 涉及表格、图形、表注、图注、配色、正文/附录取舍时，可以使用 `econ-table-figure-design`。
+
+示例：
 
 ```text
 用 cn-top-econ-writing 审查这篇中文经济学论文的引言和贡献表述。
-```
-
-Use `econ-table-figure-design` when the task is about tables, figures, notes, palettes, or main-text versus appendix placement:
-
-涉及表格、图形、表注、图注、配色、正文/附录取舍时，可以使用 `econ-table-figure-design`：
-
-```text
-Use econ-table-figure-design to decide which regression tables and figures should enter the main text, how many columns each table should have, and what the notes should include.
 ```
 
 ```text
 用 econ-table-figure-design 检查这组主回归、稳健性、机制和异质性表，并给出正文表、附录表和配色方案。
 ```
 
-For empirical coding, data cleaning, or regressions, pair these writing skills with a separate empirical workflow skill.
-
 如果任务涉及数据清洗、变量构造或回归代码，应搭配单独的实证工作流 skill，而不是只靠写作 skill。
 
 ## Current Status / 当前状态 🌱
+
+### English
 
 - `econ-write` is usable now and keeps its third-party MIT notice.
 - **2026-05-13 update**:
@@ -148,6 +195,8 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
+
+### 中文
 
 - `econ-write` 当前可直接使用，并已保留第三方 MIT 声明。
 - **2026-05-13 更新**：
@@ -161,30 +210,40 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ## Attribution, License, And Ethical Use / 引用、许可与伦理使用 ⚖️
 
-The `skills/econ-write/` skill includes content based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`NOTICE.md`](NOTICE.md) for the preserved third-party copyright and license notice.
+### English
 
-`skills/econ-write/` 包含基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) 的内容，原项目采用 MIT License。第三方版权与许可声明已保存在 [`NOTICE.md`](NOTICE.md)。
+The `skills/econ-write/` skill includes content based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`NOTICE.md`](NOTICE.md) for the preserved third-party copyright and license notice.
 
 Original repository content is licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), unless otherwise stated. Commercial use of original repository content requires separate written permission. Third-party materials remain subject to their own notices and licenses, as described in [`NOTICE.md`](NOTICE.md).
 
-除非另有说明，本仓库原创内容采用 Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)。原创内容的商业使用需要另行取得书面许可。第三方内容仍以其各自声明和许可为准，见 [`NOTICE.md`](NOTICE.md)。
-
 This repository is intended for non-commercial academic writing support. Do not use it for paid paper-writing services, ghostwriting, academic misconduct services, or fabricated research materials. See [`ETHICAL_USE.md`](ETHICAL_USE.md).
-
-本仓库用于非商用学术写作辅助。不得用于付费论文代写、ghostwriting、学术不端服务或伪造研究材料。见 [`ETHICAL_USE.md`](ETHICAL_USE.md)。
 
 Full-draft workflows are for author-responsible drafting and revision of legitimate research. They must not be used as an automatic paper-writing or submission service.
 
-完整初稿 workflow 只用于作者负责的合法研究写作与修稿，不得作为自动论文代写或自动投稿服务使用。
-
 Because the original repository content uses a NonCommercial license, this repository is not distributed as an OSI-approved open-source project.
+
+### 中文
+
+`skills/econ-write/` 包含基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) 的内容，原项目采用 MIT License。第三方版权与许可声明已保存在 [`NOTICE.md`](NOTICE.md)。
+
+除非另有说明，本仓库原创内容采用 Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)。原创内容的商业使用需要另行取得书面许可。第三方内容仍以其各自声明和许可为准，见 [`NOTICE.md`](NOTICE.md)。
+
+本仓库用于非商用学术写作辅助。不得用于付费论文代写、ghostwriting、学术不端服务或伪造研究材料。见 [`ETHICAL_USE.md`](ETHICAL_USE.md)。
+
+完整初稿 workflow 只用于作者负责的合法研究写作与修稿，不得作为自动论文代写或自动投稿服务使用。
 
 由于原创内容采用 NonCommercial 许可，本仓库不以 OSI 认可的开源项目形式发布。
 
 ## AI Assistance / AI 辅助说明 🤖
 
+### English
+
 ChatGPT and Codex were used to help organize the repository, draft documentation, review attribution, and prepare Git commits. They are not listed as authors or maintainers because responsibility for the repository, licensing choices, and final content remains with the human maintainer.
+
+See [`docs/ai-assistance.md`](docs/ai-assistance.md) for details.
+
+### 中文
 
 本仓库在整理目录、撰写说明、检查引用和准备 Git 提交时使用了 ChatGPT 与 Codex 辅助。它们不列为作者或维护者；仓库内容、许可选择和后续维护责任仍由人类维护者承担。
 
-See [`docs/ai-assistance.md`](docs/ai-assistance.md) for details.
+详情见 [`docs/ai-assistance.md`](docs/ai-assistance.md)。
