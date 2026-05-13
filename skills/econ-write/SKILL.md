@@ -33,6 +33,8 @@ For English prose polishing, diction cleanup, abstract/introduction/result rewri
 - `06_english_revision_linter.md`: run a final linter for AI style, overclaiming, passive filler, and template signposting.
 - `07_source_coverage.md`: check source coverage and extraction limits before treating a pattern as general.
 
+For table and figure tasks, use the separate `econ-table-figure-design` skill before applying prose rules. This includes table placement, three-line tables, main regression/robustness/heterogeneity/mechanism displays, table notes, figure admission, event-study/trend/map/distribution figures, palettes, typography, and export checks. After the artifact design is settled, return to `econ-write` for English results narration and surrounding prose.
+
 ---
 
 # CORE PRINCIPLES

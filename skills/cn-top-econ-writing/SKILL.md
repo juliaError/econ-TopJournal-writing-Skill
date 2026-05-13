@@ -22,7 +22,7 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - 非经济学/管理学中文稿件
 - 仅需翻译而不涉及期刊适配
 
-遇到代码、清洗、回归、图表，请优先调用 `empirical-econ-workflow`，然后回到本 skill 负责“把结果写成稿件”。
+遇到代码、清洗、回归，请优先调用 `empirical-econ-workflow`，然后回到本 skill 负责“把结果写成稿件”。遇到表格、图形、配色、表注、图注、主表/稳健性/机制/异质性展示，请优先使用独立的 `econ-table-figure-design` skill 确定表图设计，再回到本 skill 处理中文正文叙事和期刊风格。
 
 ## 总目标
 本 skill 的目标不是“把话写漂亮”，而是把稿件推进到中文顶刊常见的四个门槛之上：
@@ -113,6 +113,10 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - `07_source_coverage.md`：检查规则来源覆盖、降级语料和缺失语料，避免把单篇风格误当成通用规则。
 
 使用这些文件时，不要照搬语料论文原句；只应用其中的功能判断、句法骨架、搭配规则和检查标准。
+
+## 表格与图形设计导航
+
+当任务涉及三线表、主回归表、稳健性表、异质性表、机制表、表注、图注、正文图准入、事件研究图、趋势图、地图、分布图、配色、字体字号或导出质量时，先加载 `econ-table-figure-design`。该 skill 负责中英文共用的表图设计底盘；本 skill 负责把通过准入的表图写进中文顶刊正文，并检查中文标题、注释和结果解释是否自然、克制、具体。
 
 ## 期刊模式细则
 

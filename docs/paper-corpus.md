@@ -20,6 +20,16 @@ These papers are used as writing examples, not as a claim that the current repos
 
 这些论文是写作学习样本，并不表示当前仓库已经把每篇论文完整蒸馏为可执行规则；`paper_skills` 会逐步补全。
 
+## 2026-05-13 Table/Figure Design Update / 2026-05-13 表图设计更新
+
+The repository now includes `skills/econ-table-figure-design/`, a bilingual table and figure design skill distilled from the same local English and Chinese economics-paper corpus. It covers three-line tables, main regression tables, robustness tables, heterogeneity and mechanism displays, table notes, figure admission, event-study/trend/map/distribution figures, palette templates, typography, black-white compatibility, and export checks.
+
+The table/figure audit planned 43 corpus sources. The first pass classified 35 as included or text-only usable, 5 as downgraded because extraction quality was weak, and 3 as missing or restricted. Rendered PDF pages and visual audit images are kept only in the local task directory and are not part of the public repository.
+
+本仓库现已新增 `skills/econ-table-figure-design/`，这是一个中英文通用表格与图形设计 skill，由同一套本地中英文经济学论文语料蒸馏而来。它覆盖三线表、主回归表、稳健性表、异质性与机制展示、表注、图形准入、事件研究图、趋势图、地图、分布图、配色模板、字体字号、黑白打印兼容和导出检查。
+
+表图审计共规划 43 个语料来源。第一轮将 35 个来源归为可纳入或仅文本可用，5 个来源因抽取质量不足而降级，3 个来源仍为缺失或受限。本地渲染的 PDF 页面和视觉审计图片只保存在任务目录，不进入公开仓库。
+
 ## What The Corpus Is For / 这些论文用来学习什么
 
 - Abstracts: how top papers state the question, method, finding, and contribution compactly.
