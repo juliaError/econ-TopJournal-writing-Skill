@@ -8,7 +8,7 @@ This repository collects Codex skills for economics paper writing, revision, and
 
 | Path | English | 中文说明 |
 | --- | --- | --- |
-| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, or table/figure module, and points empirical work to the empirical workflow. | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文或表图模块；涉及实证工作时提示搭配实证 workflow。 |
+| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, full-draft, or table/figure module, and points empirical work to the empirical workflow. | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
 | `skills/econ-write/` | General economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
 | `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. | 后续用于细分写作规则的模块化参考文件，目前部分内容仍是占位。 |
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
@@ -89,6 +89,18 @@ Use econ-writing-workflow to revise this paper's introduction, tables, and Chine
 用 econ-writing-workflow 检查这篇经济学论文的引言、主回归表和中文表达。
 ```
 
+It can also help draft an auditable full paper from your own research question, regression tables, figures, and design notes. Missing facts should remain as explicit `TODO` items rather than invented claims:
+
+如果你已经有自己的研究问题、回归表、图和识别/变量说明，也可以让它生成一版可审查的完整初稿。缺失信息应保留为明确的 `TODO`，不能编造：
+
+```text
+Use econ-writing-workflow to draft a Chinese economics paper from this result folder, research question, variable notes, and figures. First audit the inputs, decide which tables and figures enter the main text, then draft the paper with TODO markers for missing literature or design details.
+```
+
+```text
+用 econ-writing-workflow 根据这个结果文件夹、研究问题、变量说明和图表，生成一版中文经济学论文初稿。先审查输入，再判断正文/附录表图，最后起草全文；缺失的文献和识别细节用 TODO 标出。
+```
+
 Advanced users may call specialized skills directly:
 
 高级用户也可以直接调用专业子 skill：
@@ -131,6 +143,7 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 - **2026-05-13 update**: `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
 - **2026-05-13 update**: `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
 - **2026-05-13 update**: `econ-writing-workflow` now includes `references/argument-logic/` for full-paper logic, repeated material, emphasis, ordering, and table/figure fit.
+- **2026-05-13 update**: `econ-writing-workflow` now includes `references/full-paper-drafting/` for drafting an auditable paper from a user-owned result package, with input audits, table/figure placement, anti-fabrication `TODO` rules, and language-specific routing.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
@@ -139,6 +152,7 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 - **2026-05-13 更新**：`econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
 - **2026-05-13 更新**：新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
 - **2026-05-13 更新**：`econ-writing-workflow` 已新增 `references/argument-logic/`，用于全文逻辑、重复删除、重点排序和表图是否服务主线的审查。
+- **2026-05-13 更新**：`econ-writing-workflow` 已新增 `references/full-paper-drafting/`，用于基于作者自己的研究问题、结果包和图表生成可审查初稿，并通过输入审查、正文/附录表图安排、禁止编造的 `TODO` 规则和中英文写作路由保证边界清楚。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
 - 长期目标是逐步基于本地写作规则和非逐篇来源的抽象规则，重写为完全原创的经济学写作 skills。
@@ -156,6 +170,10 @@ Original repository content is licensed under Creative Commons Attribution-NonCo
 This repository is intended for non-commercial academic writing support. Do not use it for paid paper-writing services, ghostwriting, academic misconduct services, or fabricated research materials. See [`ETHICAL_USE.md`](ETHICAL_USE.md).
 
 本仓库用于非商用学术写作辅助。不得用于付费论文代写、ghostwriting、学术不端服务或伪造研究材料。见 [`ETHICAL_USE.md`](ETHICAL_USE.md)。
+
+Full-draft workflows are for author-responsible drafting and revision of legitimate research. They must not be used as an automatic paper-writing or submission service.
+
+完整初稿 workflow 只用于作者负责的合法研究写作与修稿，不得作为自动论文代写或自动投稿服务使用。
 
 Because the original repository content uses a NonCommercial license, this repository is not distributed as an OSI-approved open-source project.
 
