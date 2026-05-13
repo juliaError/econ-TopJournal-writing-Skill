@@ -12,12 +12,14 @@ A structured framework for reviewing and auditing economics papers, inspired by 
 
 **Abstract**:
 - States a concrete finding with a magnitude? (not "we find effects")
-- Under 150 words?
+- Follows the default 100-150 word target, unless a journal hard cap or contribution structure justifies otherwise?
 - Follows the 4-part formula: motivation, method, result, implication?
+- Preserves any secondary contribution, mechanism, key magnitude, data/design feature, and necessary caveat?
 - Opens with a fact or puzzle, not "This paper..."?
 
 **Introduction**:
 - Main result stated within the first 3 paragraphs?
+- Contribution structure preserved: main contribution, secondary contribution if emphasized, mechanism, design/data feature, and necessary caveat?
 - Literature woven into the argument (not a laundry list)?
 - Length between 3-5 pages?
 - Ends with a roadmap paragraph?

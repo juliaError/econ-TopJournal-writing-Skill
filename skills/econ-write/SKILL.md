@@ -45,8 +45,8 @@ For table and figure tasks, use the separate `econ-table-figure-design` skill be
 ## 2. Triangular / Newspaper Style
 Put the most important information FIRST, then fill in details. NEVER write in "joke" or "novel" style where the punchline comes at the end. "Get to the point. Your reader's time is precious." (Shapiro)
 
-## 3. One Central Contribution
-Every paper must have ONE central, novel contribution. Write it down in one paragraph. If you cannot state it concisely, you have not figured it out yet. Everything in the paper serves this one contribution.
+## 3. Contribution Hierarchy
+Every paper needs a central, novel contribution. Write it down in one paragraph. If you cannot state it concisely, you have not figured it out yet. Some papers also have a strategically necessary secondary contribution: a new data object, a measurement contribution, a theoretical mechanism, a structural counterfactual, or a method. Do not flatten a mixed paper into one empirical fact. State the central contribution first, then preserve secondary contributions only when they change the paper's intellectual claim.
 
 ## 4. Concrete, Not Abstract
 Say what you FIND, not what you LOOK for. Give actual coefficients, actual magnitudes, actual facts. Never write "I analyze data on X and find many interesting results." Instead: "A 10% increase in X leads to a 3% decline in Y (SE = 0.8)." For theory papers: state the main insight and mechanism, not "I develop a model."
@@ -60,6 +60,13 @@ Write "I find that..." not "It was found that..." Use present tense for results 
 ## 7. Simple > Complex
 Use short, common words. "Use" not "utilize." "Several" not "diverse." "People" not "agents." The less math, the better -- even in theory papers. Simpler estimation techniques are better. Do not dress up papers to look impressive -- the opposite is true.
 
+## 8. Contribution Structure Diagnosis Before Rewriting
+Before rewriting an abstract, introduction, or conclusion, briefly classify the paper as one of: pure applied causal paper, descriptive measurement / stylized-facts paper, theory paper, mixed theory-empirical paper, structural/counterfactual paper, or policy/method paper.
+
+Then identify the main contribution; any secondary contribution; must-preserve mechanism; must-preserve empirical magnitude; must-preserve data/design feature; and must-preserve caveat or scope condition. If the user does not state these explicitly, infer them from the existing text and protect them during revision.
+
+Compression rule: do not remove a claim if it is one of the paper's central contributions. If space is tight, compress the wording, not the contribution. After rewriting, compare the new version with the old version and restore any dropped central claim, mechanism, data/design feature, magnitude, caveat, or secondary contribution in compressed form.
+
 ---
 
 # WRITING THE ABSTRACT
@@ -67,7 +74,10 @@ Use short, common words. "Use" not "utilize." "Several" not "diverse." "People" 
 ## Formula
 Write the abstract LAST, after the introduction is complete. Extract key sentences from the Hook, Research Question, and Value Added sections of your introduction, then polish. (Bellemare)
 
-## Structure (100-150 words)
+## Length and Structure
+Default target: 100-150 words. This is a default, not a hard cap, unless the journal explicitly imposes it. For papers with more than one central contribution, mixed theory-empirical papers, structural papers, or papers where the mechanism is part of the contribution, 150-180 words is acceptable if every sentence carries a distinct function.
+
+Default structure:
 1. **What the paper does** -- State the research question or main insight (1-2 sentences)
 2. **How it does it** -- Briefly mention data and identification strategy (empirical) or model and mechanism (theory) (1 sentence)
 3. **What it finds** -- State the central, concrete finding or result (1-2 sentences)
@@ -78,7 +88,7 @@ Write the abstract LAST, after the introduction is complete. Extract key sentenc
 - Do NOT mention other literature in the abstract (exception: one prior finding to establish a puzzle is acceptable if brief)
 - Do NOT use passive voice
 - Do NOT use jargon unnecessarily -- make it intelligible to a smart college-educated non-economist
-- Do NOT exceed 150 words
+- Keep the abstract short, specific, and non-generic, but do not let the 150-word default erase a central mechanism or second contribution
 - For empirical papers: include your identification strategy keyword (DiD, IV, RDD, RCT, etc.)
 - For theory papers: name the mechanism or key economic force
 - For structural papers: state the key counterfactual result
@@ -94,6 +104,8 @@ Write the abstract LAST, after the introduction is complete. Extract key sentenc
 # WRITING THE INTRODUCTION
 
 The introduction determines 75% of whether a paper is accepted or rejected. (Bellemare) Write it first, rewrite it every time you work on the paper, expect to revise it hundreds of times.
+
+The introduction should get to the point quickly, but speed must not erase the paper's contribution structure. For papers with both empirical and theoretical contributions, the first 1-2 pages should make visible what is measured or estimated, what the main fact/result is, what mechanism explains it, and why the mechanism matters beyond the immediate data exercise. If the paper is mixed theory-empirical, do not rewrite it as a pure measurement paper unless the user explicitly requests that reframing.
 
 ## The Introduction Formula (Head / Evans / Bellemare)
 
@@ -635,18 +647,21 @@ Not all economics subfields follow identical conventions. Adapt these rules by f
 6. Write in the triangular/newspaper style -- most important first
 
 ## When asked to REWRITE existing text:
-1. Identify specific violations of the rules above
-2. Fix passive voice, vague language, throat-clearing, buried leads
-3. Tighten prose -- cut unnecessary words and sentences
-4. Ensure concrete results are stated with magnitudes
-5. Preserve the author's meaning and contribution
-6. Briefly note what you changed and why
+1. Diagnose paper type and contribution structure before cutting
+2. Identify specific violations of the rules above
+3. Fix passive voice, vague language, throat-clearing, buried leads
+4. Tighten prose -- cut unnecessary words and sentences
+5. Ensure concrete results are stated with magnitudes
+6. Preserve the author's meaning, main contribution, strategically important secondary contribution, mechanism, data/design feature, magnitude, and necessary caveat
+7. Compare the rewrite with the original and restore any dropped central claim in compressed form
+8. Briefly note what you changed and why
 
 ## When asked to write an INTRODUCTION:
 1. Follow Head's formula exactly: Hook → Question → Results → Literature Review & Value Added → Roadmap
 2. State main results concretely in the introduction (25-30% of intro = results)
-3. Literature review as the last substantive section before roadmap
-4. Keep to 3-5 pages maximum
+3. For mixed theory-empirical papers, make both the empirical object/design and the theoretical mechanism visible early
+4. Literature review as the last substantive section before roadmap
+5. Keep to 3-5 pages maximum
 
 ## When asked to write a LITERATURE REVIEW:
 1. Place it as the last part of the introduction (before roadmap), NOT as a separate section
@@ -657,16 +672,17 @@ Not all economics subfields follow identical conventions. Adapt these rules by f
 
 ## When asked to write an ABSTRACT:
 1. Follow the 4-part formula: What/How/Findings/Implications
-2. 100-150 words maximum
+2. Default target: 100-150 words; 150-180 is acceptable for multi-contribution, mixed theory-empirical, structural, or mechanism-centered papers if every sentence has a distinct function
 3. Concrete findings with magnitudes
-4. No citations, no jargon, no passive voice
+4. Preserve the central mechanism and secondary contribution when they are part of the claim
+5. No citations, no jargon, no passive voice
 
 ## When asked to write a CONCLUSION:
 1. Follow the 3-part formula: Summary/Implications/Future Research
 2. Keep it to one page
 3. Phrase findings differently from abstract and introduction
 4. Do not speculate beyond the data or model
-5. Do NOT add a limitations or caveats section -- project confidence
+5. Do not add a formulaic limitations section; preserve necessary scope, causality, or interpretation caveats in substantive prose
 
 ## When asked to write RESULTS:
 1. Main result first -- no warmup exercises
@@ -772,8 +788,9 @@ Before submitting, verify:
 - [ ] Every number in tables is discussed in text
 - [ ] Standard errors reported for every important number
 - [ ] Identification strategy is clearly explained in economic terms
-- [ ] Conclusion is under one page with no separate limitations/caveats section
-- [ ] Abstract is under 150 words and concrete
+- [ ] Conclusion avoids a formulaic caveats section but preserves necessary scope, causality, or interpretation limits
+- [ ] Abstract is concrete and follows the default 100-150 word target unless the journal imposes a hard cap or the paper type justifies 150-180 words
+- [ ] Abstract/introduction/conclusion rewrites preserve the main contribution, any strategically important secondary contribution, mechanism, key magnitudes, data/design feature, and necessary caveats
 - [ ] Paper is under 40 pages (check target journal guidelines)
 - [ ] All Greek letters and notation are defined with names
 - [ ] No "illustrative" empirical work

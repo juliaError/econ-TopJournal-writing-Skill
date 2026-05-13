@@ -1,7 +1,7 @@
 ---
 purpose: "List weak, incomplete, or non-actionable parts of paper_skills found during review."
 applies_to: "paper_skills maintenance, rule completion, and future content integration."
-last_updated: "2026-05-12"
+last_updated: "2026-05-13"
 used_by: "paper_skills"
 ---
 
@@ -9,12 +9,10 @@ used_by: "paper_skills"
 
 ## Critical
 
-- Fill the rule bodies for all placeholder files. Current content is not usable for Codex beyond routing and file discovery.
-- Update `11_revision_linter.md` so it explicitly references and checks the applicable rules from all substantive files:
+- Fill the rule bodies for the remaining placeholder files. Current placeholder content is not usable for Codex beyond routing and file discovery.
+- Extend `11_revision_linter.md` after the remaining substantive files are filled so it explicitly checks the applicable rules from:
   - `00_project_brief.md`
   - `02_house_style_english.md`
-  - `03_abstract_rules.md`
-  - `04_introduction_rules.md`
   - `05_related_literature_rules.md`
   - `06_theory_section_rules.md`
   - `07_empirical_section_rules.md`
@@ -29,15 +27,15 @@ used_by: "paper_skills"
 
 - `00_project_brief.md`: missing actual project brief fields such as paper type, target journal, central contribution, evidence/model, audience, current draft state, and open decisions.
 - `02_house_style_english.md`: missing enforceable English style rules and examples.
-- `03_abstract_rules.md`: missing abstract structure, positive templates, negative patterns, and checks.
-- `04_introduction_rules.md`: missing hook, question, contribution, results preview, and roadmap rules.
+- `03_abstract_rules.md`: now contains contribution-preserving abstract rules; later expansion could add journal-specific variants and more examples.
+- `04_introduction_rules.md`: now contains contribution-preserving introduction rules; later expansion could add more field-specific opening patterns.
 - `05_related_literature_rules.md`: missing citation grouping, contribution positioning, and avoid-list rules.
 - `06_theory_section_rules.md`: missing model setup, assumptions, propositions, intuition, proof placement, and prediction mapping rules.
 - `07_empirical_section_rules.md`: missing data, identification, estimation, sample audit, coefficient interpretation, and causal language rules.
 - `08_tables_figures_rules.md`: missing table/figure admission criteria, notes, labels, column structure, and caption rules.
 - `09_robustness_appendix_rules.md`: missing robustness hierarchy, appendix organization, and specification audit rules.
 - `10_latex_word_format_rules.md`: missing LaTeX/Word formatting standards, table formatting rules, citation style, and export checks.
-- `11_revision_linter.md`: missing checklist items and cross-file references.
+- `11_revision_linter.md`: now contains contribution-preservation checks; later expansion should connect to remaining substantive files after their bodies are filled.
 - `12_forbidden_phrases.md`: missing phrase list, rationale, and preferred replacements.
 - `13_journal_specific/jde.md`: missing JDE-specific framing, evidence, and robustness expectations.
 - `13_journal_specific/research_policy.md`: missing Research Policy-specific innovation framing, contribution style, and evidence expectations.
@@ -49,17 +47,17 @@ used_by: "paper_skills"
 ## Cross-Reference Gaps
 
 - `README.md` references all expected files and the references are consistent with file names.
-- `11_revision_linter.md` currently references no files and therefore fails the intended role of being a cross-file linter.
+- `11_revision_linter.md` now references the active abstract and introduction rules. It should be extended after the remaining placeholder files are filled.
 - After rule bodies are added, all internal references should use exact file names, including the `13_journal_specific/` prefix for journal files.
 
 ## Vagueness Risks
 
-- All placeholder files are too vague for Codex to apply because they contain no executable rules, examples, checks, or decision criteria.
+- Remaining placeholder files are too vague for Codex to apply because they contain no executable rules, examples, checks, or decision criteria.
 - When filling files, each rule should specify: applicable scenario, action rule, positive example or template, negative pattern, and check standard.
 
 ## Formulaic AI-Style Prose Risks
 
-- No current rule encourages formulaic AI-style prose because substantive rule bodies are absent.
+- The new abstract and introduction rules use paper-type templates, but they explicitly require contribution diagnosis, concrete magnitudes, and a drop check to avoid boilerplate.
 - When content is added, watch for rules that overuse fixed paragraph formulas, generic transition sentences, or reusable boilerplate that could make papers sound templated.
 
 ## Metadata Check

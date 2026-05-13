@@ -69,4 +69,4 @@ Do not silently resolve contradictions between files. If two files prescribe inc
 
 ## Pending Content
 
-The rule bodies are placeholders until the user provides the Markdown contents. Once content is provided, save it under the metadata block, normalize headings, and record any contradictions in `CONFLICTS.md`.
+Some rule bodies remain placeholders until the user provides the Markdown contents. Once content is provided, save it under the metadata block, normalize headings, and record any contradictions in `CONFLICTS.md`.
