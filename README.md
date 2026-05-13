@@ -6,7 +6,7 @@ It is a writing workflow system, not a complete empirical pipeline: it does not 
 
 It uses a modular structure: ordinary users can start from the main workflow skill, while advanced users can call specialized sub-skills directly.
 
-这是我自己开发的一套经济学论文写作 Codex skill 系统，用于论文写作、修改、风格适配、表格图形设计和 workflow 路由。它同时覆盖英文经济学论文写作与英文顶刊风格、中文顶刊写作、中英文通用表图展示，以及基于作者自己研究问题和结果包的可审查完整初稿流程。
+这是我开发的一套经济学论文写作 Codex skill 系统，用于论文写作、修改、风格适配、表格图形设计和 workflow 路由。它同时覆盖英文经济学论文写作与英文顶刊风格、中文顶刊写作、中英文通用表图展示，以及基于作者自己研究问题和结果包的可审查完整初稿流程。
 
 它是写作 workflow 系统，不是完整实证流程；不覆盖数据清洗、变量构造、回归估计或可复现实证执行的完整过程。
 
@@ -51,7 +51,7 @@ It uses a modular structure: ordinary users can start from the main workflow ski
 This repository currently has two kinds of sources:
 
 1. **Third-party skill source**: `skills/econ-write/` is based on the open-source [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) project by Lu Han, licensed under the MIT License.
-2. **Curated local corpus**: the modular writing and table/figure workflows are informed by a private, locally maintained economics writing-learning corpus. Public files contain only abstracted rules, original examples, and reusable workflows.
+2. **Corpus-informed rules**: the modular writing and table/figure workflows are informed by Econ Top 5 papers and Chinese top-journal papers, including papers published in *Economic Research Journal*. Because some paper authors may object to their articles being publicly labeled as distilled sources, the full paper list is not published for now.
 
 See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the corpus-use policy.
 
@@ -60,7 +60,7 @@ See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the corpus-use policy.
 本仓库目前有两类来源：
 
 1. **外部 skill 来源**：`skills/econ-write/` 基于 Lu Han 的开源项目 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，许可证为 MIT License。
-2. **本地整理语料**：模块化写作和表图 workflow 由私人、本地维护的经济学写作学习语料启发。公开文件只包含抽象规则、原创例句和可复用工作流。
+2. **语料启发规则**：模块化写作和表图 workflow 来自 Econ Top 5 论文和中文顶刊论文，包括发表于《经济研究》的论文。由于担心各论文作者可能不愿意自己的文章被公开标注为蒸馏来源，短期内不公布完整论文清单。
 
 语料使用政策见 [`docs/paper-corpus.md`](docs/paper-corpus.md)。
 
