@@ -95,11 +95,13 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 ## Current Status / 当前状态 🌱
 
 - `econ-write` is usable now and keeps its third-party MIT notice.
+- **2026-05-13 update**: `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into a fully original economics writing skill distilled from the paper corpus and locally developed writing rules.
 
 - `econ-write` 当前可直接使用，并已保留第三方 MIT 声明。
+- **2026-05-13 更新**：`econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
 - 长期目标是逐步基于论文语料和自有写作规则，重写为完全原创的经济学写作 skill。
