@@ -23,6 +23,16 @@ Detailed project-specific and section-specific rules may live in `references/pap
 
 If a referenced file is still a placeholder, ignore the placeholder body and rely on the core rules in this `SKILL.md`.
 
+For English prose polishing, diction cleanup, abstract/introduction/result rewriting, or requests to remove AI-like or translation-like writing, load `references/english-diction/` selectively:
+
+- `01_sentence_functions.md`: classify each sentence by function before editing.
+- `02_verbs_collocations.md`: choose precise economics verbs and common noun/verb pairings.
+- `03_good_bad_pairs.md`: use original bad-to-better examples to remove vague, inflated, or translated prose.
+- `04_abstract_intro_patterns.md`: apply compact abstract and introduction sentence patterns.
+- `05_theory_empirical_prose.md`: separate theory prose from empirical prose.
+- `06_english_revision_linter.md`: run a final linter for AI style, overclaiming, passive filler, and template signposting.
+- `07_source_coverage.md`: check source coverage and extraction limits before treating a pattern as general.
+
 ---
 
 # CORE PRINCIPLES

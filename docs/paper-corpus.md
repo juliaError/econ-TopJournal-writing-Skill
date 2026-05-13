@@ -34,6 +34,16 @@ These papers are used as writing examples, not as a claim that the current repos
 - 实证部分：学习如何叙述识别、样本、模型、结果、稳健性和机制。
 - 表图：学习表注、panel 结构、图形准入和结果解释如何服务主线。
 
+## English Diction Training Status / 英文遣词训练状态
+
+The `econ-write` skill now includes an `english-diction` module distilled from the readable English corpus. It focuses on prose function, verbs and collocations, abstract/introduction patterns, theory-versus-empirical prose, and revision checks for AI-like or translation-like English.
+
+The first-pass audit treats E01, E02, E04, E05, E08-E11, and E13-E20 as readable for function-level distillation. E06, E07, and E12 remain downgraded because local PDF text extraction is too weak for sentence-level rules. E03 remains missing/restricted: public metadata exist, but the main article full text is not openly available locally, and the web appendix is not used as a substitute.
+
+`econ-write` 现在包含 `english-diction` 模块，用可读英文语料蒸馏英文经济学 prose 的句子功能、动词搭配、摘要/引言句法、理论与实证 prose 差异，以及去 AI 腔/翻译腔修稿检查。
+
+第一轮审计将 E01、E02、E04、E05、E08-E11、E13-E20 作为可用于功能级蒸馏的英文语料。E06、E07、E12 因本地 PDF 文本抽取质量不足而降级，不进入句子级核心规则。E03 仍为缺失/受限状态：公开元数据存在，但本地主文档不可开放取得，web appendix 不作为主文替代。
+
 ## English Papers / 英文论文
 
 ### Theory And Model Papers / 理论与模型论文
