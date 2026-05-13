@@ -2,12 +2,13 @@
 
 This repository collects Codex skills for economics paper writing, revision, and top-journal style checking.
 
-本仓库用于整理经济学论文写作、修改、投稿前审查和中文顶刊风格适配的 Codex skills。它目前采用“可用的外部英文 skill + 自有中文顶刊 skill + 后续可扩展论文语料模块”的结构。
+本仓库用于整理经济学论文写作、修改、投稿前审查和中文顶刊风格适配的 Codex skills。它目前采用“总入口 workflow skill + 可独立调用的专业子 skill”的结构。
 
 ## What Is Inside / 仓库内容 🧭
 
 | Path | English | 中文说明 |
 | --- | --- | --- |
+| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, or table/figure module, and points empirical work to the empirical workflow. | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文或表图模块；涉及实证工作时提示搭配实证 workflow。 |
 | `skills/econ-write/` | General economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
 | `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. | 后续用于细分写作规则的模块化参考文件，目前部分内容仍是占位。 |
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
@@ -37,10 +38,11 @@ See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the full paper list and w
 
 Copy the skill directories into your Codex skills folder:
 
-将 skill 目录复制到 Codex skills 文件夹：
+将本仓库中的全部 skill 目录复制到 Codex skills 文件夹：
 
 ```bash
 mkdir -p ~/.codex/skills
+cp -R skills/econ-writing-workflow ~/.codex/skills/econ-writing-workflow
 cp -R skills/econ-write ~/.codex/skills/econ-write
 cp -R skills/cn-top-econ-writing ~/.codex/skills/cn-top-econ-writing
 cp -R skills/econ-table-figure-design ~/.codex/skills/econ-table-figure-design
@@ -62,17 +64,33 @@ Short prompt for an AI agent:
 Please help me download and install the Codex skills from this repository:
 https://github.com/juliaError/econ-TopJournal-writing-Skill
 
-Copy `skills/econ-write`, `skills/cn-top-econ-writing`, and `skills/econ-table-figure-design` into `~/.codex/skills/`, then tell me whether I still need to refresh or restart Codex.
+Copy `skills/econ-writing-workflow`, `skills/econ-write`, `skills/cn-top-econ-writing`, and `skills/econ-table-figure-design` into `~/.codex/skills/`, then tell me whether I still need to refresh or restart Codex.
 ```
 
 ```text
 请帮我下载并安装这个仓库里的 Codex skills：
 https://github.com/juliaError/econ-TopJournal-writing-Skill
 
-把 `skills/econ-write`、`skills/cn-top-econ-writing` 和 `skills/econ-table-figure-design` 复制到 `~/.codex/skills/`，然后告诉我是否还需要刷新或重启 Codex。
+把 `skills/econ-writing-workflow`、`skills/econ-write`、`skills/cn-top-econ-writing` 和 `skills/econ-table-figure-design` 复制到 `~/.codex/skills/`，然后告诉我是否还需要刷新或重启 Codex。
 ```
 
 ## Usage / 使用方式 🛠️
+
+For most users, call `econ-writing-workflow` first. It will route the writing task to the right module:
+
+普通用户日常优先调用 `econ-writing-workflow`。它会根据写作任务类型自动转向合适的模块：
+
+```text
+Use econ-writing-workflow to revise this paper's introduction, tables, and Chinese abstract.
+```
+
+```text
+用 econ-writing-workflow 检查这篇经济学论文的引言、主回归表和中文表达。
+```
+
+Advanced users may call specialized skills directly:
+
+高级用户也可以直接调用专业子 skill：
 
 Use `econ-write` for general English economics paper writing:
 
@@ -111,6 +129,7 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 - `econ-write` is usable now and keeps its third-party MIT notice.
 - **2026-05-13 update**: `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
 - **2026-05-13 update**: `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
+- **2026-05-13 update**: `econ-writing-workflow` is now added as the main writing entry skill that routes ordinary user requests to the relevant specialized module.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into a fully original economics writing skill distilled from the paper corpus and locally developed writing rules.
@@ -118,6 +137,7 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 - `econ-write` 当前可直接使用，并已保留第三方 MIT 声明。
 - **2026-05-13 更新**：`econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
 - **2026-05-13 更新**：新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
+- **2026-05-13 更新**：新增 `econ-writing-workflow` 写作总入口 skill，用于把普通用户请求路由到相应专业模块。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
 - 长期目标是逐步基于论文语料和自有写作规则，重写为完全原创的经济学写作 skill。

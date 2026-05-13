@@ -1,8 +1,8 @@
 # Paper Corpus / 论文语料库 📚
 
-This file lists the economics papers used as the writing-learning corpus for developing and extending the local `paper_skills` workflow.
+This file lists the economics papers used as the writing-learning corpus for developing and extending the local `paper_skills` workflow. The `econ-writing-workflow` entry skill now routes corpus-derived writing rules to the relevant English, Chinese, or table/figure module.
 
-本文件记录构建和扩展本地 `paper_skills` 写作工作流时参考、蒸馏的经济学论文语料。
+本文件记录构建和扩展本地 `paper_skills` 写作工作流时参考、蒸馏的经济学论文语料。现在由 `econ-writing-workflow` 写作总入口 skill 将这些语料规则路由到英文、中文或表图模块。
 
 ## Corpus Status / 语料状态
 
