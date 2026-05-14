@@ -21,7 +21,7 @@ It uses a modular structure: ordinary users can start from the main workflow ski
 | `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, full-draft, or table/figure module, and points empirical work to the empirical workflow. |
 | `skills/econ-write/` | General English economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. |
 | `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. Some files are still being developed. |
-| `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. |
+| `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》, including Chinese diction cleanup and argument-logic checks. |
 | `skills/econ-table-figure-design/` | Bilingual economics table and figure design skill for regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, and export checks. |
 | `docs/paper-corpus.md` | Corpus policy for how local writing-learning sources are used without publishing paper lists or source text. |
 | `LICENSE` | Layered license overview: original repository content is CC BY-NC 4.0; third-party content keeps its own license. |
@@ -36,7 +36,7 @@ It uses a modular structure: ordinary users can start from the main workflow ski
 | `skills/econ-writing-workflow/` | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
 | `skills/econ-write/` | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
 | `skills/econ-write/references/paper_skills/` | `econ-write` 按需加载的分 section 参考规则；部分文件仍在开发中。 |
-| `skills/cn-top-econ-writing/` | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill。 |
+| `skills/cn-top-econ-writing/` | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill，包含中文遣词造句清理和论证逻辑检查。 |
 | `skills/econ-table-figure-design/` | 中英文通用经济学表格与图形设计 skill，覆盖三线表、主回归、稳健性、异质性、机制、表注图注、配色和导出检查。 |
 | `docs/paper-corpus.md` | 语料使用政策，说明如何使用本地写作学习来源，同时不公开论文清单或来源文本。 |
 | `LICENSE` | 分层许可说明：本仓库原创内容采用 CC BY-NC 4.0；第三方内容保留原许可。 |
@@ -196,6 +196,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
   2. `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
   3. `econ-writing-workflow` now includes `references/argument-logic/` for full-paper logic, repeated material, emphasis, ordering, and table/figure fit.
   4. `econ-writing-workflow` now includes `references/full-paper-drafting/` for drafting an auditable paper from a user-owned result package, with input audits, table/figure placement, anti-fabrication `TODO` rules, and language-specific routing.
+- **2026-05-14 update**:
+  1. `cn-top-econ-writing` now includes `references/argument-logic/`, a Chinese argument-logic module for transferring cross-language economics writing structure into Chinese top-journal writing without importing English diction, wording, or sentence order.
+  2. The module covers argument spine, contribution preservation, abstract/introduction logic, theory and mechanism writing, main-result narration, mechanism/heterogeneity/robustness placement, table/figure argument fit, and post-rewrite drop checks.
+  3. `chinese-diction` now explicitly runs after argument-logic when a task involves structure, contribution, section order, result organization, or table/figure placement.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
@@ -208,6 +212,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
   2. 新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
   3. `econ-writing-workflow` 已新增 `references/argument-logic/`，用于全文逻辑、重复删除、重点排序和表图是否服务主线的审查。
   4. `econ-writing-workflow` 已新增 `references/full-paper-drafting/`，用于基于作者自己的研究问题、结果包和图表生成可审查初稿，并通过输入审查、正文/附录表图安排、禁止编造的 `TODO` 规则和中英文写作路由保证边界清楚。
+- **2026-05-14 更新**：
+  1. `cn-top-econ-writing` 已新增 `references/argument-logic/` 中文论证逻辑模块，把经济学论文可跨语言迁移的写作结构转化为中文顶刊规则，但不迁移英文句式、表达或语序。
+  2. 该模块覆盖全文主线、贡献保护、摘要/引言逻辑、理论与机制写作、主结果叙述、机制/异质性/稳健性取舍、表图是否服务主线，以及改写后的 drop check。
+  3. `chinese-diction` 现在明确在涉及结构、贡献、章节顺序、结果组织或表图取舍时，先走论证逻辑判断，再做中文遣词造句和 AI 腔/翻译腔清理。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
 - 长期目标是逐步基于本地写作规则和非逐篇来源的抽象规则，重写为完全原创的经济学写作 skills。
