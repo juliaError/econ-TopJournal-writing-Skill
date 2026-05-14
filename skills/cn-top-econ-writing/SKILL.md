@@ -1,6 +1,6 @@
 ---
 name: cn-top-econ-writing
-description: Use when drafting, auditing, restructuring, or polishing a Chinese economics paper intended for top Chinese journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. Focus on China-question orientation, argument logic, identification clarity, contribution framing, section logic, Chinese abstract and English summary conventions, and submission-ready text. Do not use for raw data cleaning or model estimation; pair with empirical-econ-workflow when code or regressions are needed.
+description: Use when drafting, auditing, restructuring, polishing, or adapting a Chinese economics paper for Chinese journals such as 《经济学（季刊）》, 《经济研究》, 《管理世界》, and 《中国工业经济》. Focus on China-question orientation, argument logic, identification clarity, contribution framing, section logic, Chinese abstract and English summary conventions, journal-specific submission style, and submission-ready text. Do not use for raw data cleaning or model estimation; pair with empirical-econ-workflow when code or regressions are needed.
 ---
 
 # 中文顶刊经济学写作 Skill
@@ -12,6 +12,7 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - 将已有英文稿、工作论文或研究笔记改造成中文顶刊风格
 - 对现有中文稿做投稿前预审、结构重写、段落改写、摘要改写、标题优化
 - 做退修重写、审稿回复框架、投稿合规检查
+- 按《经济学（季刊）》等目标期刊的投稿体例、匿名审稿要求、正文/附录规则和参考文献格式调整稿件
 - 需要先审“研究设计与贡献”，再审“文字与体例”
 
 ## 不应触发
@@ -41,6 +42,7 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - **ER 模式**：更强调思想创新、理论演进、现实重大问题与政策启示；方法是工具，不是主体。
 - **MW 模式**：更强调中国现实经济管理问题、学理梳理、贡献显化、篇幅节制、匿名审稿合规。
 - **CIE 模式**：更强调问题导向、产业/企业/管理议题、实证与现实结合、体例严格、可重复性准备。
+- **EQ 模式（《经济学（季刊）》）**：更强调官网投稿体例、匿名 PDF 初投稿、录用后 Word、标题层级、JEL、在线附录、数据代码可复制性和正文/附录取舍。
 - **保守混合模式**：用户没有定刊时，默认采用兼容三刊的保守写法。
 
 ### Step 1. 先做“顶刊门槛审计”，再动笔
@@ -77,7 +79,7 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 8. 结论
 9. 审稿回复 / 附录 / 扩展讨论
 
-机制、异质性、扩展检验都不能挤占主结果的位置。
+机制、异质性、扩展检验都不能挤占主结果的位置。核心机制检验原则上属于正文主线，不能因为篇幅压力默认移入附录。
 
 ### Step 4. 修稿时先处理样本、主表和图，再处理文字
 当任务进入 revision / polish 阶段时，默认顺序固定为：
@@ -132,7 +134,25 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 
 当任务涉及三线表、主回归表、稳健性表、异质性表、机制表、表注、图注、正文图准入、事件研究图、趋势图、地图、分布图、配色、字体字号或导出质量时，先加载 `econ-table-figure-design`。该 skill 负责中英文共用的表图设计底盘；本 skill 负责把通过准入的表图写进中文顶刊正文，并检查中文标题、注释和结果解释是否自然、克制、具体。
 
+## 期刊投稿体例模块
+
+当用户指定目标中文期刊，或要求按某一期刊投稿要求调整、投稿前格式检查、匿名稿检查、录用后排版、正文/附录取舍或参考文献体例适配时，先读取 `references/journal-styles/00_journal_submission_workflow.md`。
+
+目标期刊为《经济学（季刊）》或 China Economic Quarterly 时，继续读取 `references/journal-styles/economics_quarterly.md`；涉及跨页表、图形清晰度、中文图中文字、正文图准入、附录引用和变量命名时，同时读取 `references/journal-styles/common_chinese_journal_rules.md`。
+
+期刊体例规则的优先级固定为：官网硬性投稿要求 > 用户明确确认过的投稿实操流程 > 目标期刊已发表论文中的稳定体例 > 中文期刊共同规则 > 本 skill 的一般中文顶刊写作规则。不要用单篇样例风格覆盖官网硬性要求。
+
 ## 期刊模式细则
+
+### A0. EQ 模式（《经济学（季刊）》）
+遇到 EQ 模式时，优先读取 `references/journal-styles/economics_quarterly.md`，并按该文件执行投稿前、初投稿、录用后、正文/附录、图表、变量、文献引用和参考文献规则。
+
+特别注意：
+
+- 初次投稿按用户实操确认为匿名 PDF，最终录用后才提交 Word。
+- 正文第一页必须包含 200 字以内中文摘要、3 个中英文关键词、英文标题、100 词以内英文摘要和 3 个 JEL 分类号。
+- 官网标题层级、字体字号、占行、缩进、标点和连排规则属于硬性要求。
+- 核心机制检验原则上保留正文；背景事实、平行趋势、稳健性扩展和变量细节优先进入附录。
 
 ### A. ER 模式（《经济研究》）
 遇到 ER 模式时，执行以下规则：
