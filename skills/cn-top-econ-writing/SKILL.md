@@ -1,6 +1,6 @@
 ---
 name: cn-top-econ-writing
-description: Use when drafting, auditing, restructuring, or polishing a Chinese economics paper intended for top Chinese journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. Focus on China-question orientation, identification clarity, contribution framing, section logic, Chinese abstract and English summary conventions, and submission-ready text. Do not use for raw data cleaning or model estimation; pair with empirical-econ-workflow when code or regressions are needed.
+description: Use when drafting, auditing, restructuring, or polishing a Chinese economics paper intended for top Chinese journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》. Focus on China-question orientation, argument logic, identification clarity, contribution framing, section logic, Chinese abstract and English summary conventions, and submission-ready text. Do not use for raw data cleaning or model estimation; pair with empirical-econ-workflow when code or regressions are needed.
 ---
 
 # 中文顶刊经济学写作 Skill
@@ -101,8 +101,22 @@ description: Use when drafting, auditing, restructuring, or polishing a Chinese 
 - 是否带有作者备忘、工作日志或答辩口吻；若有，应改成论文正文可直接使用的表述。
 - 如果一句话虽然逻辑上能懂，但中文读起来别扭、不顺或不够像论文，就继续修改，直到自然、准确、清楚。
 
+## 中文论证逻辑模块
+当用户要求理顺全文逻辑、重构摘要/引言、压缩全文、突出贡献、保护第二贡献、改主回归解释、安排理论/机制/异质性/稳健性，或判断表图是否服务主线时，先读取 `references/argument-logic/`，再进入中文遣词造句模块。
+
+- `01_argument_spine_cn.md`：检查全文“研究问题—机制—识别/论证—结果—贡献—边界”主线。
+- `02_contribution_structure_cn.md`：诊断主贡献、次贡献、机制贡献、数据/识别贡献，并在压缩时保护关键贡献。
+- `03_abstract_intro_logic_cn.md`：重构中文摘要和引言的重点顺序，避免删掉机制、第二贡献、量级或边界。
+- `04_theory_mechanism_logic_cn.md`：处理理论写作、制度背景、机制链条和可检验命题之间的关系。
+- `05_main_results_logic_cn.md`：决定主回归/主结果如何进入正文，先写方向和量级，再写经济含义和识别可信度。
+- `06_mechanism_heterogeneity_robustness_cn.md`：区分机制、异质性和稳健性的功能，决定正文与附录取舍。
+- `07_table_figure_argument_fit_cn.md`：判断表图是否服务主线；表图版式仍交给 `econ-table-figure-design`。
+- `08_revision_drop_check_cn.md`：改写后检查是否误删主贡献、次贡献、机制、量级、识别边界或理论命题。
+
+该模块只迁移经济学论文共同的论证骨架，不迁移英文句式、英文表达或英文语序。若任务同时涉及中文表达自然度，必须在论证结构确定后再读取 `references/chinese-diction/`。
+
 ## 中文遣词造句模块
-当用户要求中文润色、去 AI 腔、去翻译腔、去作者备忘腔、改摘要/引言/结果解释的中文表达，或进行投稿前语体清理时，必须按需读取 `references/chinese-diction/` 下的文件：
+当用户要求中文润色、去 AI 腔、去翻译腔、去作者备忘腔、改摘要/引言/结果解释的中文表达，或进行投稿前语体清理时，必须按需读取 `references/chinese-diction/` 下的文件。若任务涉及逻辑、贡献、章节顺序、表图取舍或结果组织，先用 `references/argument-logic/` 判断结构，再用本模块处理中文表达。
 
 - `01_sentence_functions.md`：先判断句子功能，再改措辞。
 - `02_collocations.md`：检查经济学中文常用搭配、慎用搭配和替代表达。
