@@ -39,7 +39,7 @@ Load only the relevant files:
 - `references/figures/01_intro_figures.md`: introduction figure admission.
 - `references/figures/02_event_study_figures.md`: event-study and dynamic-effect figures.
 - `references/figures/03_trend_and_binscatter_figures.md`: trend and binscatter figures.
-- `references/figures/04_maps_and_distribution_figures.md`: map and distribution figures.
+- `references/figures/04_maps_and_distribution_figures.md`: map and distribution figures, including China-map hard rules and mini/long China map layout patterns.
 - `references/figures/05_mechanism_figures.md`: mechanism figures and diagrams.
 - `references/figures/06_figure_notes_titles_axes.md`: captions, notes, axes, legends, labels.
 - `references/figures/07_export_quality.md`: export, resolution, and final artifact checks.
@@ -54,3 +54,4 @@ Load only the relevant files:
 - Do not use decorative color. Color must encode treatment, group, period, geography, or uncertainty.
 - Do not use a figure in the introduction unless it establishes a fact, puzzle, setting, or identifying variation.
 - Do not deliver tables or figures that overflow the page, blur in Word/PDF, or use inconsistent fonts and captions.
+- For any China map, do not deliver an incomplete or politically incorrect base map. It must include Hong Kong/香港, Macao/澳门, Taiwan province/台湾省, South Tibet/Zangnan/藏南, and all required national-boundary elements; if the map source provides the South China Sea dashed line / nine-dash-line / 南海断续线 layer, include it.
