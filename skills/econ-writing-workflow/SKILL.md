@@ -66,6 +66,20 @@ If a request spans more than one category, handle them in this order:
 - For tables, figures, notes, captions, palettes, typography, and export checks, use `econ-table-figure-design`.
 - For data cleaning, regression code, variable construction, or estimation, pair with `empirical-econ-workflow`. Do not let this writing workflow invent or run empirical results by itself.
 
+## Active Routing During Work
+
+Do not route only once at the beginning of a long task. At the start of each substantive phase, and whenever the work crosses from prose into tables, figures, maps, journal formatting, data facts, or empirical code, reclassify the current subtask and load the relevant specialized skill or reference file.
+
+Route immediately when these boundaries appear:
+
+- tables, figures, maps, image edits, captions, legends, colorbars, fonts, export quality, or main-text versus appendix placement: use `econ-table-figure-design`;
+- target-journal style, anonymous submission, title hierarchy, references, JEL codes, appendices, Word/PDF submission format, or 《经济学（季刊）》 rules: use `cn-top-econ-writing` and its `references/journal-styles/` module;
+- data cleaning, variable construction, regression code, estimation, sample changes, or post-estimation sample audit: pair with `empirical-econ-workflow`;
+- English prose or English diction: use `econ-write`;
+- Chinese top-journal prose, Chinese diction, Chinese abstract, or Chinese contribution framing: use `cn-top-econ-writing`.
+
+After a specialized skill settles its part, return to this workflow to integrate the decision into the paper-level order and final output check.
+
 ## Operating Rules
 
 - Read available manuscript context before giving paper-level prose advice. If only an excerpt is available, state that the advice is excerpt-level.
@@ -100,7 +114,7 @@ Load only the relevant files:
 
 Before finalizing a response, confirm that:
 
-- the routed skill matches the user's task;
+- the routed skill still matches the current subtask, not just the original request;
 - any table/figure decision has main-text versus appendix placement;
 - any empirical claim is grounded in provided or inspected evidence;
 - any full-draft output has an input audit, argument spine, table/figure placement plan, and unresolved `TODO` list when needed;

@@ -25,7 +25,7 @@ If this skill is directly triggered inside a multi-step paper writing, journal-a
 2. Decide placement: main text only if the artifact advances the paper's main question, design, result, or mechanism; otherwise move it to appendix or audit notes.
 3. Apply the relevant reference file below.
 4. Check language mode: English uses `Table/Figure` and `Notes:`; Chinese uses `表/图` and `注：`.
-5. Verify final artifact, not just the code: table lines, widths, panel labels, notes, fonts, colors, and export resolution must be visually correct.
+5. Verify final artifact, not just the code: table lines, widths, panel labels, notes, fonts, colors, legends, colorbars, insets, axes, and export resolution must be visually correct.
 
 ## References
 
@@ -56,4 +56,5 @@ Load only the relevant files:
 - Do not use decorative color. Color must encode treatment, group, period, geography, or uncertainty.
 - Do not use a figure in the introduction unless it establishes a fact, puzzle, setting, or identifying variation.
 - Do not deliver tables or figures that overflow the page, blur in Word/PDF, or use inconsistent fonts and captions.
+- Do not deliver a drawn, edited, or regenerated figure/map without inspecting the final rendered artifact. Confirm that text, legends, colorbars, inset boxes, axes, map layers, and plotted content do not overlap, hide, cover, or press against useful information.
 - For any China map, do not deliver an incomplete or politically incorrect base map. It must include Hong Kong/香港, Macao/澳门, Taiwan province/台湾省, South Tibet/Zangnan/藏南, and all required national-boundary elements; if the map source provides the South China Sea dashed line / nine-dash-line / 南海断续线 layer, include it.

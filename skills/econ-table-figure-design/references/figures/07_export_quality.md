@@ -21,14 +21,23 @@
 
 ## Final Artifact Check
 
-Before delivery, inspect the actual PDF or DOCX:
+Before delivery, inspect the actual rendered output, not just the plotting code or file-exists status. Open the final PNG/PDF/SVG/DOCX page or rendered preview at the intended display size.
 
 - no clipping;
 - no blurry text;
-- no legend overlap;
+- no legend, colorbar, note, title, axis label, tick label, panel label, inset box, or annotation overlap;
+- no text, legend, colorbar, inset box, axis, or map/figure content covers, hides, presses against, or obscures useful information;
 - consistent caption style;
 - consistent colors across related figures;
 - readable grayscale version if printing is possible.
+
+For edited images, maps, and regenerated charts, explicitly check the rendered artifact for:
+
+- readable and non-overlapping text;
+- complete legends and colorbars with visible labels and units;
+- inset maps or small frames that remain legible and do not cover key geography or data;
+- axes, ticks, and labels that are not cut off;
+- plotted points, lines, polygons, bars, and map layers that remain visible and are not hidden by annotations or decorative elements.
 
 ## Check
 

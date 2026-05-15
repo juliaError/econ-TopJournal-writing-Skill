@@ -190,6 +190,9 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ### English
 
+- **2026-05-16 update**:
+  1. `econ-writing-workflow` now includes active mid-task routing, so long workflows re-check whether the current phase should use `econ-table-figure-design`, `cn-top-econ-writing`, `econ-write`, or `empirical-econ-workflow`.
+  2. `econ-table-figure-design` now requires final rendered artifact inspection for drawn, edited, or regenerated figures and maps; agents must check that text, legends, colorbars, insets, axes, and map/figure content do not overlap or obscure useful information.
 - **2026-05-15 update**:
   1. `econ-writing-workflow` now includes a project-level skill routing prompt for multi-step economics writing, table, figure, journal-submission, and formatting workflows.
   2. When no economics-writing routing rule exists in the nearest `AGENTS.md` or `CLAUDE.md`, the skill asks the user once whether to add a persistent local rule before editing either file.
@@ -210,6 +213,9 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ### 中文
 
+- **2026-05-16 更新**：
+  1. `econ-writing-workflow` 已新增任务过程中的主动重路由规则，长任务中会反复检查当前阶段是否应切换到 `econ-table-figure-design`、`cn-top-econ-writing`、`econ-write` 或 `empirical-econ-workflow`。
+  2. `econ-table-figure-design` 现在要求对绘制、修改或重新生成后的图形和地图进行最终渲染结果检查，必须确认文字、图例、色带、小图框、坐标轴和地图/图形内容没有重叠、遮挡或压住有效信息。
 - **2026-05-15 更新**：
   1. `econ-writing-workflow` 已新增项目级 skill 路由提示，适用于多步骤论文写作、制表、绘图、投稿体例和格式检查任务。
   2. 当最近的 `AGENTS.md` 或 `CLAUDE.md` 中尚无 economics-writing routing 规则时，skill 会先询问用户是否添加持久本地规则；未获明确授权前不会修改这些文件。

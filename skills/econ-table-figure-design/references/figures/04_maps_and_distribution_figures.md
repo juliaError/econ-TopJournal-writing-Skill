@@ -64,6 +64,7 @@ Reject or revise the figure if any item is true:
 - The map package source is unknown and the boundary cannot be checked.
 - The figure uses color as decoration rather than to encode a geographic variable.
 - A mini-map or long-map script draws only the filled polygons and forgets the separate line layer containing `九段线`, `海岸线`, `小地图框格`, or national-boundary linework.
+- The final rendered map has overlapping or obstructing text, legend, colorbar, scale bar, north arrow, small-map frame, axis, annotation, or map layer that hides useful geographic or data information.
 
 ## Distribution Figures
 
