@@ -4,3 +4,5 @@ __pycache__/
 .pytest_cache/
 node_modules/
 .env
+AGENTS.md
+CLAUDE.md
