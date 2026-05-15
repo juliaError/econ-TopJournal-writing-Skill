@@ -26,7 +26,11 @@ For economics paper writing, journal adaptation, tables, figures, captions, note
 
 Use `cn-top-econ-writing` for Chinese top-journal prose and journal-specific submission style. Use `econ-table-figure-design` for tables, figures, maps, captions, notes, and export quality. Use `empirical-econ-workflow` when data cleaning, variable construction, regressions, sample audits, or estimation code are involved.
 
-Keep the relevant skill active throughout the task unless the user explicitly opts out.
+Keep the relevant skill active throughout the task unless the user explicitly opts out. Do not treat skill use as a one-time setup step: at the start of each substantive phase, and whenever the work crosses from prose into tables, figures, maps, journal formatting, data facts, or empirical code, reclassify the current subtask and load the relevant specialized skill or reference file.
+
+During manuscript drafting or revision, separate paper-facing text from author memos and task logs before writing each paragraph, table note, figure note, appendix note, or footnote. Only reader-facing manuscript text may enter the paper. Author workflow notes, submission-positioning discussion, reasons for moving/deleting material, and author-agent internal decisions must stay in the response, task README, revision memo, or checklist.
+
+When producing tables, figures, maps, or edited images, verify the final rendered artifact itself before treating the task as complete. Check that text, legends, colorbars, inset maps, axes, notes, and substantive visual content do not overlap, obscure, or cover useful information.
 ```
 
 After adding the rule, include a clear marker heading so future agents can detect it and avoid asking again.
