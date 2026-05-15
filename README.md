@@ -200,6 +200,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
   1. `cn-top-econ-writing` now includes `references/argument-logic/`, a Chinese argument-logic module for transferring cross-language economics writing structure into Chinese top-journal writing without importing English diction, wording, or sentence order.
   2. The module covers argument spine, contribution preservation, abstract/introduction logic, theory and mechanism writing, main-result narration, mechanism/heterogeneity/robustness placement, table/figure argument fit, and post-rewrite drop checks.
   3. `chinese-diction` now explicitly runs after argument-logic when a task involves structure, contribution, section order, result organization, or table/figure placement.
+- **2026-05-15 update**:
+  1. `econ-writing-workflow` now includes a project-level skill routing prompt for multi-step economics writing, table, figure, journal-submission, and formatting workflows.
+  2. When no economics-writing routing rule exists in the nearest `AGENTS.md` or `CLAUDE.md`, the skill asks the user once whether to add a persistent local rule before editing either file.
+  3. `cn-top-econ-writing` and `econ-table-figure-design` now point long-running tasks back to `econ-writing-workflow` for this persistent routing setup, so specialized skills are less likely to be forgotten during extended work.
 - `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
 - `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
 - The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
@@ -216,6 +220,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
   1. `cn-top-econ-writing` 已新增 `references/argument-logic/` 中文论证逻辑模块，把经济学论文可跨语言迁移的写作结构转化为中文顶刊规则，但不迁移英文句式、表达或语序。
   2. 该模块覆盖全文主线、贡献保护、摘要/引言逻辑、理论与机制写作、主结果叙述、机制/异质性/稳健性取舍、表图是否服务主线，以及改写后的 drop check。
   3. `chinese-diction` 现在明确在涉及结构、贡献、章节顺序、结果组织或表图取舍时，先走论证逻辑判断，再做中文遣词造句和 AI 腔/翻译腔清理。
+- **2026-05-15 更新**：
+  1. `econ-writing-workflow` 已新增项目级 skill 路由提示，适用于多步骤论文写作、制表、绘图、投稿体例和格式检查任务。
+  2. 当最近的 `AGENTS.md` 或 `CLAUDE.md` 中尚无 economics-writing routing 规则时，skill 会先询问用户是否添加持久本地规则；未获明确授权前不会修改这些文件。
+  3. `cn-top-econ-writing` 和 `econ-table-figure-design` 现在会在长任务中提示回到 `econ-writing-workflow` 统一设置持久路由，降低 agent 做着做着忘记调用相关 skill 的风险。
 - `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
 - `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
 - 长期目标是逐步基于本地写作规则和非逐篇来源的抽象规则，重写为完全原创的经济学写作 skills。
