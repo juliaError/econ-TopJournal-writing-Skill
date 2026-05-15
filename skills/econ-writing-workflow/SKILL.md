@@ -11,6 +11,26 @@ Use this skill as the user's main entry point for economics writing work. It doe
 
 This skill is not a full empirical pipeline. For data cleaning, variable construction, regression code, estimation, diagnostics, or reproducibility tasks, pair with `empirical-econ-workflow`.
 
+## Project-Level Skill Pinning
+
+For multi-step economics writing, table, figure, journal-submission, or paper-formatting workflows, check whether the nearest project-level `AGENTS.md` or `CLAUDE.md` already contains an economics-writing skill routing rule.
+
+If no such rule exists, ask the user once whether to add a persistent local rule. Do not edit `AGENTS.md` or `CLAUDE.md` without explicit user approval, and do not ask for tiny one-off requests.
+
+Recommended rule text:
+
+```markdown
+## Economics Writing Skill Routing
+
+For economics paper writing, journal adaptation, tables, figures, captions, notes, Word/PDF formatting, and submission checks, first route through `econ-writing-workflow`.
+
+Use `cn-top-econ-writing` for Chinese top-journal prose and journal-specific submission style. Use `econ-table-figure-design` for tables, figures, maps, captions, notes, and export quality. Use `empirical-econ-workflow` when data cleaning, variable construction, regressions, sample audits, or estimation code are involved.
+
+Keep the relevant skill active throughout the task unless the user explicitly opts out.
+```
+
+After adding the rule, include a clear marker heading so future agents can detect it and avoid asking again.
+
 ## First Decision
 
 Before writing or editing, classify the request:

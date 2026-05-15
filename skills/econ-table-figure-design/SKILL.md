@@ -17,6 +17,8 @@ Use this skill whenever a task involves economics paper tables or figures:
 
 Pair this skill with `econ-write` for English prose and `cn-top-econ-writing` for Chinese top-journal prose. This skill owns the table/figure design decision.
 
+If this skill is directly triggered inside a multi-step paper writing, journal-adaptation, table/figure, or submission-check workflow, and the project has no economics-writing skill routing rule in `AGENTS.md` or `CLAUDE.md`, suggest routing through `econ-writing-workflow` to add a persistent project-level rule. Do not edit those files without explicit user approval.
+
 ## Core Workflow
 
 1. Classify the artifact: main regression table, robustness table, heterogeneity table, mechanism table, descriptive table, introduction figure, event-study figure, trend/binscatter, map/distribution figure, or mechanism figure.

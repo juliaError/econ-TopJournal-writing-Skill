@@ -25,6 +25,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 
 遇到代码、清洗、回归，请优先调用 `empirical-econ-workflow`，然后回到本 skill 负责“把结果写成稿件”。遇到表格、图形、配色、表注、图注、主表/稳健性/机制/异质性展示，请优先使用独立的 `econ-table-figure-design` skill 确定表图设计，再回到本 skill 处理中文正文叙事和期刊风格。
 
+若本 skill 在多步骤论文写作、期刊体例调整或投稿前检查任务中被直接触发，且项目级 `AGENTS.md` 或 `CLAUDE.md` 尚无 economics-writing skill routing 规则，应提示用户可通过 `econ-writing-workflow` 添加项目级持久路由；未获明确授权前不得修改这些持久配置文件。
+
 ## 总目标
 本 skill 的目标不是“把话写漂亮”，而是把稿件推进到中文顶刊常见的四个门槛之上：
 
