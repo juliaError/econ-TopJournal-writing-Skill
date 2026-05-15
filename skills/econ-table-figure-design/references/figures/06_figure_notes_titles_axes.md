@@ -31,6 +31,7 @@ Figure notes should state:
 ## What Not To Put In Notes
 
 - Author workflow.
+- Submission strategy, author-agent discussion, or text such as `for space`, `为了节省篇幅`, `作者需要补充`, `为满足专题要求`, or why a figure was moved, redrawn, or replaced.
 - Long variable construction text.
 - Defensive explanation of why a visual was changed.
 - Repetition of every regression control if the text already explains them.

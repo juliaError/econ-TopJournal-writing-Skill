@@ -73,3 +73,10 @@ Run this linter after drafting or rewriting English economics prose. The goal is
 - Fix: state population, period, and design scope.
 - Check standard: reader knows where the result speaks most directly.
 - Original repair: `The estimates apply most directly to [population] during [period].`
+
+## Check 11. Author Memo In Manuscript
+
+- Flag: `to satisfy the call for papers`, `for the special issue`, `this draft chooses to`, `for space we move`, `we do not discuss here because`, `the author should add`, `this section is kept/dropped`, `we frame it this way`.
+- Fix: move draft-management content to an author memo, or rewrite the economics point as reader-facing scope, identification, contribution, or appendix cross-reference.
+- Check standard: a referee can read the sentence without seeing the author-agent conversation.
+- Original repair: `Appendix C reports robustness checks using alternative samples, weights, and exposure measures.`

@@ -16,6 +16,7 @@ For regression tables, notes should normally state:
 ## What Not To Put In Notes
 
 - The author's workflow, such as why a column was dropped or which draft changed.
+- Submission strategy, author-agent discussion, or text such as `for space we moved this`, `为了节省篇幅`, `作者需要补充`, or `为满足专题要求`.
 - Defensive language about significance.
 - Long variable construction paragraphs that belong in the data section or appendix.
 - Repeated details already stated clearly in the first relevant table note.

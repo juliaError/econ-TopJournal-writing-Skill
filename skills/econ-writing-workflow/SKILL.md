@@ -59,6 +59,7 @@ If a request spans more than one category, handle them in this order:
 - For English paper prose, use `econ-write`.
 - For English diction cleanup, use `econ-write` and load `references/english-diction/` selectively.
 - For full-paper logic, repeated material, emphasis, section ordering, and argument-spine audits, load `references/argument-logic/` selectively before polishing prose.
+- For manuscript-facing versus author-facing voice, internal memo leakage, or requests to remove author workflow notes from paper prose, load `references/manuscript-voice/01_no_author_memo_in_manuscript.md` before finalizing text.
 - For full-paper drafting from research questions, regression tables, figures, or result folders, load `references/full-paper-drafting/` first, then route table/figure decisions to `econ-table-figure-design` and language-specific prose to `econ-write` or `cn-top-econ-writing`.
 - For Chinese top-journal writing, use `cn-top-econ-writing`.
 - For target-journal submission style, anonymous manuscript checks, accepted-version formatting, references, appendices, or requests such as “按《经济学（季刊）》投稿要求调整”, use `cn-top-econ-writing` and its `references/journal-styles/` module. For 《经济学（季刊）》, load `references/journal-styles/00_journal_submission_workflow.md`, `references/journal-styles/economics_quarterly.md`, and when table/figure/appendix issues appear, `references/journal-styles/common_chinese_journal_rules.md`.
@@ -85,6 +86,7 @@ After a specialized skill settles its part, return to this workflow to integrate
 - Read available manuscript context before giving paper-level prose advice. If only an excerpt is available, state that the advice is excerpt-level.
 - Do not rewrite tables or figures as prose problems. Table selection, sample comparability, notes, and visual design are part of the research presentation.
 - Do not put author workflow notes in paper-facing text, table notes, or figure notes.
+- Before delivering or inserting manuscript text, classify each sentence as paper-facing text, author memo, or task log. Only paper-facing text may enter the manuscript.
 - Do not merge all specialized rules into the response. Load only the relevant child skill or reference files needed for the task.
 - Preserve the user's language target: English manuscript tasks should output English unless asked otherwise; Chinese top-journal tasks should output Chinese unless asked otherwise.
 - For full draft requests, never invent citations, data, variable definitions, identification claims, coefficient values, mechanisms, robustness results, or policy implications. Mark missing facts as concrete `TODO` items.
@@ -110,6 +112,12 @@ Load only the relevant files:
 - `references/full-paper-drafting/04_missing_information_policy.md`: anti-fabrication rules and `TODO` format.
 - `references/full-paper-drafting/05_full_draft_workflow.md`: full result-package-to-paper workflow.
 
+## Manuscript-Voice References
+
+Load when drafting, revising, polishing, or auditing prose that will enter the manuscript:
+
+- `references/manuscript-voice/01_no_author_memo_in_manuscript.md`: separates manuscript text from author memos and task logs; includes forbidden and context-dependent author-memo patterns.
+
 ## Output Check
 
 Before finalizing a response, confirm that:
@@ -119,4 +127,5 @@ Before finalizing a response, confirm that:
 - any empirical claim is grounded in provided or inspected evidence;
 - any full-draft output has an input audit, argument spine, table/figure placement plan, and unresolved `TODO` list when needed;
 - any prose revision removes vague, inflated, AI-like, or translation-like wording;
+- no paper-facing paragraph, table note, or figure note contains author-facing workflow notes, draft-management explanations, or internal discussion with the author;
 - any remaining uncertainty is stated as a concrete limitation or next step.

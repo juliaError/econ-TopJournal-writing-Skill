@@ -35,6 +35,8 @@ For English prose polishing, diction cleanup, abstract/introduction/result rewri
 
 For table and figure tasks, use the separate `econ-table-figure-design` skill before applying prose rules. This includes table placement, three-line tables, main regression/robustness/heterogeneity/mechanism displays, table notes, figure admission, event-study/trend/map/distribution figures, palettes, typography, and export checks. After the artifact design is settled, return to `econ-write` for English results narration and surrounding prose.
 
+For any manuscript-facing prose, do not include author workflow notes, draft-management explanations, submission-strategy discussion, or internal author-agent memo language. If a sentence explains why the author/agent moved, deleted, shortened, or framed something, keep it in an author memo rather than the paper.
+
 ---
 
 # CORE PRINCIPLES
