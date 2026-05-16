@@ -91,6 +91,7 @@ After a specialized skill settles its part, return to this workflow to integrate
 - Do not rewrite tables or figures as prose problems. Table selection, sample comparability, notes, and visual design are part of the research presentation.
 - Do not put author workflow notes in paper-facing text, table notes, or figure notes.
 - Before delivering or inserting manuscript text, classify each sentence as paper-facing text, author memo, or task log. Only paper-facing text may enter the manuscript.
+- When writing main-text pointers to appendices, tables, figures, or online appendices, keep them as pure pointers: state what to see, where to see it, and why it matters. Do not include layout or production language such as split columns, left/right halves, column width, page breaks, continued tables, repeated headers, or appendix-table formatting in the main text; put necessary reading guidance in the appendix text, table title, or note.
 - Do not merge all specialized rules into the response. Load only the relevant child skill or reference files needed for the task.
 - Preserve the user's language target: English manuscript tasks should output English unless asked otherwise; Chinese top-journal tasks should output Chinese unless asked otherwise.
 - For full draft requests, never invent citations, data, variable definitions, identification claims, coefficient values, mechanisms, robustness results, or policy implications. Mark missing facts as concrete `TODO` items.

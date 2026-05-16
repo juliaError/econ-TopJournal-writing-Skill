@@ -21,6 +21,28 @@ Run this linter after each paragraph or note, not only at the end:
 
 If the answer to 2 or 4 is yes, move it out of the manuscript or rewrite it as reader-facing scope/interpretation.
 
+## Main-Text Pointer Rule
+
+When the main text points to an appendix, table, figure, or online appendix, the pointer sentence should answer only:
+
+1. **what** the reader can find there;
+2. **where** it is located;
+3. **why** it matters for the current main-text claim, if the link is not already obvious.
+
+Do not mix main-text pointers with table-layout or file-construction explanations. Layout details such as `left panel`, `right panel`, `split columns`, `two-column layout`, `column width`, `page break`, `continued table`, `repeated header`, `left half`, `right half`, `分栏`, `左半部分`, `右半部分`, `列宽`, `跨页`, `续表`, `表头复写`, `中间分开`, or `排版` belong in an appendix paragraph, table title, table note, or production memo, not in the main text.
+
+Acceptable main-text pointer:
+
+- `AI适配度前10和后10城市及其人均GDP见在线附录C3。`
+- `Appendix Table C3 reports the ten cities with the highest and lowest AI-fit scores and their GDP per capita.`
+
+Not acceptable as main-text prose:
+
+- `在线附录C3左边列示前十城市，右边列示后十城市，中间分开排版。`
+- `Appendix Table C3 uses a split-column layout with the top ten on the left and the bottom ten on the right.`
+
+If the reader truly needs layout guidance to read a dense appendix table, put it in the appendix table note or the short appendix text immediately before the table.
+
 ## Hard-Reject Patterns
 
 Do not put these in manuscript text, table notes, or figure notes:
@@ -56,6 +78,7 @@ Turn author-facing draft talk into reader-facing economics prose:
 Before finalizing manuscript text, scan for:
 
 - `写法`, `定位`, `包装`, `专题`, `征稿`, `篇幅`, `移入附录`, `放入附录`, `不再赘述`, `暂不展开`, `后续补充`, `作者需要`, `TODO`, `修改`, `删除`, `保留`;
+- pointer-layout leakage in sentences containing `见附录`, `见在线附录`, `见表`, `见图`, `报告于`, `列示于`, `参见`, `see Appendix`, `see Table`, or `see Figure`: `分栏`, `左半部分`, `右半部分`, `左边`, `右边`, `列宽`, `跨页`, `续表`, `表头复写`, `中间分开`, `排版`, `split columns`, `left panel`, `right panel`, `page break`, `continued table`, `repeated header`;
 - English equivalents: `to satisfy the call`, `for the special issue`, `we do not discuss here`, `for space`, `moved to the appendix`, `the author should`, `this draft`, `we choose to write`.
 
 For each hit, decide:

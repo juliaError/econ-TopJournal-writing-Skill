@@ -53,6 +53,7 @@ Load only the relevant files:
 
 - Do not change coefficients, standard errors, stars, variable meanings, or sample definitions when only formatting a table.
 - Do not put author workflow notes in paper-facing table notes or figure notes.
+- Do not put table or appendix layout-construction language into main-text pointers. Main text may point readers to a table or appendix, but descriptions of split columns, left/right halves, page breaks, continued tables, repeated headers, column widths, or formatting choices belong in appendix text, table titles, table notes, or production notes.
 - Do not use decorative color. Color must encode treatment, group, period, geography, or uncertainty.
 - Do not use a figure in the introduction unless it establishes a fact, puzzle, setting, or identifying variation.
 - Do not deliver tables or figures that overflow the page, blur in Word/PDF, or use inconsistent fonts and captions.
