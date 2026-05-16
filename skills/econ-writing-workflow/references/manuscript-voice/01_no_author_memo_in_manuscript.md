@@ -27,7 +27,9 @@ When the main text points to an appendix, table, figure, or online appendix, the
 
 1. **what** the reader can find there;
 2. **where** it is located;
-3. **why** it matters for the current main-text claim, if the link is not already obvious.
+3. only if needed, the appendix item's **substantive role** for the current claim, such as robustness, variable construction, sample scope, background fact, derivation, or extended result.
+
+Do not satisfy the third item with meta-language such as `this is related to the main text`, `therefore it is relevant`, `因此与正文有关`, `所以和正文有关`, or `与正文相关`. Either name the substantive role or omit the clause.
 
 Do not mix main-text pointers with table-layout or file-construction explanations. Layout details such as `left panel`, `right panel`, `split columns`, `two-column layout`, `column width`, `page break`, `continued table`, `repeated header`, `left half`, `right half`, `分栏`, `左半部分`, `右半部分`, `列宽`, `跨页`, `续表`, `表头复写`, `中间分开`, or `排版` belong in an appendix paragraph, table title, table note, or production memo, not in the main text.
 
@@ -78,7 +80,7 @@ Turn author-facing draft talk into reader-facing economics prose:
 Before finalizing manuscript text, scan for:
 
 - `写法`, `定位`, `包装`, `专题`, `征稿`, `篇幅`, `移入附录`, `放入附录`, `不再赘述`, `暂不展开`, `后续补充`, `作者需要`, `TODO`, `修改`, `删除`, `保留`;
-- pointer-layout leakage in sentences containing `见附录`, `见在线附录`, `见表`, `见图`, `报告于`, `列示于`, `参见`, `see Appendix`, `see Table`, or `see Figure`: `分栏`, `左半部分`, `右半部分`, `左边`, `右边`, `列宽`, `跨页`, `续表`, `表头复写`, `中间分开`, `排版`, `split columns`, `left panel`, `right panel`, `page break`, `continued table`, `repeated header`;
+- pointer leakage in sentences containing `见附录`, `见在线附录`, `见表`, `见图`, `报告于`, `列示于`, `参见`, `see Appendix`, `see Table`, or `see Figure`: layout language such as `分栏`, `左半部分`, `右半部分`, `左边`, `右边`, `列宽`, `跨页`, `续表`, `表头复写`, `中间分开`, `排版`, `split columns`, `left panel`, `right panel`, `page break`, `continued table`, `repeated header`; or empty relevance language such as `与正文有关`, `和正文有关`, `与正文相关`, `related to the main text`, `relevant to the current text`;
 - English equivalents: `to satisfy the call`, `for the special issue`, `we do not discuss here`, `for space`, `moved to the appendix`, `the author should`, `this draft`, `we choose to write`.
 
 For each hit, decide:

@@ -23,7 +23,7 @@ For regression tables, notes should normally state:
 
 ## Main-Text Pointers Versus Table Notes
 
-Do not let main-text cross-references explain table construction. A main-text pointer should only say what to see, where to see it, and why it matters for the current argument.
+Do not let main-text cross-references explain table construction. A main-text pointer should only say what to see and where to see it. Only when needed, add the table's substantive role for the current claim, such as robustness, variable construction, sample scope, background fact, derivation, or extended result. Do not write empty relevance language such as `therefore it is related to the main text` or `因此与正文有关`.
 
 - Good main-text pointer: `AI适配度前10和后10城市及其人均GDP见在线附录C3。`
 - Bad main-text pointer: `在线附录C3左边列示前十城市，右边列示后十城市，中间分开排版。`
