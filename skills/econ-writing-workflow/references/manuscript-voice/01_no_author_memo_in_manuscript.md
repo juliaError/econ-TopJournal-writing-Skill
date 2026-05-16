@@ -10,6 +10,26 @@ Separate three output channels before writing or revising:
 
 Only `Manuscript Text` may enter the paper. `Author Memo` and `Task Log` belong in the response, task README, revision memo, or author-facing checklist.
 
+## Unclear Manuscript Facts
+
+If a manuscript fact or author choice is unclear, do not fill it in by guessing. Ask the user or mark a concrete `TODO` in an author memo when the uncertainty concerns:
+
+- research question, theory channel, mechanism, or contribution;
+- variable definition, sample construction, estimation choice, identification assumption, or coefficient interpretation;
+- table/figure meaning, main-text versus appendix placement, target-journal requirement, or whether to keep/delete a substantive claim.
+
+Do not turn uncertainty into manuscript prose such as `本文可能`, `可理解为`, `可以认为`, or a confident claim not supported by the provided draft/results.
+
+## Author-Facing Diagnostic Labels
+
+Labels such as `一句话主线`, `主线功能`, `表图对主线的支撑`, `它支撑了主线的哪一环`, `是否需要进入正文`, `是否可移入附录`, `next revision step`, and `argument spine` are diagnostic labels for author memos, review reports, task READMEs, or checklists. They must not appear in manuscript text, table notes, figure notes, appendix notes, or footnotes.
+
+When moving from diagnosis to manuscript prose, replace these labels with the concrete reader-facing object:
+
+- say `表4检验替换核心解释变量口径后，基准结果是否保持稳定`, not `表4支撑主线`;
+- say `该异质性结果表明政策效应主要集中在高司法保护地区`, not `该结果服务于论文主线`;
+- say `附录C报告替换样本门槛后的估计结果`, not `该表可移入附录`.
+
 ## Paragraph-Level Linter
 
 Run this linter after each paragraph or note, not only at the end:
@@ -18,8 +38,9 @@ Run this linter after each paragraph or note, not only at the end:
 2. Or is it explaining what the author/agent chose to do, why something was moved, why a draft is shaped a certain way, or how to satisfy a call for papers?
 3. Would the sentence still make sense if read by an anonymous referee with no access to the author-agent conversation?
 4. Does the sentence mention drafting, writing strategy, submission positioning, appendix management, deleted material, or future author work?
+5. Does the sentence contain an author-facing diagnostic label such as `主线功能`, `支撑主线`, `服务主线`, `是否进入正文`, `是否移入附录`, `argument spine`, or `revision step`?
 
-If the answer to 2 or 4 is yes, move it out of the manuscript or rewrite it as reader-facing scope/interpretation.
+If the answer to 2, 4, or 5 is yes, move it out of the manuscript or rewrite it as reader-facing scope/interpretation.
 
 ## Main-Text Pointer Rule
 
@@ -55,6 +76,7 @@ Do not put these in manuscript text, table notes, or figure notes:
 - appendix/workflow movement: `为节省篇幅移入附录`, `这部分放在附录`, `正文不再展开是因为`, `表格已移到附录`, unless rewritten as a reader-facing appendix cross-reference;
 - defensive draft talk: `这一定位并不降低文章价值`, `这样处理更符合投稿要求`, `这不是作者想做的重点`, `本文不打算做`;
 - table/figure workflow: `这一列被删掉`, `这张图换成`, `为了美观调整`, `这里没有展示是因为结果不好`.
+- author-facing diagnostic labels: `主线功能`, `支撑主线`, `服务主线`, `表图对主线的支撑`, `是否需要进入正文`, `是否可移入附录`, `下一步改写顺序`, `argument spine`, `revision step`.
 
 ## Context-Dependent Patterns
 
@@ -80,6 +102,7 @@ Turn author-facing draft talk into reader-facing economics prose:
 Before finalizing manuscript text, scan for:
 
 - `写法`, `定位`, `包装`, `专题`, `征稿`, `篇幅`, `移入附录`, `放入附录`, `不再赘述`, `暂不展开`, `后续补充`, `作者需要`, `TODO`, `修改`, `删除`, `保留`;
+- author-facing diagnostics: `主线功能`, `支撑主线`, `服务主线`, `表图对主线的支撑`, `是否需要进入正文`, `是否可移入附录`, `下一步改写顺序`, `argument spine`, `revision step`;
 - pointer leakage in sentences containing `见附录`, `见在线附录`, `见表`, `见图`, `报告于`, `列示于`, `参见`, `see Appendix`, `see Table`, or `see Figure`: layout language such as `分栏`, `左半部分`, `右半部分`, `左边`, `右边`, `列宽`, `跨页`, `续表`, `表头复写`, `中间分开`, `排版`, `split columns`, `left panel`, `right panel`, `page break`, `continued table`, `repeated header`; or empty relevance language such as `与正文有关`, `和正文有关`, `与正文相关`, `related to the main text`, `relevant to the current text`;
 - English equivalents: `to satisfy the call`, `for the special issue`, `we do not discuss here`, `for space`, `moved to the appendix`, `the author should`, `this draft`, `we choose to write`.
 

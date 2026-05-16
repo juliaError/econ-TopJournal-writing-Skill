@@ -30,6 +30,8 @@ Keep the relevant skill active throughout the task unless the user explicitly op
 
 During manuscript drafting or revision, separate paper-facing text from author memos and task logs before writing each paragraph, table note, figure note, appendix note, or footnote. Only reader-facing manuscript text may enter the paper. Author workflow notes, submission-positioning discussion, reasons for moving/deleting material, and author-agent internal decisions must stay in the response, task README, revision memo, or checklist.
 
+When paper facts, variable definitions, sample construction, identification choices, target-journal requirements, table/figure meanings, or the user's intended claim are unclear, ask the user or mark a concrete `TODO`. Do not guess, invent, silently choose among substantive alternatives, or write around the uncertainty as if it were known.
+
 When producing tables, figures, maps, or edited images, verify the final rendered artifact itself before treating the task as complete. Check that text, legends, colorbars, inset maps, axes, notes, and substantive visual content do not overlap, obscure, or cover useful information.
 ```
 
@@ -91,6 +93,7 @@ After a specialized skill settles its part, return to this workflow to integrate
 - Do not rewrite tables or figures as prose problems. Table selection, sample comparability, notes, and visual design are part of the research presentation.
 - Do not put author workflow notes in paper-facing text, table notes, or figure notes.
 - Before delivering or inserting manuscript text, classify each sentence as paper-facing text, author memo, or task log. Only paper-facing text may enter the manuscript.
+- If the manuscript context is unclear on research question, variables, sample, identification, table/figure meaning, target journal, or whether the author wants to keep/delete a substantive claim, ask the user or leave a concrete `TODO`; do not guess.
 - When writing main-text pointers to appendices, tables, figures, or online appendices, keep them as pure pointers: state what to see and where to see it; only when needed, name the substantive role for the current claim, such as robustness, variable construction, sample scope, background fact, or extended result. Do not write meta-language such as `this is related to the main text` or `因此与正文有关`. Do not include layout or production language such as split columns, left/right halves, column width, page breaks, continued tables, repeated headers, or appendix-table formatting in the main text; put necessary reading guidance in the appendix text, table title, or note.
 - Do not merge all specialized rules into the response. Load only the relevant child skill or reference files needed for the task.
 - Preserve the user's language target: English manuscript tasks should output English unless asked otherwise; Chinese top-journal tasks should output Chinese unless asked otherwise.
