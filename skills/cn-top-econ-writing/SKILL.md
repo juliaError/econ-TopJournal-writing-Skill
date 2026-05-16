@@ -27,6 +27,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 
 若本 skill 在多步骤论文写作、期刊体例调整或投稿前检查任务中被直接触发，且项目级 `AGENTS.md` 或 `CLAUDE.md` 尚无 economics-writing skill routing 规则，应提示用户可通过 `econ-writing-workflow` 添加项目级持久路由；未获明确授权前不得修改这些持久配置文件。
 
+若任务涉及文献定位、理论机制、变量口径、数据来源、识别设定、异质性/稳健性选择、贡献边界或政策含义，先回到 `econ-writing-workflow` 的 `references/literature-grounding/01_literature_and_judgment_grounding.md` 做文献 grounding：检查本地参考文献是否充足，必要时询问用户是否补充或检索；若本文沿用或改造参考文献中的数据、理论、变量、机制、分类或经验设定，写作前必须阅读对应文献内容并尽可能对齐，不得凭空创造新的理论标签、变量解释或判断边界。
+
 ## 总目标
 本 skill 的目标不是“把话写漂亮”，而是把稿件推进到中文顶刊常见的四个门槛之上：
 
@@ -102,6 +104,7 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 
 复核时至少检查以下几点：
 
+- 涉及已有文献中的数据、理论、概念、变量、机制、分类、经验设定或政策判断时，是否已经回读对应文献并与其术语、口径、样本范围和结论强度对齐；若文献缺失或依据不足，是否询问用户或留下具体 `TODO`，而不是自行空想或随意保守/激进。
 - 是否符合中文学术写作要求，而不是停留在“意思差不多”。
 - 是否符合中文语言习惯，避免翻译腔、生硬搭配、悬空指代和不自然的句法。
 - 是否带有作者备忘、工作日志或答辩口吻；若有，应改成论文正文可直接使用的表述。

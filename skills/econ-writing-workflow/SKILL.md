@@ -32,6 +32,8 @@ During manuscript drafting or revision, separate paper-facing text from author m
 
 When paper facts, variable definitions, sample construction, identification choices, target-journal requirements, table/figure meanings, or the user's intended claim are unclear, ask the user or mark a concrete `TODO`. Do not guess, invent, silently choose among substantive alternatives, or write around the uncertainty as if it were known.
 
+Before drafting literature-dependent claims, check whether the project has local reference papers, literature notes, `.bib` files, or source ledgers. Ask whether the literature is sufficient and whether the user wants help finding publicly available papers. If a Chinese or paywalled source cannot be obtained locally, tell the user; continuing is allowed, but affected judgments need concrete TODOs or more user confirmation. When the paper uses literature-based data, theories, variables, mechanisms, or empirical choices, read the relevant source material and align with it instead of inventing a new framing.
+
 When producing tables, figures, maps, or edited images, verify the final rendered artifact itself before treating the task as complete. Check that text, legends, colorbars, inset maps, axes, notes, and substantive visual content do not overlap, obscure, or cover useful information.
 ```
 
@@ -44,27 +46,30 @@ Before writing or editing, classify the request:
 1. **English paper prose**: abstract, introduction, literature review, model/theory prose, empirical/results prose, conclusion, referee response, or English revision.
 2. **English diction cleanup**: remove AI-like prose, translationese, vague contribution language, weak verbs, or template signposting.
 3. **Argument logic**: full-paper logic, argument spine, repeated material, misplaced sections, emphasis, ordering, or whether tables and figures serve the main line.
-4. **Full-paper drafting from a result package**: draft a complete paper from a research question, regression tables, figures, result folders, slides, variable notes, or design notes.
-5. **Chinese top-journal writing**: Chinese paper structure, Chinese abstract, introduction, contribution framing, journal fit, submission style, or top-journal revision.
-6. **Chinese diction cleanup**: remove AI 腔, 翻译腔, 作者备忘腔, unnatural collocations, or stiff Chinese academic prose.
-7. **Journal submission style**: target-journal formatting, submission requirements, anonymous PDF checks, accepted-version Word formatting, title hierarchy, references, JEL codes, appendices, or journal-specific body/appendix placement.
-8. **Tables and figures**: table/figure admission, main-text versus appendix placement, three-line tables, regression/robustness/heterogeneity/mechanism tables, notes, captions, palettes, fonts, or export quality.
-9. **Empirical workflow**: data cleaning, variable construction, sample construction, regression code, estimation, diagnostics, or reproducibility.
+4. **Literature and judgment grounding**: local reference papers, literature search/download decisions, source ledgers, citation grounding, theory/mechanism/variable alignment, contribution boundaries, or literature-based judgment calibration.
+5. **Full-paper drafting from a result package**: draft a complete paper from a research question, regression tables, figures, result folders, slides, variable notes, or design notes.
+6. **Chinese top-journal writing**: Chinese paper structure, Chinese abstract, introduction, contribution framing, journal fit, submission style, or top-journal revision.
+7. **Chinese diction cleanup**: remove AI 腔, 翻译腔, 作者备忘腔, unnatural collocations, or stiff Chinese academic prose.
+8. **Journal submission style**: target-journal formatting, submission requirements, anonymous PDF checks, accepted-version Word formatting, title hierarchy, references, JEL codes, appendices, or journal-specific body/appendix placement.
+9. **Tables and figures**: table/figure admission, main-text versus appendix placement, three-line tables, regression/robustness/heterogeneity/mechanism tables, notes, captions, palettes, fonts, or export quality.
+10. **Empirical workflow**: data cleaning, variable construction, sample construction, regression code, estimation, diagnostics, or reproducibility.
 
 If a request spans more than one category, handle them in this order:
 
 1. empirical workflow and sample/design facts;
-2. table and figure design;
-3. paper structure and section logic;
-4. full-paper drafting plan;
-5. prose and diction cleanup;
-6. final formatting/export checks.
+2. literature and judgment grounding;
+3. table and figure design;
+4. paper structure and section logic;
+5. full-paper drafting plan;
+6. prose and diction cleanup;
+7. final formatting/export checks.
 
 ## Routing
 
 - For English paper prose, use `econ-write`.
 - For English diction cleanup, use `econ-write` and load `references/english-diction/` selectively.
 - For full-paper logic, repeated material, emphasis, section ordering, and argument-spine audits, load `references/argument-logic/` selectively before polishing prose.
+- For literature-dependent drafting, closest-literature positioning, literature search/download decisions, source ledgers, citation grounding, theory/mechanism/variable alignment, or calibration of similar judgments from prior papers, load `references/literature-grounding/01_literature_and_judgment_grounding.md` before drafting the relevant prose.
 - For manuscript-facing versus author-facing voice, internal memo leakage, or requests to remove author workflow notes from paper prose, load `references/manuscript-voice/01_no_author_memo_in_manuscript.md` before finalizing text.
 - For full-paper drafting from research questions, regression tables, figures, or result folders, load `references/full-paper-drafting/` first, then route table/figure decisions to `econ-table-figure-design` and language-specific prose to `econ-write` or `cn-top-econ-writing`.
 - For Chinese top-journal writing, use `cn-top-econ-writing`.
@@ -80,6 +85,7 @@ Do not route only once at the beginning of a long task. At the start of each sub
 Route immediately when these boundaries appear:
 
 - tables, figures, maps, image edits, captions, legends, colorbars, fonts, export quality, or main-text versus appendix placement: use `econ-table-figure-design`;
+- local reference papers, PDFs, `.bib` files, literature search/download, closest-literature positioning, data/theory/variable/mechanism alignment with prior papers, contribution boundaries, or claim-strength calibration: load `references/literature-grounding/01_literature_and_judgment_grounding.md`;
 - target-journal style, anonymous submission, title hierarchy, references, JEL codes, appendices, Word/PDF submission format, or 《经济学（季刊）》 rules: use `cn-top-econ-writing` and its `references/journal-styles/` module;
 - data cleaning, variable construction, regression code, estimation, sample changes, or post-estimation sample audit: pair with `empirical-econ-workflow`;
 - English prose or English diction: use `econ-write`;
@@ -94,6 +100,8 @@ After a specialized skill settles its part, return to this workflow to integrate
 - Do not put author workflow notes in paper-facing text, table notes, or figure notes.
 - Before delivering or inserting manuscript text, classify each sentence as paper-facing text, author memo, or task log. Only paper-facing text may enter the manuscript.
 - If the manuscript context is unclear on research question, variables, sample, identification, table/figure meaning, target journal, or whether the author wants to keep/delete a substantive claim, ask the user or leave a concrete `TODO`; do not guess.
+- Before writing literature-dependent claims, check local literature materials and ask whether they are sufficient when that is unclear. If the user wants help finding literature, only rely on papers that can be inspected or that the user supplies. If important Chinese or paywalled papers are unavailable, say so and mark the affected judgment for user confirmation.
+- When the paper uses or adapts data, theory, concepts, variables, mechanisms, classifications, model objects, controls, fixed effects, heterogeneity dimensions, robustness checks, or policy interpretations from reference papers, inspect the relevant source material first and align terminology, construction, sample scope, and claim strength with those sources. Do not invent a new framing when a local reference already provides the relevant concept or boundary.
 - When writing main-text pointers to appendices, tables, figures, or online appendices, keep them as pure pointers: state what to see and where to see it; only when needed, name the substantive role for the current claim, such as robustness, variable construction, sample scope, background fact, or extended result. Do not write meta-language such as `this is related to the main text` or `因此与正文有关`. Do not include layout or production language such as split columns, left/right halves, column width, page breaks, continued tables, repeated headers, or appendix-table formatting in the main text; put necessary reading guidance in the appendix text, table title, or note.
 - Do not merge all specialized rules into the response. Load only the relevant child skill or reference files needed for the task.
 - Preserve the user's language target: English manuscript tasks should output English unless asked otherwise; Chinese top-journal tasks should output Chinese unless asked otherwise.
@@ -120,6 +128,12 @@ Load only the relevant files:
 - `references/full-paper-drafting/04_missing_information_policy.md`: anti-fabrication rules and `TODO` format.
 - `references/full-paper-drafting/05_full_draft_workflow.md`: full result-package-to-paper workflow.
 
+## Literature-Grounding References
+
+Load before drafting or revising literature-dependent sections or judgments:
+
+- `references/literature-grounding/01_literature_and_judgment_grounding.md`: checks local references, asks whether literature is sufficient, builds source and judgment ledgers, aligns reused data/theory/variables/mechanisms with sources, and audits claim strength.
+
 ## Manuscript-Voice References
 
 Load when drafting, revising, polishing, or auditing prose that will enter the manuscript:
@@ -133,6 +147,7 @@ Before finalizing a response, confirm that:
 - the routed skill still matches the current subtask, not just the original request;
 - any table/figure decision has main-text versus appendix placement;
 - any empirical claim is grounded in provided or inspected evidence;
+- any literature-dependent claim, theory, mechanism, variable, data source, empirical choice, contribution boundary, or policy implication is grounded in inspected local sources or marked with a concrete `TODO`;
 - any full-draft output has an input audit, argument spine, table/figure placement plan, and unresolved `TODO` list when needed;
 - any prose revision removes vague, inflated, AI-like, or translation-like wording;
 - no paper-facing paragraph, table note, or figure note contains author-facing workflow notes, draft-management explanations, or internal discussion with the author;

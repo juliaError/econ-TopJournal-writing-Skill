@@ -6,13 +6,14 @@ Use this file when the user asks for a complete paper draft from a result packag
 
 1. **Ethical check**: confirm the request is for the user's own legitimate research, teaching, revision, or noncommercial academic support.
 2. **Input audit**: apply `01_input_checklist.md` and assign green, yellow, or red draftability.
-3. **Evidence ledger**: apply `02_from_results_to_outline.md` to summarize tables and figures without overstating them.
-4. **Table and figure design**: use `econ-table-figure-design` for main-text placement, appendix placement, notes, captions, and visual consistency.
-5. **Argument spine**: use `references/argument-logic/` to remove repeated material and order the paper around the central chain.
-6. **Section drafting**: apply `03_section_drafting_order.md` and route prose through the relevant English or Chinese writing skill.
-7. **Missing information pass**: apply `04_missing_information_policy.md` and replace unsupported claims with concrete `TODO` markers.
-8. **Diction and linter pass**: use the relevant English or Chinese diction module to remove AI-like prose, translationese, inflated contribution language, and author-memo language.
-9. **Final package**: return the draft, a table/figure placement plan, and a `TODO` list.
+3. **Literature grounding**: apply `references/literature-grounding/01_literature_and_judgment_grounding.md` when local reference papers, literature positioning, theory, mechanisms, variables, data sources, or contribution boundaries affect the draft. Ask whether the literature is sufficient; if sources are missing, mark the affected judgments with concrete TODOs.
+4. **Evidence ledger**: apply `02_from_results_to_outline.md` to summarize tables and figures without overstating them.
+5. **Table and figure design**: use `econ-table-figure-design` for main-text placement, appendix placement, notes, captions, and visual consistency.
+6. **Argument spine**: use `references/argument-logic/` to remove repeated material and order the paper around the central chain.
+7. **Section drafting**: apply `03_section_drafting_order.md` and route prose through the relevant English or Chinese writing skill.
+8. **Missing information pass**: apply `04_missing_information_policy.md` and replace unsupported claims with concrete `TODO` markers.
+9. **Diction and linter pass**: use the relevant English or Chinese diction module to remove AI-like prose, translationese, inflated contribution language, and author-memo language.
+10. **Final package**: return the draft, a table/figure placement plan, and a `TODO` list.
 
 ## One-Sentence Prompt Handling
 
@@ -24,11 +25,12 @@ For full draft tasks, return:
 
 ```text
 1. Input audit
-2. Argument spine
-3. Table and figure placement plan
-4. Full draft or section draft
-5. TODO list
-6. Verification notes
+2. Literature/source grounding note
+3. Argument spine
+4. Table and figure placement plan
+5. Full draft or section draft
+6. TODO list
+7. Verification notes
 ```
 
 The draft may be incomplete, but it must be honest: no fabricated data, citations, estimates, or mechanisms.
@@ -39,6 +41,7 @@ A successful full draft:
 
 - reads as a paper, not as a work log;
 - keeps the central question visible throughout;
+- aligns literature-based data, theory, variables, mechanisms, specifications, and claim strength with inspected sources;
 - discusses only results supported by the provided tables, figures, or notes;
 - marks missing facts with precise `TODO` items;
 - separates main findings from robustness, heterogeneity, and mechanism evidence;

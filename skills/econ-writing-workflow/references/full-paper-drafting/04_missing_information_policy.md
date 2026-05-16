@@ -7,6 +7,7 @@ Use this file whenever a full draft request lacks information needed for credibl
 Do not invent:
 
 - citations, author names, journal names, or literature claims;
+- literature-based data, theory, variable, mechanism, classification, specification, or policy judgments that have not been inspected in the relevant source or confirmed by the user;
 - data sources, sample windows, sample restrictions, or observation counts;
 - variable definitions, transformations, or units;
 - identifying assumptions, instruments, discontinuities, shocks, or treatment timing;
@@ -24,6 +25,7 @@ TODO[data]: Add the sample window and unit of observation.
 TODO[variable]: Define the treatment variable and its unit.
 TODO[result]: Insert the coefficient, standard error, and economic magnitude from Table X.
 TODO[literature]: Add verified citations for the closest papers on this mechanism.
+TODO[judgment]: Confirm whether reference papers support using X as the mechanism/variable/specification.
 TODO[identification]: State the identifying assumption and the main threat.
 ```
 

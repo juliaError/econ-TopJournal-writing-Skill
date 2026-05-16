@@ -37,6 +37,8 @@ For table and figure tasks, use the separate `econ-table-figure-design` skill be
 
 For any manuscript-facing prose, do not include author workflow notes, draft-management explanations, submission-strategy discussion, or internal author-agent memo language. If a sentence explains why the author/agent moved, deleted, shortened, or framed something, keep it in an author memo rather than the paper.
 
+When drafting or revising literature-dependent prose, do not invent citations or reason from generic field memory. If the task depends on closest literature, theory, mechanisms, data sources, variable definitions, empirical specifications, contribution boundaries, or policy implications, route through `econ-writing-workflow` and its `references/literature-grounding/01_literature_and_judgment_grounding.md` module before writing. When the paper uses or adapts data, theory, variables, mechanisms, classifications, or empirical choices from reference papers, inspect the relevant source material and align terminology, construction, scope, and claim strength with those sources.
+
 ---
 
 # CORE PRINCIPLES
