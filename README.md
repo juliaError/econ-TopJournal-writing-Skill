@@ -12,9 +12,9 @@ It uses a modular structure: ordinary users can start from the main workflow ski
 
 它采用模块化结构：普通用户可以从总入口 workflow skill 开始，高级用户也可以直接调用专业子 skill。
 
-Important notes: AI writing can only assist the research and drafting process; the key academic judgments still depend on human researchers. This is not defensive disclaimer padding; it is a genuine lesson from using these workflows. For serious writing and revision tasks, use the latest and strongest available models when possible, such as GPT-5.5 or Claude 4.6. DeepSeek may be useful for Chinese prose polishing, but it still has limitations in figure and table production.
+Important notes: AI writing can only assist the research and drafting process; the key academic judgments still depend on human researchers. This really is not a defensive disclaimer; AI is simply not perfect yet. For serious writing and revision tasks, use the latest and strongest available models when possible, such as GPT-5.5 or Claude 4.6. DeepSeek may be useful for Chinese prose polishing, but it still has limitations in figure and table production.
 
-注意事项：AI 写作只能辅助研究和成文过程，关键学术判断依然离不开人类研究者。这不是叠甲，而是使用后的真实感受。进行重要写作和修改任务时，建议尽可能使用当时最新、最强的模型，例如 GPT-5.5 或 Claude 4.6；中文润色也可以使用 DeepSeek，但其在作图和制表方面仍有一定不足。
+注意事项：AI 写作只能辅助研究和成文过程，关键学术判断依然离不开人类研究者。这真的不是叠甲，而是 AI 现在确实还达不到完美。进行重要写作和修改任务时，建议尽可能使用当时最新、最强的模型，例如 GPT-5.5 或 Claude 4.6；中文润色也可以使用 DeepSeek，但其在作图和制表方面仍有一定不足。
 
 ## What Is Inside / 仓库内容 🧭
 
