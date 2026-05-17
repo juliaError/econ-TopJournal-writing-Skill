@@ -29,6 +29,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 
 若任务涉及文献定位、理论机制、变量口径、数据来源、识别设定、异质性/稳健性选择、贡献边界或政策含义，先回到 `econ-writing-workflow` 的 `references/literature-grounding/01_literature_and_judgment_grounding.md` 做文献 grounding：检查本地参考文献是否充足，必要时询问用户是否补充或检索；若本文沿用或改造参考文献中的数据、理论、变量、机制、分类或经验设定，写作前必须阅读对应文献内容并尽可能对齐，不得凭空创造新的理论标签、变量解释或判断边界。
 
+若任务涉及基准回归、机制、异质性、稳健性、摘要、引言或结论中的结果量级解释，先回到 `econ-writing-workflow` 的 `references/regression-results/01_economic_magnitude_interpretation.md` 选择合适的经济量级基准。中文正文优先使用自然单位、政策幅度、百分点、百分比转换、边际效应或净效应；均值、标准差和分位差只在适合变量口径和识别来源时使用。
+
 ## 总目标
 本 skill 的目标不是“把话写漂亮”，而是把稿件推进到中文顶刊常见的四个门槛之上：
 
@@ -598,6 +600,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
   - 下标若为索引（如 `i`、`j`、`f`、`t`）用斜体，若为说明性文字（如 `pre`、`inside`、`post`）优先用正体；
   - 在 Word/Docx 中，若行内长变量名导致两端对齐拉散、下标错乱或阅读困难，应改写句子或转为独立公式，而不是牺牲排版一致性。
 - 正文解释不能只读显著性；默认补经济量级、比例/半弹性/概率含义，并说明模型口径。
+- 经济量级解释至少选择一个适合研究问题的基准，不机械堆叠均值、标准差和分位差；若缺少均值、标准差、分位点或政策幅度，必须计算、询问用户或留下具体 `TODO`，不得自行编造。
+- 涉及交互项、异质性、非线性模型或概率模型时，正文应写有意义取值或分组下的净效应/边际效应，而不是只读主项和交互项符号。
 - 事件研究默认写成“动态补充”还是“主识别证据”，必须克制且与图形质量一致。
 
 ### 6. Word/PDF 成稿链要一起管

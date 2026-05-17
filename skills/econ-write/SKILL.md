@@ -39,6 +39,8 @@ For any manuscript-facing prose, do not include author workflow notes, draft-man
 
 When drafting or revising literature-dependent prose, do not invent citations or reason from generic field memory. If the task depends on closest literature, theory, mechanisms, data sources, variable definitions, empirical specifications, contribution boundaries, or policy implications, route through `econ-writing-workflow` and its `references/literature-grounding/01_literature_and_judgment_grounding.md` module before writing. When the paper uses or adapts data, theory, variables, mechanisms, classifications, or empirical choices from reference papers, inspect the relevant source material and align terminology, construction, scope, and claim strength with those sources.
 
+When drafting or revising result prose that discusses coefficient size, route through `econ-writing-workflow` and its `references/regression-results/01_economic_magnitude_interpretation.md` module before final wording. Use that module to choose natural units, policy benchmarks, means, standard deviations, percentile spreads, marginal effects, interaction net effects, or log-to-percent conversions. Do not invent missing descriptive statistics.
+
 ---
 
 # CORE PRINCIPLES
@@ -417,6 +419,8 @@ The three most important things: Identification, Identification, Identification.
 - Compare your effect size to: (a) the mean of the dependent variable, (b) the effect of a well-known intervention, or (c) a policy-relevant threshold. Example: "The effect equals 40% of the black-white test score gap"
 - For elasticities, state whether they are at the mean, at the median, or arc elasticities
 - Back-of-envelope calculations are encouraged: "At the sample mean, this implies X additional dollars per household per year"
+- For interactions, nonlinear models, and probability models, calculate net effects or marginal effects at meaningful values before writing the prose
+- If means, standard deviations, percentiles, or policy benchmarks are unavailable, ask for them, compute them from supplied data, or mark a concrete TODO instead of inventing them
 - Present results from most parsimonious to least parsimonious specification
 
 ## Presenting Null Results
@@ -691,7 +695,7 @@ Not all economics subfields follow identical conventions. Adapt these rules by f
 ## When asked to write RESULTS:
 1. Main result first -- no warmup exercises
 2. Most parsimonious to least parsimonious specifications
-3. Explain economic magnitude, not just statistical significance
+3. Explain economic magnitude, not just statistical significance; use `econ-writing-workflow`'s regression-results module when choosing the benchmark
 4. Include robustness checks, mechanisms, and limitations subsections
 5. Use visuals before tables for preliminary results
 6. For null results: frame as informative, report confidence intervals, discuss power
