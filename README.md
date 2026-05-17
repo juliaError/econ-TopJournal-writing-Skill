@@ -194,6 +194,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ### English
 
+- **2026-05-17 update**:
+  1. Added a shared `regression-results` reference module for economic magnitude interpretation in both English and Chinese writing.
+  2. `econ-writing-workflow` now routes main regression results, coefficient interpretation, marginal effects, interaction net effects, log-to-percent conversions, and mean/standard-deviation/percentile or policy-benchmark comparisons to this module.
+  3. `econ-write` and `cn-top-econ-writing` now require important result prose to translate coefficients into an appropriate economic magnitude benchmark, while avoiding invented descriptive statistics or mechanical mean/SD/percentile checklists.
 - **2026-05-16 update**:
   1. Added manuscript-safety guardrails that keep author-facing diagnostic labels out of paper prose, table notes, figure notes, appendix notes, and footnotes. When paper facts, variable definitions, samples, identification choices, table/figure meanings, target-journal requirements, or substantive keep/delete decisions are unclear, agents must ask the user or leave a concrete `TODO` instead of guessing.
   2. `econ-writing-workflow` now includes active mid-task routing, so long workflows re-check whether the current phase should use `econ-table-figure-design`, `cn-top-econ-writing`, `econ-write`, or `empirical-econ-workflow`.
@@ -218,6 +222,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ### 中文
 
+- **2026-05-17 更新**：
+  1. 新增中英文共用的 `regression-results` 参考模块，用于回归结果经济量级解释。
+  2. `econ-writing-workflow` 现在会把主回归结果、系数解释、边际效应、交互项净效应、对数到百分比转换，以及均值、标准差、分位差或政策幅度比较路由到该模块。
+  3. `econ-write` 和 `cn-top-econ-writing` 现在要求重要结果段将系数转译为合适的经济量级基准，同时避免编造描述统计或机械堆叠均值/标准差/分位差清单。
 - **2026-05-16 更新**：
   1. 新增稿件安全护栏：作者诊断标签（如“主线功能”“支撑主线”“是否进入正文”）不得进入正文、表注、图注、附录说明或脚注；当研究事实、变量口径、样本构造、识别设定、表图含义、目标期刊要求或实质取舍不清楚时，agent 必须询问用户或留下具体 `TODO`，不能自行猜测。
   2. `econ-writing-workflow` 已新增任务过程中的主动重路由规则，长任务中会反复检查当前阶段是否应切换到 `econ-table-figure-design`、`cn-top-econ-writing`、`econ-write` 或 `empirical-econ-workflow`。
