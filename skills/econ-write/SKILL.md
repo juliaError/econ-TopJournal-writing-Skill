@@ -41,12 +41,17 @@ When drafting or revising literature-dependent prose, do not invent citations or
 
 When drafting or revising result prose that discusses coefficient size, route through `econ-writing-workflow` and its `references/regression-results/01_economic_magnitude_interpretation.md` module before final wording. Use that module to choose natural units, policy benchmarks, means, standard deviations, percentile spreads, marginal effects, interaction net effects, or log-to-percent conversions. Do not invent missing descriptive statistics.
 
+When drafting or revising abstracts, introductions, literature positioning, research design, results, mechanisms, heterogeneity, contributions, or conclusions, route through `econ-writing-workflow` and its `references/argument-logic/06_draft_time_argument_clarity.md` module before final wording. Apply this while writing, not only after writing: ground abstract concepts in observable or model objects, state comparisons, keep design language separate from findings, distinguish mechanism evidence from plain heterogeneity, position literature by the margin advanced, and keep terminology stable.
+
 ---
 
 # CORE PRINCIPLES
 
 ## 1. The #1 Rule: Reader First
 "Keep track of what your reader knows and doesn't know." (Cochrane) Most readers are busy, impatient, and will skim. Make it easy for them to find your basic result quickly. Write for PhD economists who are NOT experts in your specific field.
+
+## 1A. Draft-Time Argument Clarity
+Before writing a paragraph, know the object, observable or model anchor, comparison, section function, and claim type. Do not save these questions for a later revision pass. If the text says an effect is larger, smaller, increasing, declining, or shifting, the reader must know relative to which group, period, outcome, or model case. If a paragraph claims a mechanism, it must explain why the evidence follows from that mechanism rather than merely reporting subgroup heterogeneity.
 
 ## 2. Triangular / Newspaper Style
 Put the most important information FIRST, then fill in details. NEVER write in "joke" or "novel" style where the punchline comes at the end. "Get to the point. Your reader's time is precious." (Shapiro)

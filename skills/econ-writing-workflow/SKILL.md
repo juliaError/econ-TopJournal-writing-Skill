@@ -32,6 +32,8 @@ During manuscript drafting or revision, separate paper-facing text from author m
 
 When paper facts, variable definitions, sample construction, identification choices, target-journal requirements, table/figure meanings, or the user's intended claim are unclear, ask the user or mark a concrete `TODO`. Do not guess, invent, silently choose among substantive alternatives, or write around the uncertainty as if it were known.
 
+Before drafting each paper-facing paragraph, apply draft-time argument clarity: ground abstract concepts in observable/model objects, state the comparison for relative or causal claims, keep design language separate from findings, distinguish mechanisms from plain heterogeneity, position close literature by the margin advanced, and keep terminology stable.
+
 Before drafting literature-dependent claims, check whether the project has local reference papers, literature notes, `.bib` files, or source ledgers. Ask whether the literature is sufficient and whether the user wants help finding publicly available papers. If a Chinese or paywalled source cannot be obtained locally, tell the user; continuing is allowed, but affected judgments need concrete TODOs or more user confirmation. When the paper uses literature-based data, theories, variables, mechanisms, or empirical choices, read the relevant source material and align with it instead of inventing a new framing.
 
 When writing regression results, main findings, mechanisms, heterogeneity, robustness, abstracts, introductions, or conclusions that mention coefficient size, translate estimates into economic magnitude using at least one appropriate benchmark. Prefer natural units or real policy changes when available; use means, standard deviations, or percentile spreads only when they fit the variable and identification source. Never invent descriptive statistics.
@@ -47,7 +49,7 @@ Before writing or editing, classify the request:
 
 1. **English paper prose**: abstract, introduction, literature review, model/theory prose, empirical/results prose, conclusion, referee response, or English revision.
 2. **English diction cleanup**: remove AI-like prose, translationese, vague contribution language, weak verbs, or template signposting.
-3. **Argument logic**: full-paper logic, argument spine, repeated material, misplaced sections, emphasis, ordering, or whether tables and figures serve the main line.
+3. **Argument logic and draft-time clarity**: full-paper logic, argument spine, paragraph-level clarity, concept grounding, comparison clarity, design/results separation, mechanism-versus-heterogeneity, contribution positioning, repeated material, misplaced sections, emphasis, ordering, or whether tables and figures serve the main line.
 4. **Regression results and economic magnitude**: main regression interpretation, coefficient size, economic magnitude, marginal effects, interaction net effects, or result prose that needs means, standard deviations, percentiles, policy benchmarks, or log-to-percent conversions.
 5. **Literature and judgment grounding**: local reference papers, literature search/download decisions, source ledgers, citation grounding, theory/mechanism/variable alignment, contribution boundaries, or literature-based judgment calibration.
 6. **Full-paper drafting from a result package**: draft a complete paper from a research question, regression tables, figures, result folders, slides, variable notes, or design notes.
@@ -71,7 +73,7 @@ If a request spans more than one category, handle them in this order:
 
 - For English paper prose, use `econ-write`.
 - For English diction cleanup, use `econ-write` and load `references/english-diction/` selectively.
-- For full-paper logic, repeated material, emphasis, section ordering, and argument-spine audits, load `references/argument-logic/` selectively before polishing prose.
+- For full-paper logic, repeated material, emphasis, section ordering, and argument-spine audits, load `references/argument-logic/` selectively before polishing prose. Before drafting or revising abstracts, introductions, literature positioning, design, results, mechanisms, heterogeneity, contributions, or conclusions, load `references/argument-logic/06_draft_time_argument_clarity.md` so clarity is handled during generation, not only in the final audit.
 - For regression results, main findings, economic magnitude, coefficient interpretation, marginal effects, interaction net effects, log-to-percent conversions, or benchmark choices using means, standard deviations, percentiles, policy changes, or natural units, load `references/regression-results/01_economic_magnitude_interpretation.md` before drafting the relevant prose.
 - For literature-dependent drafting, closest-literature positioning, literature search/download decisions, source ledgers, citation grounding, theory/mechanism/variable alignment, or calibration of similar judgments from prior papers, load `references/literature-grounding/01_literature_and_judgment_grounding.md` before drafting the relevant prose.
 - For manuscript-facing versus author-facing voice, internal memo leakage, or requests to remove author workflow notes from paper prose, load `references/manuscript-voice/01_no_author_memo_in_manuscript.md` before finalizing text.
@@ -89,6 +91,7 @@ Do not route only once at the beginning of a long task. At the start of each sub
 Route immediately when these boundaries appear:
 
 - tables, figures, maps, image edits, captions, legends, colorbars, fonts, export quality, or main-text versus appendix placement: use `econ-table-figure-design`;
+- abstracts, introductions, literature positioning, research design, results, mechanisms, heterogeneity, contributions, or conclusions where the wording depends on observable objects, comparison groups, design/results separation, mechanism evidence, contribution margins, or terminology stability: load `references/argument-logic/06_draft_time_argument_clarity.md`;
 - main regression results, mechanism or heterogeneity estimates, coefficient size, economic magnitude, marginal effects, interaction net effects, log-to-percent conversions, mean/SD/percentile comparisons, or policy benchmark interpretation: load `references/regression-results/01_economic_magnitude_interpretation.md`;
 - local reference papers, PDFs, `.bib` files, literature search/download, closest-literature positioning, data/theory/variable/mechanism alignment with prior papers, contribution boundaries, or claim-strength calibration: load `references/literature-grounding/01_literature_and_judgment_grounding.md`;
 - target-journal style, anonymous submission, title hierarchy, references, JEL codes, appendices, Word/PDF submission format, or 《经济学（季刊）》 rules: use `cn-top-econ-writing` and its `references/journal-styles/` module;
@@ -101,6 +104,7 @@ After a specialized skill settles its part, return to this workflow to integrate
 ## Operating Rules
 
 - Read available manuscript context before giving paper-level prose advice. If only an excerpt is available, state that the advice is excerpt-level.
+- Before drafting each paper-facing paragraph, apply the draft-time clarity gate: identify the object, observable or model anchor, claim type, comparison, and section function. If a needed object, comparison, timing, result variable, mechanism link, or literature margin is unclear, ask the user or leave a concrete `TODO` rather than smoothing over the gap.
 - Do not rewrite tables or figures as prose problems. Table selection, sample comparability, notes, and visual design are part of the research presentation.
 - Do not put author workflow notes in paper-facing text, table notes, or figure notes.
 - Before delivering or inserting manuscript text, classify each sentence as paper-facing text, author memo, or task log. Only paper-facing text may enter the manuscript.
@@ -123,6 +127,7 @@ Load only the relevant files:
 - `references/argument-logic/03_emphasis_and_ordering.md`: what to foreground, delay, or de-emphasize.
 - `references/argument-logic/04_table_figure_logic.md`: whether tables and figures serve the main line.
 - `references/argument-logic/05_revision_workflow.md`: full-paper logic revision workflow.
+- `references/argument-logic/06_draft_time_argument_clarity.md`: draft-time concept grounding, comparison clarity, design/results separation, mechanism-versus-heterogeneity, literature-margin positioning, and terminology stability.
 
 ## Full-Paper Drafting References
 
@@ -163,5 +168,6 @@ Before finalizing a response, confirm that:
 - any literature-dependent claim, theory, mechanism, variable, data source, empirical choice, contribution boundary, or policy implication is grounded in inspected local sources or marked with a concrete `TODO`;
 - any full-draft output has an input audit, argument spine, table/figure placement plan, and unresolved `TODO` list when needed;
 - any prose revision removes vague, inflated, AI-like, or translation-like wording;
+- any drafted or revised paragraph grounds abstract concepts, states needed comparisons, keeps design separate from findings, explains mechanism links rather than relabeling heterogeneity, and uses stable terminology;
 - no paper-facing paragraph, table note, or figure note contains author-facing workflow notes, draft-management explanations, or internal discussion with the author;
 - any remaining uncertainty is stated as a concrete limitation or next step.

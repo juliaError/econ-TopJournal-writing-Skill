@@ -31,6 +31,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 
 若任务涉及基准回归、机制、异质性、稳健性、摘要、引言或结论中的结果量级解释，先回到 `econ-writing-workflow` 的 `references/regression-results/01_economic_magnitude_interpretation.md` 选择合适的经济量级基准。中文正文优先使用自然单位、政策幅度、百分点、百分比转换、边际效应或净效应；均值、标准差和分位差只在适合变量口径和识别来源时使用。
 
+若任务涉及摘要、引言、文献定位、研究设计、主结果、机制、异质性、贡献或结论写作，先回到 `econ-writing-workflow` 的 `references/argument-logic/06_draft_time_argument_clarity.md` 执行写作时论证清晰度规则：抽象概念要落到可观测对象或模型对象，相对变化要写清比较对象，方法段只写检验什么而不提前写发现，机制证据不能只是普通异质性，文献定位要承认相近并划清差异边际，同一对象术语保持稳定。该规则在动笔时执行，投稿前复核只是兜底。
+
 ## 总目标
 本 skill 的目标不是“把话写漂亮”，而是把稿件推进到中文顶刊常见的四个门槛之上：
 
@@ -71,6 +73,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 5. 相对已有文献，增量是什么
 
 任何段落若不能服务这条主线，应被压缩、移动到附录，或删除。
+
+写每个正文段落前，先执行中英文共用的 draft-time argument clarity 检查：本段的经济对象是什么、可观测对象是什么、比较对象是谁、时间变化是什么、结果变量是什么、段落功能是什么。若这些信息在稿件中缺失，先问用户或留具体 `TODO`，不得用顺滑措辞把缺口盖过去。
 
 ### Step 3. 先写主结果，再扩展
 写作优先级必须是：
@@ -117,6 +121,8 @@ description: Use when drafting, auditing, restructuring, polishing, or adapting 
 
 ## 中文论证逻辑模块
 当用户要求理顺全文逻辑、重构摘要/引言、压缩全文、突出贡献、保护第二贡献、改主回归解释、安排理论/机制/异质性/稳健性，或判断表图是否服务主线时，先读取 `references/argument-logic/`，再进入中文遣词造句模块。
+
+若任务是生成或改写正文段落，而不仅是终审检查，同时读取 `econ-writing-workflow` 的 `references/argument-logic/06_draft_time_argument_clarity.md`。它是中英文共用底层规则，本 skill 只在此基础上叠加中文顶刊的表达、篇幅和期刊体例要求。
 
 - `01_argument_spine_cn.md`：检查全文“研究问题—机制—识别/论证—结果—贡献—边界”主线。
 - `02_contribution_structure_cn.md`：诊断主贡献、次贡献、机制贡献、数据/识别贡献，并在压缩时保护关键贡献。
