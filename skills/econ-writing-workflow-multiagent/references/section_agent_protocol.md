@@ -19,6 +19,8 @@ Before assigning section agents, the controller must settle:
 
 Then create a section map. No section agent should draft before receiving its section card.
 
+If a section needs table/figure, argument-logic, literature, diction, or empirical review, use `cross_agent_collaboration_protocol.md`. Section agents should request functional review through the controller rather than contacting functional agents directly.
+
 ## Section Card
 
 ```text
@@ -37,6 +39,8 @@ handoff_to_next_section:
 child_skill_to_use:
 open_todos:
 ```
+
+If cross-agent review changes evidence placement, contribution framing, claim strength, or empirical facts, the controller must update the section card before the section agent revises.
 
 ## Section Agents
 

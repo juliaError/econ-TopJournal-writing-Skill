@@ -38,6 +38,8 @@ Decide:
 - table/figure notes and captions;
 - whether any item is confusing, redundant, or unsupported.
 
+This is the first table/figure pass. Later section agents may request targeted table/figure review through `cross_agent_collaboration_protocol.md` if their section claim needs more specific evidence placement or note/caption decisions.
+
 ### Step 4. Argument Spine
 
 Use the argument logic role to produce:
@@ -52,6 +54,8 @@ Use the argument logic role to produce:
 ### Step 5. Section Drafting
 
 Before drafting, load `section_agent_protocol.md` and have the controller create a section map. Each section agent must receive a section card before writing.
+
+When a section agent identifies a missing table/figure, argument-logic, literature, diction, or empirical decision, pause drafting and use `cross_agent_collaboration_protocol.md`. The controller updates the section card before the section agent continues.
 
 Draft in this order:
 

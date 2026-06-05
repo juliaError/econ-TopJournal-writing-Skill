@@ -62,6 +62,34 @@ Risks or ambiguity:
 Follow-up needed:
 ```
 
+## Section-To-Functional Handoff
+
+Use this when a section agent needs a functional agent review.
+
+```text
+Requesting section:
+Section claim:
+Functional role needed:
+Question:
+Evidence or text to review:
+Decision needed:
+Current section card fields:
+```
+
+## Functional-To-Section Return
+
+Use this when a functional agent returns a bounded decision.
+
+```text
+Functional role:
+Inputs read:
+Answer:
+Recommended section card update:
+Recommended paper_state update:
+Risks:
+Needs user confirmation:
+```
+
 ## Conflict Handoff
 
 Use this when roles disagree.
