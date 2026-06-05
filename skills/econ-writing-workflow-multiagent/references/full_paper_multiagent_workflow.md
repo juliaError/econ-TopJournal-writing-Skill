@@ -51,6 +51,8 @@ Use the argument logic role to produce:
 
 ### Step 5. Section Drafting
 
+Before drafting, load `section_agent_protocol.md` and have the controller create a section map. Each section agent must receive a section card before writing.
+
 Draft in this order:
 
 1. results and table/figure narration;
@@ -62,6 +64,8 @@ Draft in this order:
 7. conclusion.
 
 Route English prose to `econ-write`; route Chinese prose to `cn-top-econ-writing`.
+
+After each section agent returns, the controller checks whether the section claim still follows the paper spine before sending the text to diction or final consistency.
 
 ### Step 6. Diction And Linter
 

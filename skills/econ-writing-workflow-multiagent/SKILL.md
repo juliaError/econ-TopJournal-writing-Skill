@@ -60,6 +60,7 @@ Load the relevant reference file before starting each phase:
 - For structured delegation and return formats, load `references/handoff_templates.md`.
 - For deciding whether to split work, load `references/context_budget_rules.md`.
 - For merging outputs and resolving disagreements, load `references/integration_and_conflict_resolution.md`.
+- For controller-led section agents, section cards, and section-level integration, load `references/section_agent_protocol.md`.
 - For complete result-package-to-paper workflows, load `references/full_paper_multiagent_workflow.md`.
 
 Then route substantive work to child skills:
@@ -79,11 +80,12 @@ For complex paper tasks, proceed in this order:
 1. Classify the request and decide whether multi-agent coordination is justified.
 2. Build or update `paper_state`.
 3. Audit inputs and mark missing facts as `TODO`.
-4. Assign narrow roles or staged passes using the handoff template.
-5. Route each substantive pass to the relevant child skill.
-6. Integrate outputs against `paper_state`, not against memory.
-7. Run conflict checks, drop checks, and final consistency checks.
-8. Return a concise result plus unresolved `TODO` items.
+4. Settle the paper spine and create section cards when section-level work is needed.
+5. Assign narrow roles or staged passes using the handoff template.
+6. Route each substantive pass to the relevant child skill.
+7. Integrate outputs against `paper_state`, not against memory.
+8. Run conflict checks, drop checks, and final consistency checks.
+9. Return a concise result plus unresolved `TODO` items.
 
 ## Output Check
 
@@ -91,6 +93,7 @@ Before finalizing, confirm:
 
 - the stable workflow and existing child skills were not modified as part of this beta workflow;
 - every delegated or staged pass used `paper_state` as the authority;
+- every section agent worked from a controller-approved section card when section-level drafting was used;
 - disagreements were resolved explicitly or left as user-facing `TODO`;
 - table/figure decisions were integrated into the argument spine;
 - prose edits did not delete central contributions, mechanisms, magnitudes, caveats, or design features;

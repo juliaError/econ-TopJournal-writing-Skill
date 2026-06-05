@@ -44,6 +44,8 @@ Do not invent citations or closest-literature claims.
 
 Drafts sections only after the controller has settled the paper state, table/figure plan, and argument spine.
 
+For large paper tasks, do not treat this as one generic writer. Use `section_agent_protocol.md` to create section cards for abstract, introduction, literature, theory/mechanism, empirical design, main results, mechanism, heterogeneity, robustness, and conclusion agents.
+
 Route to:
 
 - `econ-write` for English;
