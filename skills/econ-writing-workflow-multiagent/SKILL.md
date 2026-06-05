@@ -55,6 +55,7 @@ Missing information must remain as a concrete `TODO`.
 
 Load the relevant reference file before starting each phase:
 
+- Before any multi-agent task, load `references/controller_startup_checklist.md`.
 - For shared facts and the `paper_state` schema, load `references/paper_state_protocol.md`.
 - For role definitions and when to use true sub-agents versus staged roles, load `references/agent_roles.md`.
 - For structured delegation and return formats, load `references/handoff_templates.md`.
@@ -78,22 +79,24 @@ Then route substantive work to child skills:
 
 For complex paper tasks, proceed in this order:
 
-1. Classify the request and decide whether multi-agent coordination is justified.
-2. Build or update `paper_state`.
-3. Audit inputs and mark missing facts as `TODO`.
-4. Settle the paper spine and create section cards when section-level work is needed.
-5. Assign narrow roles or staged passes using the handoff template.
-6. Use controller-mediated cross-agent loops when a section needs table/figure, argument-logic, literature, diction, or empirical review.
-7. Route each substantive pass to the relevant child skill.
-8. Integrate outputs against `paper_state`, not against memory.
-9. Run conflict checks, drop checks, and final consistency checks.
-10. Return a concise result plus unresolved `TODO` items.
+1. Run the controller startup checklist.
+2. Classify the request and decide whether multi-agent coordination is justified.
+3. Build or update `paper_state`.
+4. Audit inputs and mark missing facts as `TODO`.
+5. Settle the paper spine and create section cards when section-level work is needed.
+6. Assign narrow roles or staged passes using the handoff template.
+7. Use controller-mediated cross-agent loops when a section needs table/figure, argument-logic, literature, diction, or empirical review.
+8. Route each substantive pass to the relevant child skill.
+9. Integrate outputs against `paper_state`, not against memory.
+10. Run conflict checks, drop checks, and final consistency checks.
+11. Return a concise result plus unresolved `TODO` items.
 
 ## Output Check
 
 Before finalizing, confirm:
 
 - the stable workflow and existing child skills were not modified as part of this beta workflow;
+- the controller startup checklist was run before delegation;
 - every delegated or staged pass used `paper_state` as the authority;
 - every section agent worked from a controller-approved section card when section-level drafting was used;
 - every section-functional collaboration went through the controller and updated the section card when needed;
