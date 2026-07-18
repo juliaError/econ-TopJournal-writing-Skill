@@ -1,5 +1,13 @@
 # Cross-Agent Collaboration Protocol
 
+## Contents
+
+- Purpose and core rule
+- Collaboration types
+- Requests, returns, and controller updates
+- Trigger and forbidden patterns
+- Integration check
+
 ## Purpose
 
 Use this protocol when section agents and functional agents need to work together. Collaboration must be controller-mediated: agents should not freely rewrite each other's decisions or create parallel paper states.
@@ -25,8 +33,9 @@ Flow:
 1. Section agent states the section's evidence need.
 2. Controller sends a bounded request to the table/figure agent.
 3. Table/figure agent returns placement, reading focus, note/caption requirements, and risks.
-4. Controller updates the section card.
-5. Section agent drafts or revises using the updated card.
+4. If the proposal moves a core object to the appendix, the agent states what remains in the main text and the cumulative artifact-budget effect; the controller runs the approval gate.
+5. Controller updates the section card and conservation ledger.
+6. Section agent drafts or revises using the updated card.
 
 ### Argument-Logic Collaboration
 
@@ -95,6 +104,9 @@ inputs_read:
 answer:
 recommended_update_to_section_card:
 recommended_update_to_paper_state:
+proposed_ledger_update:
+main_text_explanation_retained:
+cumulative_artifact_budget_effect:
 risks:
 needs_user_confirmation:
 ```
@@ -116,6 +128,8 @@ Trigger functional review when:
 
 - a section needs a table or figure not yet admitted to main text;
 - a section cannot decide whether a result belongs in main text or appendix;
+- a functional agent proposes moving central data construction, sample audit, identification/model environment, main results, or core robustness discussion to the appendix;
+- any proposed relocation would cross a section or cumulative artifact-budget trigger;
 - a section wants to make a literature claim not grounded in inspected sources;
 - a section's contribution framing conflicts with the paper spine;
 - a diction pass may remove a mechanism, magnitude, caveat, or secondary contribution;
@@ -126,6 +140,7 @@ Do not trigger functional review for every sentence. Use it when the decision af
 ## Forbidden Patterns
 
 - A section agent directly changes table/figure placement without controller approval.
+- A functional or section agent executes an unapproved core appendix move or treats appendix existence as sufficient main-text coverage.
 - A table/figure agent rewrites prose beyond its evidence and presentation scope.
 - A literature agent invents citations to support a section.
 - A diction agent removes caveats or magnitudes for smoothness.
@@ -138,5 +153,6 @@ After a cross-agent loop, the controller must confirm:
 - the updated section card reflects the functional decision;
 - the section agent used the updated card;
 - any changed claim remains consistent with `paper_state`;
+- any appendix move has an authorized ledger entry, a sufficient main-text replacement, and an updated cumulative budget;
 - any unresolved issue appears as a concrete `TODO`;
 - the final user-facing output does not expose unnecessary internal agent chatter.

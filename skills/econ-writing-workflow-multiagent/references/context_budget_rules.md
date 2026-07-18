@@ -37,7 +37,10 @@ Use multi-agent or staged-agent coordination when at least one is true:
 - Pass only the fields needed for each role.
 - Summarize long tables, but preserve coefficient values, samples, notes, and caveats needed for interpretation.
 - Do not pass full papers or long source excerpts to every role.
-- Keep role outputs structured and short enough for the controller to integrate.
+- Keep handoff metadata and duplicated input context concise. Let the manuscript payload be as long as the section card and artifact contract require.
+- Never infer a shorter manuscript from a smaller context budget.
+- For long mature sections, return targeted patches, stable block moves, or bounded ledger slices instead of replacing the section with a short summary.
+- Store the complete conservation ledger as a durable project artifact and pass only the relevant slice to each role.
 
 ## Escalation Rule
 
