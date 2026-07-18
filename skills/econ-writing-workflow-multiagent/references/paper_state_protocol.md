@@ -42,6 +42,9 @@ heterogeneity_results:
 robustness_results:
 literature_positioning:
 scope_conditions_and_caveats:
+artifact_contract:
+section_budgets:
+content_conservation_ledger:
 cannot_invent:
 open_todos:
 last_updated_by:
@@ -53,6 +56,10 @@ last_updated_by:
 - If an agent infers a fact from supplied materials, label it as `inferred` until confirmed.
 - If a needed fact is missing, write a concrete `TODO` rather than smoothing over the gap.
 - If user instructions update the paper facts, update `paper_state` before editing prose.
+- Treat user, project, verified-journal, and accepted-baseline artifact constraints as paper-state authority rather than optional style preferences.
+- Fix the accepted baseline path or hash and the measurement contract before recording cumulative changes. Never replace the baseline merely because a candidate fails.
+- Keep the complete conservation ledger in a durable JSON or Markdown artifact. Put only the relevant ledger slice in a role handoff.
+- Record `metric_status: unavailable` or `ambiguous` and pause artifact-sensitive work when required measurements cannot be reproduced.
 - Do not use `paper_state` to store long source excerpts, paper PDFs, or copyrighted text.
 
 ## Minimal Paper State

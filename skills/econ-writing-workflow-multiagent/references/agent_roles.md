@@ -2,7 +2,7 @@
 
 ## Controller
 
-Owns the workflow. Maintains `paper_state`, assigns roles, integrates outputs, resolves conflicts, and decides what the user sees.
+Owns the workflow. Maintains `paper_state`, the artifact contract, conservation ledger, and cumulative dashboard; assigns roles, integrates outputs, resolves conflicts, and decides what the user sees.
 
 The controller must not let specialized agents rewrite the paper's main claim without updating `paper_state` and flagging the change.
 
@@ -16,6 +16,7 @@ Focus:
 - data, sample, variables, design;
 - tables and figures;
 - literature materials;
+- accepted baseline, project artifact constraints, and available main-text measurements;
 - target language and journal;
 - missing facts and `TODO` items.
 
@@ -60,8 +61,23 @@ Route to:
 - `econ-write/references/english-diction/` for English;
 - `cn-top-econ-writing/references/chinese-diction/` for Chinese.
 
+## Main-Text Sufficiency And Conservation Role
+
+Audit the integrated candidate against the accepted baseline, artifact contract, cumulative dashboard, and conservation ledger. Keep this role independent from drafting and diction.
+
+Report:
+
+- missing main-text functions and unjustified appendix dependencies;
+- cumulative main-text word and page changes;
+- source blocks without a ledger disposition;
+- whole sections or core labels that disappeared or crossed the appendix boundary;
+- sections below their approved budget or minimum-depth questions;
+- deterministic audit status and unresolved approval triggers.
+
+Do not polish prose, silently restore text, or change the artifact contract. Block diction and finalization when status is `fail`, `metric_unavailable`, or unapproved `approval_required`; return the recovery or approval decision to the controller and user.
+
 ## Final Consistency Role
 
-Checks terminology, variables, table and figure numbers, magnitudes, caveats, contribution preservation, manuscript voice, and unresolved `TODO` items.
+Checks terminology, variables, table and figure numbers, magnitudes, caveats, contribution preservation, manuscript voice, and unresolved `TODO` items after the sufficiency and conservation gate passes.
 
 This role should be skeptical and should not rewrite the paper unless the controller asks for a final integrated pass.

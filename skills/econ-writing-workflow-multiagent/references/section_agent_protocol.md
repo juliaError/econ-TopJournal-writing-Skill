@@ -1,5 +1,13 @@
 # Section Agent Protocol
 
+## Contents
+
+- Purpose and controller duties
+- Section card and mature-draft rules
+- Section agents
+- Section return
+- Controller integration
+
 ## Purpose
 
 Use this protocol when a paper task is large enough that each major section needs its own focused pass. The controller remains responsible for the whole paper; section agents work only inside the section contract assigned to them.
@@ -14,6 +22,8 @@ Before assigning section agents, the controller must settle:
 - one-sentence paper spine;
 - contribution hierarchy;
 - table/figure placement plan;
+- artifact contract, accepted baseline, and cumulative length/depth dashboard when revising a mature draft;
+- stable source-block IDs and an initial conservation ledger;
 - target language and journal style;
 - missing facts and `TODO` items.
 
@@ -37,10 +47,29 @@ tables_figures_to_use:
 handoff_from_previous_section:
 handoff_to_next_section:
 child_skill_to_use:
+rewrite_mode:
+baseline_words:
+target_word_range:
+maximum_reduction_pct:
+minimum_depth_questions:
+must_remain_main:
+allowed_appendix_moves:
+ledger_slice:
 open_todos:
 ```
 
 If cross-agent review changes evidence placement, contribution framing, claim strength, or empirical facts, the controller must update the section card before the section agent revises.
+
+## Mature-Draft Rules
+
+- Default each mature-draft card to `patch_existing`. Use `reorder_existing_blocks` when the architecture pass requires movement without deletion.
+- Return patches or block moves instead of a replacement section unless the card explicitly authorizes `full_redraft`.
+- Give every source block a ledger disposition. Do not let a block disappear because the agent omitted it from newly generated prose.
+- Recommend an appendix move when appropriate, but execute it only when `allowed_appendix_moves` authorizes the object or the controller records approval.
+- Keep a main-text replacement or summary for every appendix move that affects a central reader question.
+- Do not assume another section covers an omitted object without a verified destination in the section map and conservation ledger.
+- Treat length ranges and depth questions as guardrails. Do not add padding or preserve genuine repetition merely to hit a number.
+- Apply “shortest complete version” only to the abstract. Do not generalize it to the manuscript or other sections.
 
 ## Section Agents
 
@@ -196,6 +225,12 @@ inputs_read:
 section_claim:
 draft_or_revision:
 must_preserve_check:
+words_before:
+words_after:
+blocks_revised_reordered_merged_moved_or_omitted:
+conservation_ledger_updates:
+main_text_self_containment_check:
+approval_needed:
 conflicts_with_paper_state:
 handoff_to_next_section:
 remaining_todos:
@@ -212,5 +247,10 @@ After section agents return, the controller must check:
 - tables and figures are cited only where they serve the argument;
 - caveats remain visible;
 - diction passes do not narrow or inflate claims.
+- every mature-draft source block has a ledger disposition and every executed appendix move was authorized;
+- section and cumulative word/page changes remain within the artifact contract;
+- the main text remains self-contained for the section's reader question.
+
+Update the cumulative length/depth dashboard after every section return. If a section or the integrated manuscript crosses an approval trigger, stop further compression and send the candidate to the Main-Text Sufficiency and Conservation Role before continuing.
 
 If a section fails this check, return it to the relevant section agent with a narrowed revision card.

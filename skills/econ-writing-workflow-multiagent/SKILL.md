@@ -1,6 +1,6 @@
 ---
 name: econ-writing-workflow-multiagent
-description: Experimental beta entry point for large economics writing projects that need multi-agent or staged-agent coordination, including full paper drafting from result packages, many tables and figures, major revisions, bilingual writing, long context management, shared paper_state protocols, role handoffs, conflict resolution, and integration across econ-write, cn-top-econ-writing, econ-table-figure-design, and empirical-econ-workflow. Use for complex projects, not short one-off polishing.
+description: Experimental beta entry point for large economics writing projects that need multi-agent or staged-agent coordination, including full paper drafting from result packages, many tables and figures, major revisions, mature-manuscript restructuring, bilingual writing, long context management, shared paper_state and artifact-conservation protocols, role handoffs, conflict resolution, and integration across econ-write, cn-top-econ-writing, econ-table-figure-design, and empirical-econ-workflow. Use for complex projects, not short one-off polishing.
 ---
 
 # Economics Writing Workflow Multiagent
@@ -51,12 +51,17 @@ Before splitting work across agents or roles, create or update a shared paper st
 
 Missing information must remain as a concrete `TODO`.
 
+Context compression governs handoffs and duplicated input, not the reader-facing manuscript. Preserve the accepted artifact budget and substantive main-text coverage unless the user, project rules, or verified format requirements authorize a shorter output.
+
+For an accepted mature manuscript, default to `patch_existing` or `reorder_existing_blocks`. Do not use clean-slate section redrafting unless the user authorizes `full_redraft` or the controller records why the existing section is unusable.
+
 ## Routing
 
 Load the relevant reference file before starting each phase:
 
 - Before any multi-agent task, load `references/controller_startup_checklist.md`.
 - For shared facts and the `paper_state` schema, load `references/paper_state_protocol.md`.
+- For full drafting, mature-manuscript revision, restructuring, shortening, or appendix relocation, load `references/artifact_conservation_and_depth_gates.md` before setting the paper spine or assigning roles.
 - For role definitions and when to use true sub-agents versus staged roles, load `references/agent_roles.md`.
 - For structured delegation and return formats, load `references/handoff_templates.md`.
 - For deciding whether to split work, load `references/context_budget_rules.md`.
@@ -81,15 +86,16 @@ For complex paper tasks, proceed in this order:
 
 1. Run the controller startup checklist.
 2. Classify the request and decide whether multi-agent coordination is justified.
-3. Build or update `paper_state`.
-4. Audit inputs and mark missing facts as `TODO`.
-5. Settle the paper spine and create section cards when section-level work is needed.
+3. Build or update `paper_state` and, when applicable, its artifact contract, baseline measurements, and conservation ledger.
+4. Audit inputs and mark missing facts or unavailable artifact metrics as `TODO`.
+5. Settle the paper spine and create section cards with rewrite modes and artifact budgets when section-level work is needed.
 6. Assign narrow roles or staged passes using the handoff template.
-7. Use controller-mediated cross-agent loops when a section needs table/figure, argument-logic, literature, diction, or empirical review.
+7. Use controller-mediated cross-agent loops when a section needs table/figure, argument-logic, literature, diction, empirical, or conservation review.
 8. Route each substantive pass to the relevant child skill.
-9. Integrate outputs against `paper_state`, not against memory.
-10. Run conflict checks, drop checks, and final consistency checks.
-11. Return a concise result plus unresolved `TODO` items.
+9. Integrate outputs against `paper_state`, the artifact contract, and the conservation ledger, not against memory.
+10. Run deterministic conservation checks and the independent main-text sufficiency review before diction or final consistency.
+11. Run conflict checks, drop checks, and final consistency checks.
+12. Return a concise result plus unresolved `TODO` and approval items.
 
 ## Output Check
 
@@ -103,4 +109,8 @@ Before finalizing, confirm:
 - disagreements were resolved explicitly or left as user-facing `TODO`;
 - table/figure decisions were integrated into the argument spine;
 - prose edits did not delete central contributions, mechanisms, magnitudes, caveats, or design features;
+- any mature-draft revision followed its recorded rewrite mode and mapped every substantive source block to a conservation-ledger disposition;
+- context or handoff limits were not used as manuscript-length instructions;
+- the integrated manuscript satisfies the artifact contract, cumulative compression permission, and main-text self-containment gate;
+- deterministic audit status is `pass`; if it first returned `approval_required`, any scoped approval was recorded and the audit was rerun to `pass`;
 - no fabricated data, citations, results, or policy implications entered the output.

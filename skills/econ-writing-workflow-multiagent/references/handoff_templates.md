@@ -1,5 +1,13 @@
 # Handoff Templates
 
+## Contents
+
+- Delegation and return
+- Drafting and table/figure handoffs
+- Section-functional collaboration
+- Conservation audit
+- Conflict handoff
+
 ## Delegation Template
 
 Use this when assigning work to a sub-agent or staged role.
@@ -9,6 +17,7 @@ Role:
 Task:
 Inputs to read:
 Paper_state fields to respect:
+Artifact contract and ledger slice:
 Allowed changes:
 Forbidden changes:
 Questions to answer:
@@ -27,6 +36,11 @@ Claims used:
 Findings:
 Recommended changes:
 Must preserve:
+Words before/after:
+Blocks revised, reordered, merged, moved, or omitted:
+Conservation-ledger updates:
+Main-text self-containment check:
+Approval needed:
 Conflicts with paper_state:
 Missing information:
 Output for next role:
@@ -44,6 +58,12 @@ Paper_state facts to use:
 Tables/figures to cite:
 Claims to preserve:
 Caveats to preserve:
+Rewrite mode:
+Baseline and target length:
+Must remain in main text:
+Permitted appendix moves:
+Cumulative main-text reduction before this task:
+Ledger slice:
 Do not mention:
 TODO items to leave visible:
 ```
@@ -88,6 +108,35 @@ Recommended section card update:
 Recommended paper_state update:
 Risks:
 Needs user confirmation:
+```
+
+## Conservation Audit Handoff
+
+Use this after integration and before diction or final consistency.
+
+```text
+Accepted baseline:
+Candidate manuscript:
+Artifact contract:
+Measurement contract:
+Cumulative dashboard:
+Conservation ledger:
+Deterministic report:
+Questions for semantic sufficiency review:
+```
+
+Require this return:
+
+```text
+Deterministic status:
+Missing main-text functions:
+Unjustified appendix dependencies:
+Unmapped source blocks:
+Sections below budget:
+Cumulative reduction:
+Recovery required:
+Approval required:
+Gate decision: pass | approval_required | fail | metric_unavailable
 ```
 
 ## Conflict Handoff
