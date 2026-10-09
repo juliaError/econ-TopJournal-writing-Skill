@@ -1,91 +1,116 @@
-# Economics Writing Workflow Skills / 经济学论文写作 Workflow Skills ✨
+# Economics Writing Skills / 经济学写作技能
 
-This repository is a self-developed Codex skill system for economics paper writing, revision, style adaptation, table/figure design, and workflow routing. It supports English economics prose and top-journal style, Chinese top-journal writing, bilingual table and figure presentation, and auditable full-draft workflows based on user-owned research questions and result packages.
+This Codex workflow supports economics writing in English and Chinese: outlines, full drafts, revisions, tables and figures, and manuscript review. It combines writing instructions and reference modules with multi-agent review and an executable Python pipeline for preparing reviews and checking their coverage, citations, and file versions.
 
-It is a writing workflow system, not a complete empirical pipeline: it does not cover the full process of data cleaning, variable construction, regression estimation, or reproducible empirical execution.
+**AI can assist research and writing, but key academic judgments remain with human researchers.** You provide the research question, evidence, and intended argument, and decide which changes to accept.
 
-It uses a modular structure: ordinary users can start from the main workflow skill, while advanced users can call specialized sub-skills directly.
+这套 Codex 写作流程支持经济学论文的大纲、全文起草、修改、图表制作和稿件审阅，兼顾中文和英文写作。仓库既有写作规则和分项参考模块，也有多 agent 审阅流程与可执行的 Python 管线，用于准备审阅材料，检查审阅覆盖、引文和文件版本是否一致。
 
-这是我开发的一套经济学论文写作 Codex skill 系统，用于论文写作、修改、风格适配、表格图形设计和 workflow 路由。它同时覆盖英文经济学论文写作与英文顶刊风格、中文顶刊写作、中英文通用表图展示，以及基于作者自己研究问题和结果包的可审查完整初稿流程。
+**AI 写作只能辅助研究和成文过程，关键学术判断依然离不开人类研究者。** 研究问题、证据解释和论文主张由作者确定，agent 按要求协助写作，修改结果仍须由作者判断和确认。
 
-它是写作 workflow 系统，不是完整实证流程；不覆盖数据清洗、变量构造、回归估计或可复现实证执行的完整过程。
-
-它采用模块化结构：普通用户可以从总入口 workflow skill 开始，高级用户也可以直接调用专业子 skill。
-
-Important notes: AI writing can only assist the research and drafting process; the key academic judgments still depend on human researchers. This really is not a defensive disclaimer; AI is simply not perfect yet. For serious writing and revision tasks, use the latest and strongest available models when possible, such as GPT-5.5 or Claude 4.6. DeepSeek may be useful for Chinese prose polishing, but it still has limitations in figure and table production.
-
-注意事项：AI 写作只能辅助研究和成文过程，关键学术判断依然离不开人类研究者。这真的不是叠甲，而是 AI 现在确实还达不到完美。进行重要写作和修改任务时，建议尽可能使用当时最新、最强的模型，例如 GPT-5.5 或 Claude 4.6；中文润色也可以使用 DeepSeek，但其在作图和制表方面仍有一定不足。
-
-## What Is Inside / 仓库内容 🧭
+## What It Does / 主要功能
 
 ### English
 
-| Path | Description |
-| --- | --- |
-| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, argument/writing-task outline, full-draft, or table/figure module, and points empirical work to the empirical workflow. |
-| `skills/econ-write/` | General English economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. |
-| `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. Some files are still being developed. |
-| `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》, including Chinese diction cleanup and argument-logic checks. |
-| `skills/econ-table-figure-design/` | Bilingual economics table and figure design skill for regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, and export checks. |
-| `docs/paper-corpus.md` | Corpus policy for how local writing-learning sources are used without publishing paper lists or source text. |
-| `LICENSE` | Layered license overview: original repository content is CC BY-NC 4.0; third-party content keeps its own license. |
-| `NOTICE.md` | Third-party copyright and MIT License notice. |
-| `ETHICAL_USE.md` | Ethical-use policy for non-commercial academic writing support. |
-| `docs/ai-assistance.md` | Notes on AI-assisted development and responsibility. |
+- **Outlines and research plans.** Organize paper or book arguments and turn an agreed framework into assignments for collaborators: what to read, what to explain, and which tables or figures to make. Research-proposal guidance also covers feasibility, stages, risks, and expected outputs.
+- **English and Chinese writing.** Draft and revise abstracts, introductions, literature reviews, theory, results, conclusions, and referee responses. Review sentence structure, terminology, awkward phrasing, and literal translations.
+- **Arguments and interpretation.** Check how the question, contribution, reasoning, and evidence fit together. Distinguish descriptive findings, causal estimates, mechanisms, and heterogeneity; explain the economic size of results using suitable comparisons.
+- **Literature and citations.** Work from inspected papers and source notes, check which claims each source supports, and reconcile in-text citations with the literature records and bibliography.
+- **Tables and figures.** Use the dedicated `econ-table-figure-design` skill to plan and produce three-line tables, main regressions, robustness, heterogeneity, and mechanism tables, as well as event-study, trend, binscatter, map, distribution, and mechanism figures. It covers main-text versus appendix placement, columns and panels, titles, notes, axes, legends, fonts, palettes, grayscale printing, and export quality. The agent must inspect the rendered output.
+- **Journal and document conventions.** Apply the relevant Chinese journal guidance, including submission and anonymity checks, heading structure, references, and appendix placement, with guidance for LaTeX and Word-based work.
+- **Long manuscripts and revision control.** Coordinate section and review tasks, preserve the author's intended meaning, track changes to established content, and distinguish draft results, approved versions, and material inserted into the manuscript. Substantive rewriting and manuscript insertion follow the author's approval.
 
 ### 中文
 
-| 路径 | 说明 |
-| --- | --- |
-| `skills/econ-writing-workflow/` | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、论证大纲/任务型写作大纲、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
-| `skills/econ-write/` | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
-| `skills/econ-write/references/paper_skills/` | `econ-write` 按需加载的分 section 参考规则；部分文件仍在开发中。 |
-| `skills/cn-top-econ-writing/` | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill，包含中文遣词造句清理和论证逻辑检查。 |
-| `skills/econ-table-figure-design/` | 中英文通用经济学表格与图形设计 skill，覆盖三线表、主回归、稳健性、异质性、机制、表注图注、配色和导出检查。 |
-| `docs/paper-corpus.md` | 语料使用政策，说明如何使用本地写作学习来源，同时不公开论文清单或来源文本。 |
-| `LICENSE` | 分层许可说明：本仓库原创内容采用 CC BY-NC 4.0；第三方内容保留原许可。 |
-| `NOTICE.md` | 外部来源与 MIT License 声明。 |
-| `ETHICAL_USE.md` | 非商用学术写作辅助的伦理使用说明。 |
-| `docs/ai-assistance.md` | 关于 AI 辅助开发、署名和责任边界的说明。 |
+- **大纲与研究计划。** 梳理论文或书稿的论证，把已确定的框架整理成合作者可以执行的写作任务，明确读什么、写什么、制作哪些图表。研究建议书另有可行性、阶段安排、风险和预期成果方面的指导。
+- **中英文写作。** 起草和修改摘要、引言、文献综述、理论、结果、结论及审稿回复，检查句式、术语、生硬表达和翻译腔。
+- **论证与结果解释。** 检查研究问题、贡献、推理和证据能否衔接，区分描述性发现、因果估计、机制和异质性，并选择合适的参照解释结果的经济量级。
+- **文献与引用。** 根据实际阅读的论文和资料判断文献能支持哪些主张，核对正文引文、文献记录与最终参考文献表。
+- **制表与绘图。** 独立的 `econ-table-figure-design` 子模块指导 agent 设计和制作三线表、主回归表、稳健性表、异质性表、机制表，以及事件研究图、趋势图、分箱散点图、地图、分布图和机制图。它还处理正文与附录的安排、列和分面、标题、注释、坐标轴、图例、字体、配色、黑白打印和导出质量；agent 须检查实际生成的表格或图形。
+- **期刊与文档格式。** 按适用的中文期刊要求检查投稿体例、匿名处理、标题层级、参考文献和附录安排，并提供 LaTeX 与 Word 文档处理方面的指导。
+- **长文协作与版本管理。** 分配章节写作和审阅任务，检查作者原意是否保留，记录既有内容的增删，并区分候选结果、已确认版本和已经写入稿件的内容。实质改写和稿件整合须遵循作者的授权。
 
-## Knowledge Sources / 知识来源 📚
+## Python Pipeline And Review / Python 管线与审阅
 
 ### English
 
-This repository currently has two kinds of sources:
+For a full paper, a complete proposal, a document-level translation or compression, or a major revision, the workflow combines agent review with Python checks:
 
-1. **Third-party skill source**: `skills/econ-write/` is based on the open-source [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) project by Lu Han, licensed under the MIT License.
-2. **Corpus-informed rules**: the modular writing and table/figure workflows are informed by Econ Top 5 papers (AER, QJE, JPE, Econometrica, REStud) and Chinese top-journal papers, including papers published in *Economic Research Journal*, *Management World*, and *China Industrial Economics*. Because some paper authors may object to their articles being publicly labeled as distilled sources, the full paper list is not published for now.
+1. The author confirms the intended argument and the scope of the work; the agent drafts or revises from the supplied evidence.
+2. `prepare_manuscript_qa.py` reads the manuscript, enumerates the text to review, and builds review packets with context and file hashes.
+3. Independent agents review meaning, evidence, definitions, and economic reasoning. They return structured findings for the coordinating agent to address.
+4. Python validators check whether the required reviews are complete, refer to the current files, and agree with the recorded decisions. Citation, content-preservation, literature-review, and figure-label checks cover their respective parts.
+5. The agent revises the affected passages and obtains the required re-review. The author reviews the resulting manuscript and unresolved decisions.
 
-See [`docs/paper-corpus.md`](docs/paper-corpus.md) for the corpus-use policy.
+The repository contains six Python programs and six accompanying test files. The Python code handles reproducible checks; agents assess meaning and evidence, and the author makes the academic decisions. The manuscript preparation and conservation tools accept UTF-8 `.tex`, `.md`, and `.txt` sources. Figure labels and rendered-output reviews have their own records.
+
+The multi-agent component, `econ-writing-workflow-multiagent`, requires an agent environment that supports independent reviewers. Short polishing tasks and outline-only requests use lighter checks rather than the complete-manuscript process.
 
 ### 中文
 
-本仓库目前有两类来源：
+完整论文、完整研究建议书、整篇翻译或压缩，以及重大修改，会结合 agent 审阅和 Python 程序检查：
 
-1. **外部 skill 来源**：`skills/econ-write/` 基于 Lu Han 的开源项目 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill)，许可证为 MIT License。
-2. **语料启发规则**：模块化写作和表图 workflow 来自 Econ Top 5 论文（AER、QJE、JPE、Econometrica、REStud）和中文顶刊论文，包括发表于《经济研究》《管理世界》《中国工业经济》的论文。由于担心各论文作者可能不愿意自己的文章被公开标注为蒸馏来源，短期内不公布完整论文清单。
+1. 作者确认论文要表达的内容和本次任务范围，agent 根据已有证据起草或修改。
+2. `prepare_manuscript_qa.py` 读取稿件，列出需要审阅的文字，生成包含上下文和文件校验值的审阅包。
+3. 独立的 agent 分别检查原意、证据、定义和经济推理，返回明确的问题记录，由负责整合的 agent 处理。
+4. Python 验证程序检查审阅是否覆盖应审内容、是否对应当前文件、是否与已记录的决定一致。引文、原有内容保留、文献审阅和图表标签另有相应检查。
+5. agent 修改受影响的文字并完成必要的复审，再将稿件和待决定的问题交给作者。
 
-语料使用政策见 [`docs/paper-corpus.md`](docs/paper-corpus.md)。
+仓库包含六个 Python 程序和六个配套测试文件。Python 负责可以重复核验的项目，agent 负责理解文字和判断证据，作者负责学术决定。稿件准备和内容保留检查支持 UTF-8 编码的 `.tex`、`.md` 和 `.txt` 文件；图表标签及最终画面的审查使用单独的记录。
 
-## Install Locally / 本地安装 🚀
+多 agent 模块 `econ-writing-workflow-multiagent` 需要运行环境支持独立审阅 agent。短段落润色和只交付大纲的任务使用相应的轻量检查，不套用完整稿件流程。
+
+### Programs / 程序清单
+
+| Program / 程序 | What it checks / 作用 |
+| --- | --- |
+| [`prepare_manuscript_qa.py`](skills/econ-writing-workflow-multiagent/scripts/prepare_manuscript_qa.py) | Builds the manuscript inventory and review packets / 生成稿件清单和审阅包。 |
+| [`validate_manuscript_qa.py`](skills/econ-writing-workflow-multiagent/scripts/validate_manuscript_qa.py) | Checks review coverage, current file versions, findings, and required re-reviews / 核对审阅覆盖、文件版本、问题处理和复审记录。 |
+| [`audit_manuscript_conservation.py`](skills/econ-writing-workflow-multiagent/scripts/audit_manuscript_conservation.py) | Measures length and tracked content changes against the agreed revision limits / 按已约定的修改范围检查篇幅和内容变化。 |
+| [`audit_citation_integrity.py`](skills/econ-writing-workflow-multiagent/scripts/audit_citation_integrity.py) | Reconciles citations, literature records, and bibliography / 核对引文、文献记录和参考文献表。 |
+| [`validate_literature_audit.py`](skills/econ-writing-workflow-multiagent/scripts/validate_literature_audit.py) | Validates the independent literature-review assignment and result / 验证独立文献审阅的任务与结果记录。 |
+| [`audit_reader_facing_labels.py`](skills/econ-table-figure-design/scripts/audit_reader_facing_labels.py) | Checks label coverage, numeric preservation, bilingual pairing, and semantic/render-review records / 检查图表标签覆盖、数值保留、中英对应及语义和画面审查记录。 |
+
+## Model Choice / 模型选择
 
 ### English
 
-#### Method 1 (Recommended): Ask an AI agent to install
+For important writing and substantial revisions, choose the latest, most advanced models, such as [GPT-6.1 Sol or GPT-6 Astra](https://developers.openai.com/api/docs/models) and [Claude Opus 5.5 or Claude Fable 5.1](https://platform.claude.com/docs/en/models/overview).
 
-Copy the repository URL and ask an AI agent to download and install the skills for you.
+For Chinese wording and sentence-level revision, you can also try DeepSeek or Kimi, then compare the revision with the original to check that the meaning is intact. Use each model in a service that supports it. Current model lineups are listed by [OpenAI](https://developers.openai.com/api/docs/models) and [Anthropic](https://platform.claude.com/docs/en/models/overview).
+
+### 中文
+
+重要写作和较大幅度的修改，建议使用最新、最先进的模型，例如 [GPT-6.1 Sol、GPT-6 Astra](https://developers.openai.com/api/docs/models)、[Claude Opus 5.5 或 Claude Fable 5.1](https://platform.claude.com/docs/en/models/overview)。
+
+中文措辞和句式润色，也可以使用 DeepSeek 或 Kimi，再对照原文检查含义是否保留。请在支持相应模型的平台上使用。当前型号可查阅 [OpenAI](https://developers.openai.com/api/docs/models) 和 [Anthropic](https://platform.claude.com/docs/en/models/overview) 的官方列表。
+
+## Install Locally / 本地安装
+
+### English
+
+#### Ask the agent to install
+
+Send this request in a Codex conversation:
 
 ```text
-Please help me download and install the Codex skills from this repository:
+Please download and install the writing skills from this repository:
 https://github.com/juliaError/econ-TopJournal-writing-Skill
 
-Copy `skills/econ-writing-workflow`, `skills/econ-write`, `skills/cn-top-econ-writing`, and `skills/econ-table-figure-design` into `~/.codex/skills/`, then tell me whether I still need to refresh or restart Codex.
+Install these five folders: skills/econ-writing-workflow, skills/econ-write,
+skills/cn-top-econ-writing, skills/econ-table-figure-design, and
+skills/econ-writing-workflow-multiagent (including its references and scripts).
+First check which skills directory my version of Codex reads. If skills with
+the same names are already installed, compare the versions and ask before
+replacing them. After installation, check that Codex can find the skills and
+tell me whether I need to restart it.
 ```
 
-#### Method 2: Manual copy
+The agent downloads the files, checks the installation path, and copies the skills. You do not need to run the commands below if the agent completes the installation.
 
-Clone or download this repository, then copy the skill directories into your Codex skills folder:
+#### Install manually
+
+If your Codex installation reads skills from `~/.codex/skills/`, clone or download the repository, open a terminal in its root directory, and run the following commands. These commands are for a first installation; if the destination folders already exist, compare them before copying. If your Codex version uses a different directory, use the installation request above to have the agent check it.
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -93,26 +118,35 @@ cp -R skills/econ-writing-workflow ~/.codex/skills/econ-writing-workflow
 cp -R skills/econ-write ~/.codex/skills/econ-write
 cp -R skills/cn-top-econ-writing ~/.codex/skills/cn-top-econ-writing
 cp -R skills/econ-table-figure-design ~/.codex/skills/econ-table-figure-design
+cp -R skills/econ-writing-workflow-multiagent ~/.codex/skills/econ-writing-workflow-multiagent
 ```
 
-After either method, restart or refresh Codex so the skills list is reloaded.
+The audit scripts require Python 3 and use its standard library. The multi-agent skill is used for complete-manuscript review; install its reference files and scripts together. The agent runs the relevant checks as part of the writing task.
+
+If the skills do not appear after installation, restart Codex and ask it to check again.
 
 ### 中文
 
-#### 方法 1（推荐）：让 AI agent 帮你安装
+#### 让 agent 安装
 
-复制这个仓库链接，让 AI agent 帮你下载并安装 skills。
+在 Codex 对话中发送下面这段话：
 
 ```text
-请帮我下载并安装这个仓库里的 Codex skills：
+请下载并安装这个仓库中的写作技能：
 https://github.com/juliaError/econ-TopJournal-writing-Skill
 
-把 `skills/econ-writing-workflow`、`skills/econ-write`、`skills/cn-top-econ-writing` 和 `skills/econ-table-figure-design` 复制到 `~/.codex/skills/`，然后告诉我是否还需要刷新或重启 Codex。
+需要安装五个目录：skills/econ-writing-workflow、skills/econ-write、
+skills/cn-top-econ-writing、skills/econ-table-figure-design，以及
+skills/econ-writing-workflow-multiagent（连同其 references 和 scripts）。
+请先确认当前 Codex 版本读取哪个技能目录。如果已经安装同名技能，先比较版本，
+征得我同意后再替换。安装后，检查 Codex 能否找到这些技能，并告诉我是否需要重启。
 ```
 
-#### 方法 2：手动复制
+下载文件、核对安装路径和复制技能由 agent 完成。它安装成功后，你不需要再执行下面的命令。
 
-克隆或下载本仓库，然后把 skill 目录复制到 Codex skills 文件夹：
+#### 手动安装
+
+如果你的 Codex 从 `~/.codex/skills/` 读取技能，可以先克隆或下载仓库，在仓库根目录打开终端，再执行以下命令。这组命令适用于首次安装；目标目录已经存在时，应先比较内容再复制。如果当前版本使用其他目录，可以用上面的安装请求让 agent 核对。
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -120,200 +154,198 @@ cp -R skills/econ-writing-workflow ~/.codex/skills/econ-writing-workflow
 cp -R skills/econ-write ~/.codex/skills/econ-write
 cp -R skills/cn-top-econ-writing ~/.codex/skills/cn-top-econ-writing
 cp -R skills/econ-table-figure-design ~/.codex/skills/econ-table-figure-design
+cp -R skills/econ-writing-workflow-multiagent ~/.codex/skills/econ-writing-workflow-multiagent
 ```
 
-无论使用哪种方法，安装后都需要重启或刷新 Codex，让 skills 列表重新加载。
+检查脚本需要 Python 3，使用 Python 标准库。多 agent 技能用于完整稿件审阅，安装时应保留其中的参考文件和脚本，由 agent 在写作任务中调用相应检查。
 
-## Usage / 使用方式 🛠️
+安装后如果仍未显示这些技能，请重启 Codex，再让 agent 检查。
+
+## Usage / 如何使用
 
 ### English
 
-For most users, call `econ-writing-workflow` first. It will route the writing task to the right module.
+After installation, describe your writing task in a Codex conversation and ask the agent to use `econ-writing-workflow`. For example:
 
 ```text
-Use econ-writing-workflow to revise this paper's introduction, tables, and Chinese abstract.
+Please use econ-writing-workflow to revise this paper's introduction.
+Focus on whether the research question and contribution are clear.
 ```
 
-The outline module turns an accepted paper or book framework into a writing-task outline for collaborators. It preserves the agreed structure and makes the required reading, reasoning steps, and table/figure assignments explicit. A writing-task outline is a separate deliverable from manuscript prose or a complete research proposal; an outline-only request checks the argument and display specifications without requiring the figures to be produced.
+The agent reads the workflow instructions and selects the English-writing, Chinese-writing, or table-and-figure skill needed for your task. You do not need to select each of these skills yourself. Codex can also choose a skill from the task description; naming it explicitly tells the agent to use this collection. See the [official skill documentation](https://learn.chatgpt.com/docs/build-skills#how-chatgpt-and-codex-use-skills).
+
+Give the agent the relevant draft, tables, figures, or source materials, along with the parts you want changed and the parts you want preserved. Here are two further examples.
+
+**Prepare an outline for collaborators**
 
 ```text
-Use econ-writing-workflow to turn this accepted book outline into a writing-task outline for collaborators. Preserve the existing headings and framework. For each task, specify what to read, the reasoning to develop, and any already agreed table or figure to produce. Deliver the outline only; leave unresolved substantive choices for confirmation.
+Please use econ-writing-workflow to turn this agreed book outline into
+writing assignments for my collaborators. Keep the headings and structure.
+For each section, explain what to read, which argument to develop, and which
+tables or figures we have agreed to make. Prepare the outline only, not the
+chapters or figures. Ask me about any substantive choices that remain open.
 ```
 
-It can also help draft an auditable full paper from your own research question, regression tables, figures, and design notes. Missing facts should remain as explicit `TODO` items rather than invented claims.
+**Draft from completed research**
 
 ```text
-Use econ-writing-workflow to draft a Chinese economics paper from this result folder, research question, variable notes, and figures. First audit the inputs, decide which tables and figures enter the main text, then draft the paper with TODO markers for missing literature or design details.
+Please use econ-writing-workflow to help draft a Chinese economics paper
+from these research notes, results, and figures. First read the materials and
+confirm with me what the paper should argue. Then draft within that scope.
+List missing information separately. If a gap affects the meaning or support
+for a claim, ask me before writing that part.
 ```
 
-Advanced users may call specialized skills directly:
+For a specific task, you can name a specialized skill directly: `econ-write` for English prose, `cn-top-econ-writing` for Chinese prose, or `econ-table-figure-design` for tables and figures. For example: “Use econ-table-figure-design to check the column layout and notes in these regression tables.”
 
-- Use `econ-write` for general English economics paper writing.
-- Use `cn-top-econ-writing` for Chinese top-journal submissions.
-- Use `econ-table-figure-design` when the task is about tables, figures, notes, palettes, or main-text versus appendix placement.
-
-Examples:
-
-```text
-Use econ-write to revise this introduction.
-```
-
-```text
-Use econ-table-figure-design to decide which regression tables and figures should enter the main text, how many columns each table should have, and what the notes should include.
-```
-
-For empirical coding, data cleaning, or regressions, pair these writing skills with a separate empirical workflow skill.
+These are writing skills. Data cleaning, variable construction, regression estimation, and reproducible empirical execution require a separate empirical workflow.
 
 ### 中文
 
-普通用户日常优先调用 `econ-writing-workflow`。它会根据写作任务类型自动转向合适的模块。
+安装完成后，在 Codex 对话中说明你的写作任务，并指定使用 `econ-writing-workflow`。例如：
 
 ```text
-用 econ-writing-workflow 检查这篇经济学论文的引言、主回归表和中文表达。
+请使用 econ-writing-workflow，帮我修改这篇论文的引言，
+重点检查研究问题和贡献是否说清楚。
 ```
 
-大纲模块可以把已确认的论文或书稿框架整理成供合作者执行的任务型写作大纲，保留既定结构，并明确各项任务需要阅读的材料、展开的推理步骤和制作的图表。任务型写作大纲与论文正文、完整研究 Proposal 是不同交付物；只要求大纲时，检查论证和图表规格，不要求同时制作图表。
+agent 收到请求后，会读取技能说明，再根据任务使用英文写作、中文写作或表图技能。你不需要逐个选择和调用这些技能。不写技能名时，Codex 也可以根据任务自动选择；明确点名，是为了指定使用本仓库的这套写作流程。调用方式见 [Codex 官方文档](https://learn.chatgpt.com/docs/build-skills#how-chatgpt-and-codex-use-skills)。
+
+请同时提供相关稿件、表格、图形或参考材料，并说明哪些地方要改、哪些内容要保留。下面是另外两种常见用法。
+
+**给合作者整理写作任务**
 
 ```text
-用 econ-writing-workflow 把这份已确认的书稿大纲整理成供合作者执行的任务型写作大纲。保留现有标题和框架，逐项说明读什么材料、展开哪些推理，以及制作哪些已经约定的图表。本次只交付大纲，未确定的实质选择留待确认。
+请使用 econ-writing-workflow，把这份已确定的书稿大纲整理成合作者可以
+照着写的任务安排。保留现有标题和结构，逐节说明读什么材料、展开哪些论证，
+以及制作哪些已经约定的图表。本次只整理大纲，不写章节正文，也不制作图表。
+尚未确定的实质问题，请先问我。
 ```
 
-如果你已经有自己的研究问题、回归表、图和识别/变量说明，也可以让它生成一版可审查的完整初稿。缺失信息应保留为明确的 `TODO`，不能编造。
+**根据已有研究起草论文**
 
 ```text
-用 econ-writing-workflow 根据这个结果文件夹、研究问题、变量说明和图表，生成一版中文经济学论文初稿。先审查输入，再判断正文/附录表图，最后起草全文；缺失的文献和识别细节用 TODO 标出。
+请使用 econ-writing-workflow，根据这些研究说明、结果和图表，协助起草
+一篇中文经济学论文。先阅读材料，与我确认论文要表达的主要观点，再按确认的
+范围写作。缺少的信息单独列出；如果缺口影响论点的含义或依据，先问我再写。
 ```
 
-高级用户也可以直接调用专业子 skill：
+任务比较具体时，也可以直接点名：英文修改用 `econ-write`，中文修改用 `cn-top-econ-writing`，表格和图形检查用 `econ-table-figure-design`。例如：“请使用 econ-table-figure-design，检查这些回归表的列安排和表注。”
 
-- 一般英文经济学论文写作可以使用 `econ-write`。
-- 中文顶刊投稿、修改和预审可以使用 `cn-top-econ-writing`。
-- 涉及表格、图形、表注、图注、配色、正文/附录取舍时，可以使用 `econ-table-figure-design`。
+这套技能负责写作。数据清洗、变量构造、回归估计和可复现实证执行，需要另外使用实证工作流。
 
-示例：
-
-```text
-用 cn-top-econ-writing 审查这篇中文经济学论文的引言和贡献表述。
-```
-
-```text
-用 econ-table-figure-design 检查这组主回归、稳健性、机制和异质性表，并给出正文表、附录表和配色方案。
-```
-
-如果任务涉及数据清洗、变量构造或回归代码，应搭配单独的实证工作流 skill，而不是只靠写作 skill。
-
-## Current Status / 当前状态 🌱
+## Sources / 内容来源
 
 ### English
 
-- **2026-10-09 update**:
-  1. Added `references/outlines/01_argument_and_writing_task_outlines.md` and entry-point routing for argument outlines and collaborator-facing writing-task outlines.
-  2. The module preserves the accepted framework, assigns claims to their main locations, and specifies the reading, reasoning, and agreed table/figure work needed for each writing task.
-  3. Deliverable type is distinguished from work stage: a writing-task outline or proposal skeleton is not a manuscript or complete proposal. Outline-only work reviews the argument, sources, and display specifications; full-manuscript audits and rendered-figure checks apply when the corresponding artifacts are requested.
-- **2026-07-18 update**:
-  1. Added three selectively loaded `research-convergence` references for scope and claim contracts, theory/empirical closure gates, and proposal/revision/stop gates.
-  2. `econ-writing-workflow` now classifies the task stage before routing these checks: exploration and local polishing are protected from premature freezing or unsolicited paper-wide audits, while full drafting, major revision, proposals, and final audits load only the applicable sections.
-  3. The new rules distinguish evidence status, model and measurement closure, proposal feasibility, normative policy conditions, and mature-draft stop/reopen criteria. Fixed paragraph counts, result counts, and minimal-model advice remain paper-type-sensitive defaults, and all workflow matrices or scope lists stay outside manuscript prose.
-  4. Normalized the `econ-write` frontmatter by removing the unsupported `argument-hint` and `user-invocable` keys. Its `name`, `description`, complete instruction body, references, and explicit/implicit skill routing are unchanged; both source and installed copies now pass the current strict skill validator.
-- **2026-05-17 update**:
-  1. Added a shared `regression-results` reference module for economic magnitude interpretation in both English and Chinese writing.
-  2. `econ-writing-workflow` now routes main regression results, coefficient interpretation, marginal effects, interaction net effects, log-to-percent conversions, and mean/standard-deviation/percentile or policy-benchmark comparisons to this module.
-  3. `econ-write` and `cn-top-econ-writing` now require important result prose to translate coefficients into an appropriate economic magnitude benchmark, while avoiding invented descriptive statistics or mechanical mean/SD/percentile checklists.
-- **2026-05-16 update**:
-  1. Added manuscript-safety guardrails that keep author-facing diagnostic labels out of paper prose, table notes, figure notes, appendix notes, and footnotes. When paper facts, variable definitions, samples, identification choices, table/figure meanings, target-journal requirements, or substantive keep/delete decisions are unclear, agents must ask the user or leave a concrete `TODO` instead of guessing.
-  2. `econ-writing-workflow` now includes active mid-task routing, so long workflows re-check whether the current phase should use `econ-table-figure-design`, `cn-top-econ-writing`, `econ-write`, or `empirical-econ-workflow`.
-  3. `econ-table-figure-design` now requires final rendered artifact inspection for drawn, edited, or regenerated figures and maps; agents must check that text, legends, colorbars, insets, axes, and map/figure content do not overlap or obscure useful information.
-- **2026-05-15 update**:
-  1. `econ-writing-workflow` now includes a project-level skill routing prompt for multi-step economics writing, table, figure, journal-submission, and formatting workflows.
-  2. When no economics-writing routing rule exists in the nearest `AGENTS.md` or `CLAUDE.md`, the skill asks the user once whether to add a persistent local rule before editing either file.
-  3. `cn-top-econ-writing` and `econ-table-figure-design` now point long-running tasks back to `econ-writing-workflow` for this persistent routing setup, so specialized skills are less likely to be forgotten during extended work.
-- **2026-05-14 update**:
-  1. `cn-top-econ-writing` now includes `references/argument-logic/`, a Chinese argument-logic module for transferring cross-language economics writing structure into Chinese top-journal writing without importing English diction, wording, or sentence order.
-  2. The module covers argument spine, contribution preservation, abstract/introduction logic, theory and mechanism writing, main-result narration, mechanism/heterogeneity/robustness placement, table/figure argument fit, and post-rewrite drop checks.
-  3. `chinese-diction` now explicitly runs after argument-logic when a task involves structure, contribution, section order, result organization, or table/figure placement.
-- **2026-05-13 update**:
-  1. `econ-write` now includes `references/english-diction/`, an English top-journal prose module for sentence functions, verbs/collocations, abstract and introduction patterns, theory-versus-empirical prose, and AI/translationese revision checks.
-  2. `econ-table-figure-design` is now added as a bilingual table/figure design skill for main regression tables, robustness, heterogeneity, mechanisms, notes, captions, palettes, typography, and export checks.
-  3. `econ-writing-workflow` now includes `references/argument-logic/` for full-paper logic, repeated material, emphasis, ordering, and table/figure fit.
-  4. `econ-writing-workflow` now includes `references/full-paper-drafting/` for drafting an auditable paper from a user-owned result package, with input audits, table/figure placement, anti-fabrication `TODO` rules, and language-specific routing.
-- `econ-write` is usable now and keeps its third-party MIT notice.
-- `cn-top-econ-writing` is a standalone Chinese top-journal writing skill.
-- `paper_skills` reference files are still being developed. Some files are placeholders until their detailed rule bodies are filled in.
-- The long-term goal is to gradually rewrite the workflow into fully original economics writing skills based on local writing rules and non-source-specific abstractions.
+`econ-write` includes work based on Lu Han's [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill), which is licensed under MIT. The original copyright and license notice is preserved in [`NOTICE.md`](NOTICE.md).
+
+Other writing and table-and-figure guidance draws on a locally maintained collection of papers from AER, QJE, JPE, Econometrica, REStud, and Chinese journals including *Economic Research Journal*, *Management World*, and *China Industrial Economics*. The public files describe general writing practices rather than reproduce the papers. The article list is not published, out of concern that authors may not wish their papers to be identified as sources for these rules. See the [corpus policy](docs/paper-corpus.md).
 
 ### 中文
 
-- **2026-10-09 更新**：
-  1. 新增 `references/outlines/01_argument_and_writing_task_outlines.md`，并在总入口接入论证大纲和面向合作者的任务型写作大纲路由。
-  2. 模块保留已确认的框架，明确各项主张的主要论述位置，并为每项写作任务说明阅读材料、推理步骤和已经约定的图表工作。
-  3. 区分交付物类型与工作阶段：任务型写作大纲或 Proposal 骨架不等于论文正文或完整 Proposal。只交付大纲时检查论证、来源和图表规格；要求交付相应成品时，再适用完整稿件审计和图形渲染检查。
-- **2026-07-18 更新**：
-  1. 新增三个按需加载的 `research-convergence` reference，分别处理研究范围与主张契约、理论/实证闭合门槛，以及 Proposal/分轮修改/停止修改门槛。
-  2. `econ-writing-workflow` 现在会先识别任务阶段再路由这些检查：探索和局部润色不会被过早冻结或擅自扩展为全文审查；完整起草、重大修改、Proposal 和终稿审查只加载适用部分。
-  3. 新规则区分证据状态、模型与测量闭合、Proposal 可行性、规范性政策条件，以及成熟稿的停止/重开标准。固定段数、结果数量和最小模型仍是按论文类型调整的默认建议；范围清单和一致性矩阵只留在作者侧记录中，不进入论文正文。
-  4. 已规范化 `econ-write` 的 frontmatter，删除当前规范和验证器均不支持的 `argument-hint`、`user-invocable`。`name`、`description`、完整指令正文、references 以及显式/隐式 skill 路由均未改变；源文件与安装副本现在都通过严格验证。
-- **2026-05-17 更新**：
-  1. 新增中英文共用的 `regression-results` 参考模块，用于回归结果经济量级解释。
-  2. `econ-writing-workflow` 现在会把主回归结果、系数解释、边际效应、交互项净效应、对数到百分比转换，以及均值、标准差、分位差或政策幅度比较路由到该模块。
-  3. `econ-write` 和 `cn-top-econ-writing` 现在要求重要结果段将系数转译为合适的经济量级基准，同时避免编造描述统计或机械堆叠均值/标准差/分位差清单。
-- **2026-05-16 更新**：
-  1. 新增稿件安全护栏：作者诊断标签（如“主线功能”“支撑主线”“是否进入正文”）不得进入正文、表注、图注、附录说明或脚注；当研究事实、变量口径、样本构造、识别设定、表图含义、目标期刊要求或实质取舍不清楚时，agent 必须询问用户或留下具体 `TODO`，不能自行猜测。
-  2. `econ-writing-workflow` 已新增任务过程中的主动重路由规则，长任务中会反复检查当前阶段是否应切换到 `econ-table-figure-design`、`cn-top-econ-writing`、`econ-write` 或 `empirical-econ-workflow`。
-  3. `econ-table-figure-design` 现在要求对绘制、修改或重新生成后的图形和地图进行最终渲染结果检查，必须确认文字、图例、色带、小图框、坐标轴和地图/图形内容没有重叠、遮挡或压住有效信息。
-- **2026-05-15 更新**：
-  1. `econ-writing-workflow` 已新增项目级 skill 路由提示，适用于多步骤论文写作、制表、绘图、投稿体例和格式检查任务。
-  2. 当最近的 `AGENTS.md` 或 `CLAUDE.md` 中尚无 economics-writing routing 规则时，skill 会先询问用户是否添加持久本地规则；未获明确授权前不会修改这些文件。
-  3. `cn-top-econ-writing` 和 `econ-table-figure-design` 现在会在长任务中提示回到 `econ-writing-workflow` 统一设置持久路由，降低 agent 做着做着忘记调用相关 skill 的风险。
-- **2026-05-14 更新**：
-  1. `cn-top-econ-writing` 已新增 `references/argument-logic/` 中文论证逻辑模块，把经济学论文可跨语言迁移的写作结构转化为中文顶刊规则，但不迁移英文句式、表达或语序。
-  2. 该模块覆盖全文主线、贡献保护、摘要/引言逻辑、理论与机制写作、主结果叙述、机制/异质性/稳健性取舍、表图是否服务主线，以及改写后的 drop check。
-  3. `chinese-diction` 现在明确在涉及结构、贡献、章节顺序、结果组织或表图取舍时，先走论证逻辑判断，再做中文遣词造句和 AI 腔/翻译腔清理。
-- **2026-05-13 更新**：
-  1. `econ-write` 已新增 `references/english-diction/` 英文顶刊遣词造句模块，覆盖句子功能、动词搭配、摘要与引言句法、理论/实证 prose 差异，以及 AI 腔/翻译腔修稿检查。
-  2. 新增 `econ-table-figure-design` 中英文通用表图设计 skill，覆盖主回归表、稳健性、异质性、机制、表注图注、配色、字体字号和导出检查。
-  3. `econ-writing-workflow` 已新增 `references/argument-logic/`，用于全文逻辑、重复删除、重点排序和表图是否服务主线的审查。
-  4. `econ-writing-workflow` 已新增 `references/full-paper-drafting/`，用于基于作者自己的研究问题、结果包和图表生成可审查初稿，并通过输入审查、正文/附录表图安排、禁止编造的 `TODO` 规则和中英文写作路由保证边界清楚。
-- `econ-write` 当前可直接使用，并已保留第三方 MIT 声明。
-- `cn-top-econ-writing` 是独立的中文顶刊写作 skill。
-- `paper_skills` 参考文件仍在开发中，部分文件目前仍是占位。
-- 长期目标是逐步基于本地写作规则和非逐篇来源的抽象规则，重写为完全原创的经济学写作 skills。
+`econ-write` 包含基于 Lu Han 的开源项目 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) 的内容。原项目采用 MIT 许可，版权和许可声明保存在 [`NOTICE.md`](NOTICE.md)。
 
-## Attribution, License, And Ethical Use / 引用、许可与伦理使用 ⚖️
+其他写作和表图规则参考了本地整理的经济学论文，包括 AER、QJE、JPE、Econometrica、REStud，以及《经济研究》《管理世界》《中国工业经济》等中文期刊。公开文件总结写作方法，不转载论文内容。考虑到论文作者可能不愿被列为这些规则的提炼来源，目前不公开具体论文清单。详见[语料使用政策](docs/paper-corpus.md)。
+
+## Current Status / 当前状态
 
 ### English
 
-The `skills/econ-write/` skill includes content based on [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) by Lu Han, licensed under the MIT License. See [`NOTICE.md`](NOTICE.md) for the preserved third-party copyright and license notice.
+The repository includes four writing/design skills and the `econ-writing-workflow-multiagent` module. Some files in `paper_skills` remain placeholders. Further development will replace inherited writing guidance with original rules while preserving the required attribution for retained third-party material.
 
-Original repository content is licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), unless otherwise stated. Commercial use of original repository content requires separate written permission. Third-party materials remain subject to their own notices and licenses, as described in [`NOTICE.md`](NOTICE.md).
+<details>
+<summary>Update history</summary>
 
-This repository is intended for non-commercial academic writing support. Do not use it for paid paper-writing services, ghostwriting, academic misconduct services, or fabricated research materials. See [`ETHICAL_USE.md`](ETHICAL_USE.md).
+- **2026-10-09** — Added argument outlines and writing assignments for collaborators. The agent preserves agreed headings, gives each claim a main location, and specifies the reading, reasoning, and agreed table or figure work for each section. An outline or proposal skeleton is checked as an outline; full-draft review and rendered-figure checks apply when those finished outputs are requested.
+- **2026-07-18** — Added three research-planning references covering scope and claims, theory and empirical support, and proposal feasibility and revision decisions. The agent selects checks for the task at hand rather than turning exploration or a local edit into a full-paper audit. The references distinguish preliminary from established findings, check model and measurement definitions, connect theory to data, examine the conditions behind policy recommendations, and ask when a revision is finished. Suggested paragraph counts, result counts, and model complexity vary with the paper; working checklists stay outside the manuscript. Removed unsupported `argument-hint` and `user-invocable` fields from `econ-write` without changing its instructions or invocation behavior; source and installed copies passed validation.
+- **2026-05-17** — Added guidance for explaining the economic size of estimates in English and Chinese. It covers coefficients, marginal effects, interactions, log conversions, and comparisons with relevant means, standard deviations, percentiles, or policy changes. The agent chooses a meaningful comparison rather than applying every benchmark, and must not invent descriptive statistics.
+- **2026-05-16** — Added checks to keep editing notes and internal labels out of paper text, notes, appendices, and footnotes. Unclear research facts or substantive choices must be raised with the author rather than guessed. The workflow now rechecks which skill is needed as a task changes. Drawn or edited figures and maps require inspection of the final output for obscured content, overlapping text, and unreadable labels.
+- **2026-05-15** — Added an optional project-level reminder to use the relevant writing skills throughout a longer task. Before adding it to local `AGENTS.md` or `CLAUDE.md` files, the agent asks for permission. The Chinese-writing and table-and-figure skills also refer longer tasks back to this setup.
+- **2026-05-14** — Added Chinese argument-review guidance for the paper's central argument, contribution, section order, theory, results, supporting analyses, and use of tables and figures. It draws on economic reasoning without copying English syntax. The agent checks structure and retained content before polishing Chinese wording.
+- **2026-05-13** — Added English prose guidance for sentence purpose, verbs, abstracts, introductions, theory and empirical writing, and awkward or formulaic phrasing. Added the bilingual table-and-figure skill, whole-paper argument review, and a process for drafting from the author's research materials. That process checks the inputs, places tables and figures, and separates missing information from supported claims.
 
-Full-draft workflows are for author-responsible drafting and revision of legitimate research. They must not be used as an automatic paper-writing or submission service.
-
-Because the original repository content uses a NonCommercial license, this repository is not distributed as an OSI-approved open-source project.
+</details>
 
 ### 中文
 
-`skills/econ-write/` 包含基于 Lu Han 的 [`hanlulong/econ-writing-skill`](https://github.com/hanlulong/econ-writing-skill) 的内容，原项目采用 MIT License。第三方版权与许可声明已保存在 [`NOTICE.md`](NOTICE.md)。
+仓库包含四个写作与表图技能，以及 `econ-writing-workflow-multiagent` 模块；`paper_skills` 中部分参考文件仍是占位内容。后续会继续用原创规则替换借鉴的写作指导，保留仍在使用的第三方内容所需的署名和许可声明。
 
-除非另有说明，本仓库原创内容采用 Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)。原创内容的商业使用需要另行取得书面许可。第三方内容仍以其各自声明和许可为准，见 [`NOTICE.md`](NOTICE.md)。
+<details>
+<summary>查看更新记录</summary>
 
-本仓库用于非商用学术写作辅助。不得用于付费论文代写、ghostwriting、学术不端服务或伪造研究材料。见 [`ETHICAL_USE.md`](ETHICAL_USE.md)。
+- **2026-10-09** — 新增论证大纲和面向合作者的写作任务安排。agent 保留已确定的标题，为各项主张安排主要论述位置，并逐节说明阅读材料、推理步骤和已约定的图表任务。大纲和研究建议书骨架按大纲检查；要求交付完整稿件或实际图形时，再做相应验收。
+- **2026-07-18** — 新增三个研究规划参考文件，分别处理研究范围与主张、理论和实证依据，以及研究建议书的可行性和修改安排。agent 按当前任务选择检查内容，不把探索或局部修改扩大为全文审查。规则区分初步结果与已有结论，检查模型和测量定义、理论与数据的对应关系、政策建议成立的条件，以及何时可以结束修改。段数、结果数量和模型复杂度建议随论文类型调整，工作清单不写进正文。同时删除 `econ-write` 中不受支持的 `argument-hint`、`user-invocable` 字段，技能正文和调用方式未变，源文件与安装副本均通过校验。
+- **2026-05-17** — 新增中英文共用的经济量级解释指导，涵盖系数、边际效应、交互项、对数换算，以及与均值、标准差、分位差或政策变化的比较。agent 应选择有经济含义的参照，不机械套用所有指标，也不编造描述统计。
+- **2026-05-16** — 新增检查，避免把修改备忘和内部标签写进正文、表注、图注、附录或脚注。研究事实或实质选择不清楚时，应向作者提出，而不是猜测。写作任务转入其他环节时，agent 会重新判断应使用的技能；绘制或修改图形、地图后，须检查实际输出，确认内容没有被遮挡、文字没有重叠、标签可以辨认。
+- **2026-05-15** — 新增可选的项目级提醒，让 agent 在长任务中持续使用相关写作技能。写入本地 `AGENTS.md` 或 `CLAUDE.md` 前，agent 必须取得许可。中文写作和表图技能也会在长任务中提示使用这项设置。
+- **2026-05-14** — 新增中文论证检查，涵盖全文主线、贡献、章节顺序、理论、结果、补充分析和表图安排。参考经济学论证方法，不照搬英文句法。agent 先检查结构和必要内容是否保留，再修改中文表达。
+- **2026-05-13** — 新增英文表达指导，处理句子作用、动词搭配、摘要、引言、理论和实证写作，以及生硬或套路化表达。同时加入中英文表图技能、全文论证检查，以及根据作者研究材料起草论文的步骤，包括检查输入、安排正文与附录表图、区分缺失信息和已有依据。
 
-完整初稿 workflow 只用于作者负责的合法研究写作与修稿，不得作为自动论文代写或自动投稿服务使用。
+</details>
 
-由于原创内容采用 NonCommercial 许可，本仓库不以 OSI 认可的开源项目形式发布。
-
-## AI Assistance / AI 辅助说明 🤖
+## What Is Inside / 仓库内容
 
 ### English
 
-ChatGPT and Codex were used to help organize the repository, draft documentation, review attribution, and prepare Git commits. They are not listed as authors or maintainers because responsibility for the repository, licensing choices, and final content remains with the human maintainer.
+The five skill directories include the entry point, three specialist writing/design skills, and a multi-agent coordinator. Reference files hold the detailed guidance; `scripts/` directories hold the executable Python checks and their tests.
 
-See [`docs/ai-assistance.md`](docs/ai-assistance.md) for details.
+| Path | Contents |
+| --- | --- |
+| [`skills/econ-writing-workflow/`](skills/econ-writing-workflow/) | Main entry point; argument and task outlines, author-intent preservation, full drafting, literature use, research planning, economic-magnitude interpretation, and version/approval procedures. |
+| [`skills/econ-write/`](skills/econ-write/) | English economics writing and revision, diction, section guidance, identification discussion, LaTeX tips, and review checklists. |
+| [`skills/econ-write/references/paper_skills/`](skills/econ-write/references/paper_skills/) | Section-specific references; some remain under development. |
+| [`skills/cn-top-econ-writing/`](skills/cn-top-econ-writing/) | Chinese economics prose, argument review, wording, and journal conventions. |
+| [`skills/econ-table-figure-design/`](skills/econ-table-figure-design/) | Table and figure design, labels, visual style, and export checks. |
+| [`skills/econ-table-figure-design/scripts/`](skills/econ-table-figure-design/scripts/) | Python label-audit program and its tests. |
+| [`skills/econ-writing-workflow-multiagent/`](skills/econ-writing-workflow-multiagent/) | Coordination of long writing tasks, independent reviewers, shared research facts, handoffs, and revisions. |
+| [`skills/econ-writing-workflow-multiagent/scripts/`](skills/econ-writing-workflow-multiagent/scripts/) | Five Python preparation/validation programs for manuscript, citation, and literature review, plus their tests. |
+| [`docs/paper-corpus.md`](docs/paper-corpus.md) | Policy for using the local paper collection without publishing source texts or article lists. |
+| [`LICENSE`](LICENSE) | License for original repository content. |
+| [`NOTICE.md`](NOTICE.md) | Third-party copyright and license notices. |
+| [`ETHICAL_USE.md`](ETHICAL_USE.md) | Academic and non-commercial use requirements. |
+| [`docs/ai-assistance.md`](docs/ai-assistance.md) | How AI assisted development and who is responsible for the repository. |
 
 ### 中文
 
-本仓库在整理目录、撰写说明、检查引用和准备 Git 提交时使用了 ChatGPT 与 Codex 辅助。它们不列为作者或维护者；仓库内容、许可选择和后续维护责任仍由人类维护者承担。
+五个技能目录分别是写作总入口、三个专业写作与表图技能，以及多 agent 协作模块。具体规则放在参考文件中；`scripts/` 目录存放可执行的 Python 检查程序及测试。
 
-详情见 [`docs/ai-assistance.md`](docs/ai-assistance.md)。
+| 路径 | 内容 |
+| --- | --- |
+| [`skills/econ-writing-workflow/`](skills/econ-writing-workflow/) | 写作总入口，包含论证与任务大纲、作者原意保留、全文起草、文献使用、研究规划、经济量级解释，以及版本和授权安排。 |
+| [`skills/econ-write/`](skills/econ-write/) | 英文经济学写作与修改、遣词造句、章节指导、识别策略讨论、LaTeX 提示和审阅清单。 |
+| [`skills/econ-write/references/paper_skills/`](skills/econ-write/references/paper_skills/) | 分章节参考规则；部分仍在开发。 |
+| [`skills/cn-top-econ-writing/`](skills/cn-top-econ-writing/) | 中文经济学论文表达、论证检查、遣词造句和期刊体例。 |
+| [`skills/econ-table-figure-design/`](skills/econ-table-figure-design/) | 表格与图形设计、标签、视觉样式和导出检查。 |
+| [`skills/econ-table-figure-design/scripts/`](skills/econ-table-figure-design/scripts/) | 图表标签 Python 检查程序及测试。 |
+| [`skills/econ-writing-workflow-multiagent/`](skills/econ-writing-workflow-multiagent/) | 长文写作、独立审阅、共享研究事实、任务交接和修改整合的多 agent 模块。 |
+| [`skills/econ-writing-workflow-multiagent/scripts/`](skills/econ-writing-workflow-multiagent/scripts/) | 稿件、引文和文献审阅所用的五个 Python 准备与验证程序，以及配套测试。 |
+| [`docs/paper-corpus.md`](docs/paper-corpus.md) | 本地论文语料的使用政策，说明为何不公开原文和具体论文清单。 |
+| [`LICENSE`](LICENSE) | 仓库原创内容的许可说明。 |
+| [`NOTICE.md`](NOTICE.md) | 第三方版权与许可声明。 |
+| [`ETHICAL_USE.md`](ETHICAL_USE.md) | 学术使用和非商用要求。 |
+| [`docs/ai-assistance.md`](docs/ai-assistance.md) | AI 参与开发的方式，以及仓库责任归属。 |
+
+## License And Use / 许可与使用要求
+
+### English
+
+Unless otherwise stated, original repository content is licensed under **CC BY-NC 4.0**. Commercial use requires separate written permission. Third-party material keeps its own license, including the MIT-licensed material used in `econ-write`; it is not relicensed as non-commercial-only content. See [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
+
+The skills are intended for non-commercial academic writing, teaching, and revision. Do not use them for paid paper-writing, undisclosed ghostwriting, academic misconduct, fabricated research, or an automatic paper-writing or submission service. Authors remain responsible for accuracy, citations, disclosure, and compliance with their institution's or journal's rules. See [`ETHICAL_USE.md`](ETHICAL_USE.md).
+
+Because the original content has a non-commercial restriction, this repository is not an OSI-approved open-source project.
+
+### 中文
+
+除另有说明外，本仓库原创内容采用 **CC BY-NC 4.0** 许可，商业使用须另行取得书面许可。第三方内容保留原许可；例如 `econ-write` 使用的 MIT 许可内容，不因收入本仓库而变为仅限非商用。详见 [`LICENSE`](LICENSE) 和 [`NOTICE.md`](NOTICE.md)。
+
+这些技能用于非商用学术写作、教学和修稿，不得用于付费论文代写、隐瞒实际作者身份的代写、学术不端、伪造研究，或自动论文代写和投稿服务。作者负责核对内容、引用和披露要求，并遵守所在机构及期刊的规定。详见 [`ETHICAL_USE.md`](ETHICAL_USE.md)。
+
+由于原创内容有非商用限制，本仓库不属于 OSI 认可的开源项目。
+
+## AI Assistance / AI 辅助说明
+
+ChatGPT and Codex assisted with repository organization, documentation, attribution checks, and Git operations. They are not authors or maintainers; the human maintainer is responsible for the content, licensing decisions, and maintenance. See [`docs/ai-assistance.md`](docs/ai-assistance.md).
+
+本仓库使用 ChatGPT 和 Codex 协助整理目录、撰写说明、检查来源署名和执行 Git 操作。它们不列为作者或维护者；内容、许可决定和后续维护由维护者负责。详见 [AI 辅助说明](docs/ai-assistance.md)。
