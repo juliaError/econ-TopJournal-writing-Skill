@@ -1,4 +1,4 @@
-# Economics Writing Skills / 经济学写作技能
+# Economics Writing Skills / 经济学写作技能 ✨
 
 This Codex workflow supports economics writing in English and Chinese: outlines, full drafts, revisions, tables and figures, and manuscript review. It combines writing instructions and reference modules with multi-agent review and an executable Python pipeline for preparing reviews and checking their coverage, citations, and file versions.
 
@@ -8,7 +8,7 @@ This Codex workflow supports economics writing in English and Chinese: outlines,
 
 **AI 写作只能辅助研究和成文过程，关键学术判断依然离不开人类研究者。** 研究问题、证据解释和论文主张由作者确定，agent 按要求协助写作，修改结果仍须由作者判断和确认。
 
-## What It Does / 主要功能
+## What It Does / 主要功能 ✍️
 
 ### English
 
@@ -30,7 +30,7 @@ This Codex workflow supports economics writing in English and Chinese: outlines,
 - **期刊与文档格式。** 按适用的中文期刊要求检查投稿体例、匿名处理、标题层级、参考文献和附录安排，并提供 LaTeX 与 Word 文档处理方面的指导。
 - **长文协作与版本管理。** 分配章节写作和审阅任务，检查作者原意是否保留，记录既有内容的增删，并区分候选结果、已确认版本和已经写入稿件的内容。实质改写和稿件整合须遵循作者的授权。
 
-## Python Pipeline And Review / Python 管线与审阅
+## Python Pipeline And Review / Python 管线与审阅 🐍
 
 ### English
 
@@ -60,7 +60,7 @@ The multi-agent component, `econ-writing-workflow-multiagent`, requires an agent
 
 多 agent 模块 `econ-writing-workflow-multiagent` 需要运行环境支持独立审阅 agent。短段落润色和只交付大纲的任务使用相应的轻量检查，不套用完整稿件流程。
 
-### Programs / 程序清单
+### Programs / 程序清单 🛠️
 
 | Program / 程序 | What it checks / 作用 |
 | --- | --- |
@@ -71,7 +71,7 @@ The multi-agent component, `econ-writing-workflow-multiagent`, requires an agent
 | [`validate_literature_audit.py`](skills/econ-writing-workflow-multiagent/scripts/validate_literature_audit.py) | Validates the independent literature-review assignment and result / 验证独立文献审阅的任务与结果记录。 |
 | [`audit_reader_facing_labels.py`](skills/econ-table-figure-design/scripts/audit_reader_facing_labels.py) | Checks label coverage, numeric preservation, bilingual pairing, and semantic/render-review records / 检查图表标签覆盖、数值保留、中英对应及语义和画面审查记录。 |
 
-## Model Choice / 模型选择
+## Model Choice / 模型选择 🧠
 
 ### English
 
@@ -85,11 +85,11 @@ For Chinese wording and sentence-level revision, you can also try DeepSeek or Ki
 
 中文措辞和句式润色，也可以使用 DeepSeek 或 Kimi，再对照原文检查含义是否保留。请在支持相应模型的平台上使用。当前型号可查阅 [OpenAI](https://developers.openai.com/api/docs/models) 和 [Anthropic](https://platform.claude.com/docs/en/models/overview) 的官方列表。
 
-## Install Locally / 本地安装
+## Install Locally / 本地安装 🚀
 
 ### English
 
-#### Ask the agent to install
+#### Ask the agent to install 🤖
 
 Send this request in a Codex conversation:
 
@@ -108,7 +108,7 @@ tell me whether I need to restart it.
 
 The agent downloads the files, checks the installation path, and copies the skills. You do not need to run the commands below if the agent completes the installation.
 
-#### Install manually
+#### Install manually 💻
 
 If your Codex installation reads skills from `~/.codex/skills/`, clone or download the repository, open a terminal in its root directory, and run the following commands. These commands are for a first installation; if the destination folders already exist, compare them before copying. If your Codex version uses a different directory, use the installation request above to have the agent check it.
 
@@ -127,7 +127,7 @@ If the skills do not appear after installation, restart Codex and ask it to chec
 
 ### 中文
 
-#### 让 agent 安装
+#### 让 agent 安装 🤖
 
 在 Codex 对话中发送下面这段话：
 
@@ -144,7 +144,7 @@ skills/econ-writing-workflow-multiagent（连同其 references 和 scripts）。
 
 下载文件、核对安装路径和复制技能由 agent 完成。它安装成功后，你不需要再执行下面的命令。
 
-#### 手动安装
+#### 手动安装 💻
 
 如果你的 Codex 从 `~/.codex/skills/` 读取技能，可以先克隆或下载仓库，在仓库根目录打开终端，再执行以下命令。这组命令适用于首次安装；目标目录已经存在时，应先比较内容再复制。如果当前版本使用其他目录，可以用上面的安装请求让 agent 核对。
 
@@ -161,7 +161,7 @@ cp -R skills/econ-writing-workflow-multiagent ~/.codex/skills/econ-writing-workf
 
 安装后如果仍未显示这些技能，请重启 Codex，再让 agent 检查。
 
-## Usage / 如何使用
+## Usage / 如何使用 🧭
 
 ### English
 
@@ -234,7 +234,7 @@ agent 收到请求后，会读取技能说明，再根据任务使用英文写�
 
 这套技能负责写作。数据清洗、变量构造、回归估计和可复现实证执行，需要另外使用实证工作流。
 
-## Sources / 内容来源
+## Sources / 内容来源 📚
 
 ### English
 
@@ -248,7 +248,7 @@ Other writing and table-and-figure guidance draws on a locally maintained collec
 
 其他写作和表图规则参考了本地整理的经济学论文，包括 AER、QJE、JPE、Econometrica、REStud，以及《经济研究》《管理世界》《中国工业经济》等中文期刊。公开文件总结写作方法，不转载论文内容。考虑到论文作者可能不愿被列为这些规则的提炼来源，目前不公开具体论文清单。详见[语料使用政策](docs/paper-corpus.md)。
 
-## Current Status / 当前状态
+## Current Status / 当前状态 📌
 
 ### English
 
@@ -284,7 +284,7 @@ The repository includes four writing/design skills and the `econ-writing-workflo
 
 </details>
 
-## What Is Inside / 仓库内容
+## What Is Inside / 仓库内容 🗂️
 
 ### English
 
@@ -326,7 +326,7 @@ The five skill directories include the entry point, three specialist writing/des
 | [`ETHICAL_USE.md`](ETHICAL_USE.md) | 学术使用和非商用要求。 |
 | [`docs/ai-assistance.md`](docs/ai-assistance.md) | AI 参与开发的方式，以及仓库责任归属。 |
 
-## License And Use / 许可与使用要求
+## License And Use / 许可与使用要求 ⚖️
 
 ### English
 
@@ -344,7 +344,7 @@ Because the original content has a non-commercial restriction, this repository i
 
 由于原创内容有非商用限制，本仓库不属于 OSI 认可的开源项目。
 
-## AI Assistance / AI 辅助说明
+## AI Assistance / AI 辅助说明 🤖
 
 ChatGPT and Codex assisted with repository organization, documentation, attribution checks, and Git operations. They are not authors or maintainers; the human maintainer is responsible for the content, licensing decisions, and maintenance. See [`docs/ai-assistance.md`](docs/ai-assistance.md).
 
