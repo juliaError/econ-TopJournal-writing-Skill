@@ -1,6 +1,6 @@
 ---
 name: econ-writing-workflow
-description: Use as the main entry point for economics writing workflows in English or Chinese, including paper and research-proposal planning, scope and claim convergence, full paper drafting from research questions and result packages, major revision, document-level translation or compression, exhaustive semantic QA and final audits, abstract/introduction/results revision, Chinese top-journal adaptation, English and Chinese diction cleanup, AI/translationese removal, table and figure design, notes/captions, formatting checks, and routing to empirical workflow support when data cleaning, regressions, or variable construction are involved.
+description: Use as the main entry point for economics writing workflows in English or Chinese, including paper and research-proposal planning, argument outlines and collaborator-facing writing-task outlines, scope and claim convergence, full paper drafting from research questions and result packages, major revision, document-level translation or compression, exhaustive semantic QA and final audits, abstract/introduction/results revision, Chinese top-journal adaptation, English and Chinese diction cleanup, AI/translationese removal, table and figure design, notes/captions, formatting checks, and routing to empirical workflow support when data cleaning, regressions, or variable construction are involved.
 ---
 
 # Economics Writing Workflow
@@ -10,6 +10,30 @@ description: Use as the main entry point for economics writing workflows in Engl
 Use this skill as the user's main entry point for economics writing work. It does not replace the specialized skills; it routes the task to the right writing module, keeps the workflow ordered, and checks that the final output matches the user's target.
 
 This skill is not a full empirical pipeline. For data cleaning, variable construction, regression code, estimation, diagnostics, or reproducibility tasks, pair with `empirical-econ-workflow`.
+
+## Deliverable Type
+
+Identify the requested deliverable separately from the work stage: discussion
+or argument outline, research proposal, collaborator-facing writing-task
+outline, or manuscript prose. A writing-task outline is meant to contain
+reading assignments, argument steps and figure/table production instructions;
+do not strip them out using manuscript-only voice rules. Keep internal edit
+history and agent bookkeeping out of the handed-off outline.
+
+For paper/book outlines or writing-task outlines, load
+`references/outlines/01_argument_and_writing_task_outlines.md`. Preserve the
+accepted framework and use the outline's purpose to choose its level of detail.
+An outline alone does not trigger complete-paper drafting or exhaustive
+complete-manuscript QA requirements. Existing author-intent, source, empirical
+and write-authorization rules still apply where relevant. For an actual
+research proposal, continue to use the proposal-specific module rather than
+substituting the task-outline template.
+
+A proposal skeleton is still an outline, not a complete proposal. For
+outline-only requests, check argument and display specifications; do not
+require produced figures, rendered-label checks, or a complete-proposal QA
+report when those artifacts are not being delivered. Apply the corresponding
+production and acceptance checks when the actual artifacts are requested.
 
 ## Project-Level Skill Pinning
 
@@ -256,6 +280,7 @@ If a request spans more than one category, handle them in this order:
 
 ## Routing
 
+- For discussion/argument outlines, book outlines, or writing-task outlines handed to collaborators, load `references/outlines/01_argument_and_writing_task_outlines.md`; distinguish the deliverable from a research proposal or manuscript before applying the remaining routes.
 - For new claim-bearing prose, substantive rewriting, meaning-sensitive translation, section restructuring, or uncertainty about what the author wants to say or not say, first load `references/author-intent/01_author_intent_contract_and_semantic_fidelity.md`.
 - For a complete paper or proposal, document-level translation or compression, major revision, or exhaustive pre-delivery semantic audit, route to `econ-writing-workflow-multiagent` and load `econ-writing-workflow-multiagent/references/exhaustive_semantic_qa_protocol.md`. Do not use a sequential same-agent simulation as evidence that the independent-review gate passed.
 - For English paper prose, use `econ-write`.
@@ -392,11 +417,12 @@ Load before drafting or revising main result prose, abstracts, introductions, co
 Before finalizing a response, confirm that:
 
 - the routed skill still matches the current subtask, not just the original request;
+- a writing-task outline makes the required reading, argument steps and outputs recoverable at each relevant unit, distinguishes production from prose instructions, and has been actually read within the claimed audit scope;
 - any claim-bearing draft is covered by a frozen-current author-intent contract for the requested scope, or qualifies for the explicit meaning-preserving mechanical exception;
 - the semantic-fidelity audit maps every required intent to the draft and finds no unapproved addition, claim-strength escalation, lost qualifier, forbidden implication, or evidence conflict;
-- any complete paper or proposal, document-level translation or compression, or major revision has a current exhaustive-QA report tied to the candidate and contract hashes; all reader-visible text is captured, every sentence/heading review target has the required roles, high-risk targets meet the contract's explicit independent-review minimum, and the final status is `pass` rather than `clarification_required`, `evidence_conflict`, `audit_incomplete`, `approval_required`, `fail`, or `metric_unavailable`;
+- any complete paper or proposal, or document-level translation, compression, or major revision of such a manuscript, has a current exhaustive-QA report tied to the candidate and contract hashes; all reader-visible text is captured, every sentence/heading review target has the required roles, high-risk targets meet the contract's explicit independent-review minimum, and the final status is `pass` rather than `clarification_required`, `evidence_conflict`, `audit_incomplete`, `approval_required`, `fail`, or `metric_unavailable`; outline-only deliverables, including proposal skeletons, receive the outline review defined above rather than complete-manuscript acceptance;
 - any bounded local polish rechecks the changed sentences, their paragraph and necessary adjacent context, and affected definition or cross-section dependencies rather than claiming a paper-wide pass;
-- any table/figure decision has main-text versus appendix placement and has passed the applicable basic-identity, full-recoverability, language, and rendered-label checks;
+- any table/figure decision specifies its intended placement and passes the applicable specification and source-recoverability checks; actual delivered tables/figures also pass the applicable basic-identity, full-recoverability, language, and rendered-label checks; outline-only production instructions do not require a produced or rendered artifact;
 - any empirical claim is grounded in provided or inspected evidence;
 - any main regression or important mechanism/robustness result has an economic magnitude benchmark, or the missing benchmark is kept out of paper-facing prose and recorded as a concrete author-facing `TODO`;
 - any literature-dependent claim, theory, mechanism, variable, data source, empirical choice, contribution boundary, or policy implication is grounded in inspected local sources; unavailable non-semantic metadata is recorded as an author-facing `TODO`, while a material support gap returns `evidence_conflict` and keeps the affected prose unwritten;

@@ -22,7 +22,7 @@ Important notes: AI writing can only assist the research and drafting process; t
 
 | Path | Description |
 | --- | --- |
-| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, full-draft, or table/figure module, and points empirical work to the empirical workflow. |
+| `skills/econ-writing-workflow/` | Main entry skill that routes economics writing tasks to the relevant English, Chinese, argument/writing-task outline, full-draft, or table/figure module, and points empirical work to the empirical workflow. |
 | `skills/econ-write/` | General English economics paper writing skill for abstracts, introductions, literature reviews, theory sections, empirical sections, tables, robustness, LaTeX, and revision. |
 | `skills/econ-write/references/paper_skills/` | Optional section-specific reference modules loaded by `econ-write` when relevant. Some files are still being developed. |
 | `skills/cn-top-econ-writing/` | Chinese top-journal economics writing skill for journals such as 《经济研究》, 《管理世界》, and 《中国工业经济》, including Chinese diction cleanup and argument-logic checks. |
@@ -37,7 +37,7 @@ Important notes: AI writing can only assist the research and drafting process; t
 
 | 路径 | 说明 |
 | --- | --- |
-| `skills/econ-writing-workflow/` | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
+| `skills/econ-writing-workflow/` | 普通用户主要调用的写作总入口 skill，负责把经济学写作任务路由到英文、中文、论证大纲/任务型写作大纲、完整初稿或表图模块；涉及实证工作时提示搭配实证 workflow。 |
 | `skills/econ-write/` | 通用英文经济学论文写作 skill，覆盖摘要、引言、文献、理论、实证、表图、稳健性、LaTeX 和修改审查。 |
 | `skills/econ-write/references/paper_skills/` | `econ-write` 按需加载的分 section 参考规则；部分文件仍在开发中。 |
 | `skills/cn-top-econ-writing/` | 面向《经济研究》《管理世界》《中国工业经济》等中文顶刊的写作、审查和修稿 skill，包含中文遣词造句清理和论证逻辑检查。 |
@@ -134,6 +134,12 @@ For most users, call `econ-writing-workflow` first. It will route the writing ta
 Use econ-writing-workflow to revise this paper's introduction, tables, and Chinese abstract.
 ```
 
+The outline module turns an accepted paper or book framework into a writing-task outline for collaborators. It preserves the agreed structure and makes the required reading, reasoning steps, and table/figure assignments explicit. A writing-task outline is a separate deliverable from manuscript prose or a complete research proposal; an outline-only request checks the argument and display specifications without requiring the figures to be produced.
+
+```text
+Use econ-writing-workflow to turn this accepted book outline into a writing-task outline for collaborators. Preserve the existing headings and framework. For each task, specify what to read, the reasoning to develop, and any already agreed table or figure to produce. Deliver the outline only; leave unresolved substantive choices for confirmation.
+```
+
 It can also help draft an auditable full paper from your own research question, regression tables, figures, and design notes. Missing facts should remain as explicit `TODO` items rather than invented claims.
 
 ```text
@@ -166,6 +172,12 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 用 econ-writing-workflow 检查这篇经济学论文的引言、主回归表和中文表达。
 ```
 
+大纲模块可以把已确认的论文或书稿框架整理成供合作者执行的任务型写作大纲，保留既定结构，并明确各项任务需要阅读的材料、展开的推理步骤和制作的图表。任务型写作大纲与论文正文、完整研究 Proposal 是不同交付物；只要求大纲时，检查论证和图表规格，不要求同时制作图表。
+
+```text
+用 econ-writing-workflow 把这份已确认的书稿大纲整理成供合作者执行的任务型写作大纲。保留现有标题和框架，逐项说明读什么材料、展开哪些推理，以及制作哪些已经约定的图表。本次只交付大纲，未确定的实质选择留待确认。
+```
+
 如果你已经有自己的研究问题、回归表、图和识别/变量说明，也可以让它生成一版可审查的完整初稿。缺失信息应保留为明确的 `TODO`，不能编造。
 
 ```text
@@ -194,6 +206,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ### English
 
+- **2026-10-09 update**:
+  1. Added `references/outlines/01_argument_and_writing_task_outlines.md` and entry-point routing for argument outlines and collaborator-facing writing-task outlines.
+  2. The module preserves the accepted framework, assigns claims to their main locations, and specifies the reading, reasoning, and agreed table/figure work needed for each writing task.
+  3. Deliverable type is distinguished from work stage: a writing-task outline or proposal skeleton is not a manuscript or complete proposal. Outline-only work reviews the argument, sources, and display specifications; full-manuscript audits and rendered-figure checks apply when the corresponding artifacts are requested.
 - **2026-07-18 update**:
   1. Added three selectively loaded `research-convergence` references for scope and claim contracts, theory/empirical closure gates, and proposal/revision/stop gates.
   2. `econ-writing-workflow` now classifies the task stage before routing these checks: exploration and local polishing are protected from premature freezing or unsolicited paper-wide audits, while full drafting, major revision, proposals, and final audits load only the applicable sections.
@@ -227,6 +243,10 @@ For empirical coding, data cleaning, or regressions, pair these writing skills w
 
 ### 中文
 
+- **2026-10-09 更新**：
+  1. 新增 `references/outlines/01_argument_and_writing_task_outlines.md`，并在总入口接入论证大纲和面向合作者的任务型写作大纲路由。
+  2. 模块保留已确认的框架，明确各项主张的主要论述位置，并为每项写作任务说明阅读材料、推理步骤和已经约定的图表工作。
+  3. 区分交付物类型与工作阶段：任务型写作大纲或 Proposal 骨架不等于论文正文或完整 Proposal。只交付大纲时检查论证、来源和图表规格；要求交付相应成品时，再适用完整稿件审计和图形渲染检查。
 - **2026-07-18 更新**：
   1. 新增三个按需加载的 `research-convergence` reference，分别处理研究范围与主张契约、理论/实证闭合门槛，以及 Proposal/分轮修改/停止修改门槛。
   2. `econ-writing-workflow` 现在会先识别任务阶段再路由这些检查：探索和局部润色不会被过早冻结或擅自扩展为全文审查；完整起草、重大修改、Proposal 和终稿审查只加载适用部分。
