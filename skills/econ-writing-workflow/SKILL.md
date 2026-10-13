@@ -1,6 +1,6 @@
 ---
 name: econ-writing-workflow
-description: Use as the main entry point for economics writing workflows in English or Chinese, including paper and research-proposal planning, argument outlines and collaborator-facing writing-task outlines, scope and claim convergence, full paper drafting from research questions and result packages, major revision, document-level translation or compression, exhaustive semantic QA and final audits, abstract/introduction/results revision, Chinese top-journal adaptation, English and Chinese diction cleanup, AI/translationese removal, table and figure design, notes/captions, formatting checks, and routing to empirical workflow support when data cleaning, regressions, or variable construction are involved.
+description: Use as the main entry point for economics writing workflows in English or Chinese, including paper and research-proposal planning, argument outlines, collaborator-facing writing-task outlines and research-team staffing briefs, scope and claim convergence, full paper drafting from research questions and result packages, major revision, document-level translation or compression, exhaustive semantic QA and final audits, abstract/introduction/results revision, Chinese top-journal adaptation, English and Chinese diction cleanup, AI/translationese removal, table and figure design, notes/captions, formatting checks, and routing to empirical workflow support when data cleaning, regressions, or variable construction are involved.
 ---
 
 # Economics Writing Workflow
@@ -15,12 +15,13 @@ This skill is not a full empirical pipeline. For data cleaning, variable constru
 
 Identify the requested deliverable separately from the work stage: discussion
 or argument outline, research proposal, collaborator-facing writing-task
-outline, or manuscript prose. A writing-task outline is meant to contain
+outline, research-team staffing brief, or manuscript prose. A writing-task outline is meant to contain
 reading assignments, argument steps and figure/table production instructions;
 do not strip them out using manuscript-only voice rules. Keep internal edit
 history and agent bookkeeping out of the handed-off outline.
 
-For paper/book outlines or writing-task outlines, load
+For paper/book or proposal outlines, writing-task outlines, or research-team
+staffing briefs, load
 `references/outlines/01_argument_and_writing_task_outlines.md`. Preserve the
 accepted framework and use the outline's purpose to choose its level of detail.
 An outline alone does not trigger complete-paper drafting or exhaustive
@@ -34,6 +35,42 @@ outline-only requests, check argument and display specifications; do not
 require produced figures, rendered-label checks, or a complete-proposal QA
 report when those artifacts are not being delivered. Apply the corresponding
 production and acceptance checks when the actual artifacts are requested.
+
+## Audience And Intended Use
+
+Before drafting a book outline, paper plan, proposal, writing-task outline or
+research-team staffing brief, establish who will read it and what they need
+to do with it. Read the user's existing instructions first. If unclear, ask:
+“这份文件主要供你自己推敲，还是发给老师、同学或合作者？如果发给别人，
+是请对方讨论判断，还是据此执行任务？” Wait for the answer before drafting
+content whose inclusion depends on it; independent context reading can continue.
+Reuse an explicit audience and purpose without asking again on each edit or
+resumption. Reassess when the intended recipient or use changes.
+
+Self-use permits useful alternatives, edit reasons and discussion notes; it
+does not require adding them. For a document handed to others, retain content
+that helps the recipient understand the research, make the requested decision,
+or carry out confirmed work. Keep author-agent deliberation, allocation
+history and agent bookkeeping outside it. Personal availability, workload,
+existing task burdens and personal accommodation arrangements belong only in
+the user's private deliberation or records. Exclude them from documents handed
+to anyone else, whether for discussion or execution; apparent usefulness to
+the recipient's decision is not an exception. Retain relevant expertise only
+when the user permits its disclosure and it is necessary for that recipient's
+current decision.
+Research reasoning, necessary sources, evidence status, methods, feasibility,
+risks, and substantive questions requiring the recipient's decision are not
+internal chatter. Writing and figure/table instructions belong in a task
+outline even though they would not belong in manuscript prose.
+
+Apply this distinction while drafting, when converting a self-use document
+for circulation, and before final delivery. For outlines and staffing briefs,
+use the recipient-necessity and assignment checks in
+`references/outlines/01_argument_and_writing_task_outlines.md`; for complete
+proposals also preserve the proposal-specific requirements. Keep internal
+notes in the conversation or existing authorized records. Do not automatically
+create internal/external versions, extra files, or printed audit checklists.
+Audience selection does not authorize sending the document to anyone.
 
 ## Project-Level Skill Pinning
 
@@ -280,7 +317,7 @@ If a request spans more than one category, handle them in this order:
 
 ## Routing
 
-- For discussion/argument outlines, book outlines, or writing-task outlines handed to collaborators, load `references/outlines/01_argument_and_writing_task_outlines.md`; distinguish the deliverable from a research proposal or manuscript before applying the remaining routes.
+- For discussion/argument outlines, book or proposal outlines, writing-task outlines, or research-team staffing briefs, apply Audience And Intended Use and load `references/outlines/01_argument_and_writing_task_outlines.md`; distinguish the deliverable from a research proposal or manuscript before applying the remaining routes.
 - For new claim-bearing prose, substantive rewriting, meaning-sensitive translation, section restructuring, or uncertainty about what the author wants to say or not say, first load `references/author-intent/01_author_intent_contract_and_semantic_fidelity.md`.
 - For a complete paper or proposal, document-level translation or compression, major revision, or exhaustive pre-delivery semantic audit, route to `econ-writing-workflow-multiagent` and load `econ-writing-workflow-multiagent/references/exhaustive_semantic_qa_protocol.md`. Do not use a sequential same-agent simulation as evidence that the independent-review gate passed.
 - For English paper prose, use `econ-write`.
@@ -417,6 +454,8 @@ Load before drafting or revising main result prose, abstracts, introductions, co
 Before finalizing a response, confirm that:
 
 - the routed skill still matches the current subtask, not just the original request;
+- for an outline, proposal or staffing brief, the audience and intended use are established; every delivered paragraph has been read for its value to that recipient, internal deliberation is excluded from circulated documents, and necessary research content and confirmed task instructions remain intact;
+- a staffing brief distinguishes confirmed assignments for execution from explicitly requested proposals for discussion; proposed owners and responsibilities are marked pending confirmation, not treated as formal assignments or execution authorization; output and handoff instructions remain within the requested scope, and agent-generated coordination ideas have not silently become extra assignments;
 - a writing-task outline makes the required reading, argument steps and outputs recoverable at each relevant unit, distinguishes production from prose instructions, and has been actually read within the claimed audit scope;
 - any claim-bearing draft is covered by a frozen-current author-intent contract for the requested scope, or qualifies for the explicit meaning-preserving mechanical exception;
 - the semantic-fidelity audit maps every required intent to the draft and finds no unapproved addition, claim-strength escalation, lost qualifier, forbidden implication, or evidence conflict;

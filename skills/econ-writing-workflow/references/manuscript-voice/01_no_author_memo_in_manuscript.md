@@ -1,5 +1,18 @@
 # No Author Memo In Manuscript
 
+## Scope: Manuscript Prose Versus Outlines And Proposals
+
+The manuscript-only prohibitions below apply to prose intended for the paper's
+reader. For outlines and research-team staffing briefs, first apply Audience
+And Intended Use in `../../SKILL.md` and the recipient-necessity checks in
+`../outlines/01_argument_and_writing_task_outlines.md`. Exclude internal
+editorial deliberation from circulated documents, but preserve useful reading
+assignments, argument steps, sources and figure/table instructions in a task
+outline. Words such as “写”, “制作” or “完成” do not by themselves indicate
+internal leakage. A complete proposal still needs its substantive research
+rationale, evidence status, methods, feasibility, risks and necessary stages;
+apply its own genre requirements rather than mechanically banning future work.
+
 ## Core Rule
 
 Separate three output channels before writing or revising:

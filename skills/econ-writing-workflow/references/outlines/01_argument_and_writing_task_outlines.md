@@ -1,9 +1,57 @@
 # Argument Outlines And Writing-Task Outlines
 
-Use for planning or revising a paper/book outline, especially a task outline
-that human collaborators must use to write sections. Reuse the existing
+Use for planning or revising a paper/book or proposal outline, a writing-task
+outline that human collaborators must use to write sections, or an associated
+research-team staffing brief. Reuse the existing
 argument-logic, literature-grounding, and table/figure modules as needed;
 this reference supplies the handoff form and division of work.
+
+## Audience And Recipient Necessity
+
+Apply the main skill's Audience And Intended Use step before drafting. Record
+an established audience and purpose in existing working context when needed
+for resumption, not as mandatory front matter in the delivered document.
+Reapply the check when a self-use draft becomes a document for others.
+
+Judge content by what this recipient needs to understand, decide or do:
+
+| Intended use | Useful content | Content normally left out |
+|---|---|---|
+| Author's own thinking | Research reasoning, useful alternatives, unresolved questions and relevant edit notes | Unnecessary bookkeeping or explanations the author did not request |
+| Discussion with a teacher or collaborator | Research question, reasoning, evidence, feasibility and concrete choices on which input is sought | Author-agent editing dialogue, rejected drafting history, personal availability/workload constraints and personal accommodation arrangements |
+| Execution by section writers | Confirmed assignments, usable sources, argument steps, figure/table specifications and necessary handoffs | Personal availability/workload constraints, allocation negotiation history, personal accommodation arrangements and redundant coordination commentary |
+
+Use the deletion test: would removing this passage make the recipient less
+able to understand the research, make the requested decision or complete the
+assigned work? If not, leave it outside the circulated document. If yes,
+state the necessary current information directly, without recounting the
+internal discussion. Research justifications, evidence qualifications and
+proposal methods or risks must not be mistaken for editing history. Do not
+silently remove accepted claims, sources or assignments under an audience
+cleanup; seek a specific decision when their substantive removal is needed.
+
+For a staffing brief intended for execution, give only confirmed owners and
+scope, plus necessary outputs or handoffs. When the user explicitly requests
+a proposed allocation for discussion, mark proposed owners and responsibilities
+as pending confirmation; do not treat the proposal as a formal assignment or
+execution authorization. Do not duplicate the full writing-task outline.
+Keep personal availability, workload, existing task burdens and personal
+accommodation arrangements only in the user's private deliberation or records.
+Do not include them in documents handed to anyone else, including teachers,
+colleagues or collaborators, whether for discussion or execution. The
+recipient-necessity test does not create an exception. Retain relevant expertise
+only when the user permits its disclosure and it is necessary for the
+recipient's current decision; do not recount negotiation history.
+Shared case/material coordination belongs in the brief only when it is part
+of the confirmed scope and recipients need it to carry out a concrete task
+or handoff. Do not turn the agent's ideas for consistency, workload balancing
+or avoiding repetition into additional assignments. Do not restore a deleted
+coordination block merely because it sounds useful in general.
+
+For example, “甲负责2.1；乙负责4.2” states an assignment. “考虑到甲临近毕业，
+我们几轮讨论后作此调整” explains an internal decision. “甲提供已确认的共用
+数据表，乙据此撰写比较” may be useful when that handoff was requested and is
+necessary. Do not invent it simply because the same data appear twice.
 
 ## 1. Choose The Deliverable And Preserve The Accepted Plan
 
@@ -16,6 +64,10 @@ this reference supplies the handoff form and division of work.
 - A writing-task outline tells a writer what to read, explain, and produce.
   Writing instructions and figure specifications are intended content here;
   do not remove them using manuscript-only voice rules.
+- A staffing brief states confirmed owners, work and necessary handoffs for
+  execution, or clearly marked pending proposals when the user requests a
+  discussion version; it is not a second writing-task outline or a history
+  of allocation.
 - Manuscript prose presents the argument to the eventual reader. Keep task
   instructions out of that separate deliverable.
 
@@ -289,6 +341,15 @@ Check whether the writer can identify the question, necessary material,
 argument sequence, required outputs, and what this unit adds. If the user
 points to an example of a general problem, inspect the stated broader scope,
 not only the example. State the scope actually reviewed.
+
+Before handing off the document, read each paragraph, heading and task within
+the delivery scope from the established recipient's perspective. Apply the
+recipient-necessity test above, check for unconfirmed extra assignments, and
+verify that cleanup preserved necessary sources, reasoning and production
+instructions. A self-use draft need not be stripped of useful internal notes.
+Keep the audit and internal discussion in existing records or the response;
+do not append them to the handoff document or create another version by default.
+Keyword scans may help locate passages but cannot establish this review.
 
 Check the argument map against the tasks: each claim has a clear parent
 question and main location; reasoning steps have a necessary purpose; other
