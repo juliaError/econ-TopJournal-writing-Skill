@@ -2,9 +2,24 @@
 
 Use for planning or revising a paper/book or proposal outline, a writing-task
 outline that human collaborators must use to write sections, or an associated
-research-team staffing brief. Reuse the existing
-argument-logic, literature-grounding, and table/figure modules as needed;
-this reference supplies the handoff form and division of work.
+research-team staffing brief. For monographs, follow the paper-writing
+routes in `../../SKILL.md`; this reference covers chapter organization,
+writing assignments and the editor's review of submitted sections.
+
+## 大纲与专著：先读哪一节
+
+四步中的任何一步遇到不清楚的地方，先查用户已给的说明、已确认的书纲和相关材料。仍不能确定，就主动问用户：具体哪里不清楚，不同答案会怎样改变任务、论证、分工或验收。等用户答复再继续受影响的部分；已明确的事项不重复询问，可以独立完成的部分照常进行。
+
+例如，书纲已定、文件是给执笔人的，就沿用章名和受众。如果两稿分别主张“各地自建冷库”和“错季共用冷库”，而书纲没有确定本节要解释哪一个问题，先问作者；这会改变采收月份表的用途和收稿时要核对的判断。
+
+| 顺序 | 当前要解决的问题 | 参阅 |
+|---|---|---|
+| 先定任务 | 交付的是讨论纲、执笔任务纲，还是合稿意见？谁来读、拿它做什么？以哪份已确认的书纲为准？ | [受众说明](#audience-and-recipient-necessity)、[第 1 节](#1-choose-the-deliverable-and-preserve-the-accepted-plan) |
+| 再定论证 | 前文已经讲清什么？本章、本节还要回答什么？哪个论点在这里展开，哪些事实只需承接？ | [第 1 节](#1-choose-the-deliverable-and-preserve-the-accepted-plan)、[第 5 节](#5-explain-the-argument-and-the-use-of-cases)、[第 6 节](#6-give-introductions-and-conclusions-distinct-jobs)、[第 7 节](#7-design-for-concision-and-limit-cross-section-dependence) |
+| 然后布置写作 | 按段或段组交代要讲清什么、用什么材料、下一段怎么接。涉及来源、表图或机制解释时，直接参照已有规则。 | [第 2 节](#2-make-each-assignment-executable)、[第 3 节](#3-specify-facts-and-figures-without-inventing-more-work)、[第 4 节](#4-keep-sources-usable-and-proportionate)、[第 5 节](#5-explain-the-argument-and-the-use-of-cases) |
+| 按任务收尾 | 交任务纲，检查执笔人能否据此写；做合稿，核对章首和章尾的判断能否在实收正文中找到。 | [第 8 节](#8-review-actual-tasks-and-maintain-real-document-structure) |
+
+作者授权、受众隐私和证据要求贯穿四步。项目记录、LaTeX 和版式只在任务涉及它们时处理。
 
 ## Audience And Recipient Necessity
 
@@ -165,6 +180,9 @@ instructions can sit inside the relevant task rather than being repeated in
 a separate end-of-section field. A task may contain both production and
 writing, but distinguish those actions visibly.
 
+布置任务前，先核对前文已经讲清什么、本节还要回答什么。按段或段组交代：这一段要把本节的哪一步讲清，用什么材料，下一段怎样顺着这个判断往下讲。已交代的事实直接承接；再次使用时，说明它这次支持哪个不同的判断。案例细节写到足以解释本节的问题为止。
+A writer may build a table first without putting it first in the chapter.
+
 Replace vague instructions such as "observe", "compare", "connect back",
 or "explain the relationship" with named objects and outputs. For example,
 "制作一张各国人口与消费规模表；正文解释人口与平均购买量怎样共同形成总量"
@@ -288,6 +306,11 @@ For a book outline, use these responsibilities as adaptable defaults:
 | Section/chapter ending | Summarize what this part established at its own level and explain its connection to adjacent parts. |
 | General conclusion | Answer the central question by synthesizing established chapter conclusions and relationships, including conditions already examined in the body. |
 
+When a section brings several parts together, make their relationship clear:
+are they parallel comparisons, successive steps, or conditions for a result?
+Do not turn parallel cases into stages or require a separate introduction
+when a brief transition already makes the relationship clear.
+
 At every level, a summary must not introduce a new claim, example, evidence
 item or argument requiring fresh support. It may connect established
 conclusions and explain their significance at the appropriate level. If a
@@ -341,6 +364,16 @@ Check whether the writer can identify the question, necessary material,
 argument sequence, required outputs, and what this unit adds. If the user
 points to an example of a general problem, inspect the stated broader scope,
 not only the example. State the scope actually reviewed.
+
+For a multi-author chapter, each section writer supplies the reasoning and
+material for the assigned question. The chapter editor reads the chapter
+opening, section openings and conclusion together, then checks their claims
+against the body actually received. Check separately whether the requested
+materials arrived and whether the prose uses them where the reader needs
+them. A heading without a draft is not evidence for a chapter conclusion.
+If a draft follows the brief but the result reads poorly, or several drafts
+repeat the same problem, check whether the original assignment called for
+that wording or order before asking writers to revise it.
 
 Before handing off the document, read each paragraph, heading and task within
 the delivery scope from the established recipient's perspective. Apply the

@@ -1,6 +1,6 @@
 ---
 name: econ-writing-workflow
-description: Use as the main entry point for economics writing workflows in English or Chinese, including paper and research-proposal planning, argument outlines, collaborator-facing writing-task outlines and research-team staffing briefs, scope and claim convergence, full paper drafting from research questions and result packages, major revision, document-level translation or compression, exhaustive semantic QA and final audits, abstract/introduction/results revision, Chinese top-journal adaptation, English and Chinese diction cleanup, AI/translationese removal, table and figure design, notes/captions, formatting checks, and routing to empirical workflow support when data cleaning, regressions, or variable construction are involved.
+description: Use as the main entry point for economics writing workflows in English or Chinese, including paper and research-proposal planning, monograph outlines, chapter drafting and integration, argument outlines, collaborator-facing writing-task outlines and research-team staffing briefs, scope and claim convergence, full paper drafting from research questions and result packages, major revision, document-level translation or compression, exhaustive semantic QA and final audits, abstract/introduction/results revision, Chinese top-journal adaptation, English and Chinese diction cleanup, AI/translationese removal, table and figure design, notes/captions, formatting checks, and routing to empirical workflow support when data cleaning, regressions, or variable construction are involved.
 ---
 
 # Economics Writing Workflow
@@ -29,6 +29,15 @@ complete-manuscript QA requirements. Existing author-intent, source, empirical
 and write-authorization rules still apply where relevant. For an actual
 research proposal, continue to use the proposal-specific module rather than
 substituting the task-outline template.
+
+When planning a monograph, drafting a chapter or bringing separately written
+sections together, consult the same paper-writing references listed under
+Routing for the work at hand: argument logic, literature and evidence, or
+tables and figures. Use them when setting assignments as well as when reading
+drafts. For chapter roles, writing order and editorial handoff, use
+`references/outlines/01_argument_and_writing_task_outlines.md`. An empirical
+design, regression or journal-style contribution statement belongs in a book
+only when the chapter actually calls for it.
 
 A proposal skeleton is still an outline, not a complete proposal. For
 outline-only requests, check argument and display specifications; do not
