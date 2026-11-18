@@ -38,6 +38,14 @@ Do not use it for:
 
 For small tasks, use the stable `econ-writing-workflow` or the relevant child skill directly.
 
+## User-Triggered Research Aesthetics Review
+
+Dispatch a separate Research Aesthetics Review Role only when the user says the argument is problematic or explicitly requests an aesthetics review. Keep it within the concern or scope the user identifies. Task length, complexity, the model's own doubts, or ordinary automatic loading of the shared v0.8 module are not triggers for this additional agent.
+
+When triggered, load the role in [references/agent_roles.md](references/agent_roles.md#research-aesthetics-review-role). This is a narrow exception to the small-task exclusions above: the review may cover a paragraph, an outline, a chapter, or a whole draft. Use a bounded, controller-mediated review; do not start full-paper drafting or final acceptance merely because this role is requested. If the concern or affected scope remains unclear after reading the available context, ask the user before reviewing that part.
+
+Routine writing continues to use the shared aesthetics module under the existing writing-entry rules. Existing argument-logic, language, evidence, and mandatory acceptance roles keep their duties; this optional review neither replaces them nor changes their triggers.
+
 ## Core Rule
 
 Before splitting work across agents or roles, create or update a shared paper state. The paper state is the single source of truth. No agent may invent or silently alter:

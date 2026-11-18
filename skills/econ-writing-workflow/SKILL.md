@@ -131,6 +131,16 @@ After a specialized skill settles its part, return to this workflow to integrate
 - For full draft requests, never invent citations, data, variable definitions, identification claims, coefficient values, mechanisms, robustness results, or policy implications. Mark missing facts as concrete `TODO` items.
 - Do not provide full manuscript drafting for paid paper-writing services, undisclosed ghostwriting, fabricated research, or academic misconduct. Offer an ethical outline, checklist, or teaching-oriented alternative instead.
 
+## Research Aesthetics In Argument Organization
+
+When drafting or substantively revising research questions, theoretical mechanisms, contributions, or policy tradeoffs, automatically read the complete v0.8 [research-aesthetics module](references/research-aesthetics.md) before organizing the argument. This includes arranging these elements in paper or monograph outlines, and applies equally to Chinese and English. An explicit author request also triggers the module; the author need not name it for the automatic cases.
+
+First establish the author's confirmed meaning from the supplied instructions and materials. Use the module to organize the importance of the question, main versus subsidiary points, comparison objects, economic tradeoffs, and reasoning order within the authorized writing task. Its idea-generation and theory-deepening sections supply reasoning criteria here, not permission to generate new topics or redesign the research. If a proposed improvement changes the question, mechanism, comparison, or substantive judgment, present it separately and obtain author approval before applying it. Ask about unresolved meaning that affects the task; do not re-ask already confirmed matters. Author approval does not supply missing evidence.
+
+After argument organization, continue with the applicable Chinese or English expression checks and content/semantic verification. The module does not replace existing argument-logic, evidence, or author-intent rules. Reuse it once loaded within the same writing phase; do not reload it for every paragraph or again merely because a language entry is called.
+
+Pure spelling, local word substitutions, language-only polishing, and formatting do not automatically trigger this module. Writing use does not automatically start topic-selection training, blind evaluation, or multi-agent review.
+
 ## Argument-Logic References
 
 Load only the relevant files:
